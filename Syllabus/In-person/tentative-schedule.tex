@@ -1,0 +1,146 @@
+\documentclass[10pt]{article}
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage{enumerate}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{termcal}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage[normalem]{ulem}
+
+%For month display on every day of the month
+%\renewcommand{\calprintdate}{%
+%	\monthname\ \ordinaldate%
+%}
+
+%For month display only on the first day of the month 
+\renewcommand{\calprintdate}{%
+	\ifnewmonth\monthname\ \ordinaldate%
+	\else \ordinaldate\fi
+}
+%For displaying the class number
+\renewcommand{\calprintclass}{}
+
+%command for creating calendar
+\newcommand{\MTWRClass}{%
+\calday[Monday]{\classday} % Monday 
+\calday[Tuesday]{\classday}% Tuesday
+\calday[Wednesday]{\classday} % Wednesday 
+\calday[Thursday]{\classday} % Thursday
+\skipday %\calday[Friday]{\classday} % Friday 
+\skipday % weekend (no class)
+\skipday % weekend (no class)
+}
+
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\begin{document}
+
+
+\setlength{\leftskip}{0cm}
+
+\newgeometry{top=.75in, bottom=.75in, left=.75in, right=.75in}
+\section*{Tentative Schedule}
+\begin{center}
+\begin{calendar}{9/30/2019}{10} 
+\setlength{\calboxdepth}{1.5in}
+\setlength{\calwidth}{7in}
+%
+\calday[Monday]{\classday} 
+\skipday % \calday[Tuesday]{\classday}
+\calday[Wednesday]{\classday} 
+\skipday % \calday[Thursday]{\classday} 
+\skipday %\calday[Friday]{\classday} 
+\skipday % weekend
+\skipday % weekend 
+
+
+%Schedule
+
+%Week 1
+\caltexton{1}{\vspace{2 em} No classes held} 
+\caltexton{2}{\vspace{2 em} Course Syllabus \\ \vspace{2 em} Chapter 1}
+
+
+%Week 2
+\caltexton{3}{ \vspace{2 em} Chapter 2} 
+\caltexton{4}{ \vspace{2 em} Chapter 3}
+
+
+%\caltexton{4}{\vspace{2 em} Chapter 4 \\ \vspace{2 em}  {\underline{\bf{In-class Quiz 1}}}}
+%\caltexton{5}{\vspace{2 em} Chapter 5}
+%\caltexton{6}{\vspace{2 em} Chapter 6 }
+%\caltexton{7}{\vspace{2 em} Midterm Review}
+%\caltexton{8}{\vspace{2 em} \underline{\bf{Midterm}}}
+%\caltexton{9}{\vspace{2 em} Chapter 7}
+%\caltexton{10}{ \vspace{2 em} Chapter 8}
+%\caltexton{11}{\vspace{2 em}  Chapter 9}
+%\caltexton{12}{\vspace{2 em}  Chapter 9 (cont'd) \\ \vspace{2 em} {\underline{\bf{In-class Quiz 2}}}}
+%\caltexton{13}{ \vspace{2 em} Chapter 22}
+%\caltexton{14}{ \vspace{2 em} Chapter 23 }
+%\caltexton{15}{ \vspace{2 em} Final Review}
+%\caltexton{16}{\vspace{2 em} \underline{\bf{Final}}}
+
+
+%Week 3
+\caltexton{5}{ \vspace{2 em} \textbf{HW1 DUE} \\ \vspace{2 em} Chapter 4 - Part I} 
+\caltexton{6}{ \vspace{2 em} Chapter 4 - Part II}
+
+
+
+%Week 4
+\caltexton{7}{\vspace{2 em} Chapter 4 - Part III \\ \vspace{2 em} Chapter 5 - Part I} 
+\caltexton{8}{\vspace{2 em} \textbf{HW2 DUE} \\  \vspace{2 em} Chapter 5 - Part II \\ \vspace{2 em} Midterm I Review}
+
+
+
+%Week 5
+\caltexton{9}{\vspace{2 em} \textbf{MIDTERM I}} 
+\caltexton{10}{ \vspace{2 em} Chapter 6 - Part I}
+
+
+
+
+%Week 6
+\caltexton{11}{ \vspace{2 em} Chapter 6 - Part II} 
+\caltexton{12}{ \vspace{2 em} \textbf{HW3 DUE} \\ \vspace{2 em} Chapter 9}
+
+
+%Week 7
+\caltexton{13}{\vspace{2 em} \textbf{HW4 DUE} \\  \vspace{2 em} Chapter 14 - Part I} 
+\caltexton{14}{ \vspace{2 em} Chapter 14 - Part II \\ \vspace{2 em} Midterm II Review}
+
+
+%Week 8
+\caltexton{15}{ \vspace{2 em} \textbf{MIDTERM II}} 
+\caltexton{16}{ \vspace{2 em} Chapter 15 - Part I}
+
+
+%Week 9
+\caltexton{17}{ \vspace{2 em} Chapter 15 - Part II} 
+\caltexton{18}{ \vspace{2 em} Class cancelled}
+
+
+%Week 10
+\caltexton{19}{ \vspace{2 em} \textbf{HW5 due} \\ \vspace{2 em} Chapter 19} 
+\caltexton{20}{\vspace{2 em} Final Review}
+
+
+
+\end{calendar}
+\end{center}
+\bf{Final exam is scheduled at 10:15 Friday, December 13. This schedule is subjective to change.}
+
+\end{document}

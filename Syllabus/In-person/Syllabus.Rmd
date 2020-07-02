@@ -1,0 +1,131 @@
+---
+output: 
+  pdf_document:
+    keep_tex: true
+    fig_caption: yes
+    latex_engine: pdflatex
+    template: /Users/lixiang/Desktop/EC370-F19/syllabus/syllabus-template.tex
+geometry: margin=1in
+
+title: "EC370: Money and Banking"
+author: Xiang LI
+date: "Fall 2019"
+
+email: "xli4@uoregon.edu"
+web: "canvas.uoregon.edu"
+officehours: "T/W 1:00-2:00pm"
+office: "407 PLC"
+classroom: "240A MCK"
+classhours: "M/W 8:30-9:50am"
+
+
+
+fontfamily: mathpazo
+fontsize: 11pt
+header-includes:
+   - \linespread{1.05}
+   
+
+
+---
+
+# Course Description
+In this class we will study financial markets, financial instruments, and financial institutions.  Along with these  topics,  we  will  discuss  the  determinants  of  market  interest  rates. We  will  also  study  money,  the structure and role of central banks, and the conduct of monetary policy. This course aims to help you to understand better the role money, banks, and financial markets play in the economy, and to think about policy issues in a more informed way.
+
+
+
+# Prerequisites
+It is required that you have already taken EC 202 before taking this course. This course presumesproficiency in basic math skills, including algebra and analytic geometry (i.e., graphs); as such, having taken EC 313 or a similar course is recommended. 
+
+
+# Textbook
+The recommended textbook for this course is The  Economics  of  Money, Banking, and Financial Markets, written by Frederic S. Mishkin. I will be using 12th edition, but old editions are fine. We will not be using MyEconLab, so do not purchase a copy of the book with this included.
+
+
+# Chapters Tentative To Be Covered
+- Chapter 1: Why Study Money, Banking, and Financial Markets
+- Chapter 2: An Overview of the Financial System
+- Chapter 3: What is money
+- Chapter 4: The Meaning of Interest Rates
+- Chapter 5: The Behavior of Interest Rates
+- Chapter 6: The Risk and Term Structure of Interest Rate
+- Chapter 9: Banking and the Management of Financial Institutions
+- Chapter 14: The Money Supply Process
+- Chapter 15: Tools of Monetary Policy
+- Chapter 19: Quantity Theory, Inflation, and the Demand for Money
+
+# Evaluation
+- Participation \hfill 2.5\%
+- 5 Homework \hfill 17.5\% 
+- 2 Midterm  (\textbf{Oct 28, Nov 18}) \hfill 50\% 
+- 1 Final (\textbf{Dec 13, 10:15am}) \hfill 30\%
+- Extra credit assignments might be given during the course
+
+## Participation
+I'm a big fan of asking my instructors questions! That's why I want my students to participate in class and interact with me too. To make earning participation credit easier for you, I have devised two ways to receive participation credit in this class. 
+
+- First, you can ask questions or answer questions that I ask during lectures.  
+
+- Second, if you are shy or simply don't like talking in front of large audiences, you have an option of coming to my offce hour with questions or comments on the material. 
+
+You are required to participate \textbf{once} during the entire duration of class. If you participate during class, make sure to come to me after class, so I can make a note of your name and assign you the grade. When you meet your full participation credit, do not be discouraged and keep participating, I really appreciate my students' input in class.
+
+
+## Midterm and Final
+There will be 2 in-class midterms and 1 in-class final exam. The midterm will be given \textbf{8:30am, Monday, Oct 28} and \textbf{8:30am, Monday, Nov 18}, and the final will be given \textbf{10:15am, Friday, Dec 13}. Midterm will be administered at 240A MCK. Final exam will be taking place in MCK 221.
+
+<!-- Midterm I will tentatively test the materials that we will cover in chapter 1, 2, 3, 4, 5. Midterm II will tentatively test the materials that we will cover in chapter 6, 9, 14. The final exam will be more heavily weighted toward the materials that we will cover in chapter 4, 5, 6, 9, 14, 15, 19.   -->
+
+Let me know as soon as possible if you cannot make it to the midterm or final and you have a documented, University-sanctioned excuse. If a serious illness or emergency prevents you from being present at an exam, contact me ASAP before the exam. Be prepared to provide documentation. 
+
+<!-- Note that make-up exams will be given at a greater level of difficulty compared to in-class exams. -->
+
+An unexcused absence from an exam will result in scoring a zero on that exam, with devastating effects on your course grade. An unexcused absence from the final exam will result in scoring a zero on that exam, and hence will likely result in a failing grade for the course. If you know that you will not be able to take one of the exams, you should seriously reconsider taking this course this term.
+
+Please be aware that if you need a certain grade in the course, you will be expected to earn that grade. I will not provide additional assignments for extra credits or adjust grades following the final exam.
+
+# Exams Administration
+You are permitted rulers or straightedges, and non-graphing calculators on your desk during the exam. Graphing calculators, phones and any other devices are \textbf{not} allowed. A limited amount of dumb calculators will be provided. You are required to bring student ID. 
+
+All in-class quizzes and exams are \textbf{closed notes}. No cheat sheet is allowed. \textbf{Formula sheets will be provided}. There will be assigned seating. 
+
+Don't plan on cheating. Spend the requisite time studying. Evidence of academic misconduct during an exam will likely result in a failing grade for the entire course.  
+
+# Pass/Not Pass Option
+Students taking the course Pass/Not Pass are expected to do all of the course work and must take the final exam. P/NP students need to earn a C- or above for their overall grade to pass the course. 
+
+
+# Re-grade Requests
+If you notice an arithmetic mistake in totaling the number of points on in-class quizzes or midterm, simply point this out to me as soon as possible, and the correction will be made. For any other reconsideration of a grade on your in-class quizzes or midterm, you must submit a formal re-grade request explaining why you believe your answer(s) should be given more points. This request must be made in writing and given to me no later than one week after the in-class quizzes or midterm is returned. There will never be a re-grade for any online homework or the final exam. 
+
+
+# Course Announcements
+I will use Canvas to send announcements to the course **frequently**. Be sure to check your Canvas or ``@uoregon.edu" email account regularly so that you receive course-related information quickly and reliably. 
+
+# University Policies and Expectations
+## Sexual Violence and Survivor Support
+The UO is committed to providing an environment free of all forms of discrimination and sexual harassment, including sexual assault, domestic and dating violence and gender-based stalking. If you (or someone you know) has experienced or experiences gender-based violence (intimate partner violence, attempted or completed sexual assault, harassment, coercion, stalking, etc.), know that you are not alone. UO has staff members trained to support survivors in navigating campus life, accessing health and counseling services, providing academic and housing accommodations, helping with legal protective orders, and more.
+Please be aware that all UO employees are required reporters. This means that if you tell me about a situation, I may have to report the information to my supervisor or the Office of Affirmative Action and Equal Opportunity. Although I have to report the situation, you will still have options about how your case will be handled, including whether or not you wish to pursue a formal complaint. Our goal is to make sure you are aware of the range of options available to you and have access to the resources you need. 
+If you wish to speak to someone confidentially, you can call 541-346-SAFE, UO's 24-hour hotline, to be connected to a confidential counselor to discuss your options. You can also visit the SAFE website at \href{safe.uoregon.edu}{safe.uoregon.edu}.
+
+## Diversity
+The University of Oregon is dedicated to the principles of equal opportunity and freedom from unfair discrimination for all members of the university community and an acceptance of true diversity as an affirmation of individual identity within a welcoming community. This course is committed to upholding
+these principles by encouraging the exploration, engagement, and expression of distinct perspectives and diverse identities. 
+All of us associated with the course---you included---are expected to value each class member's experiences and contributions and to communicate disagreements respectfully. Please notify me if you feel aspects of the course undermine these principles in any way. You may also notify the Department of Economics at 541-346-8845. For additional assistance and resources, you are also encouraged to contact the following campus services:
+- Office of Equity and Inclusion: 1 Johnson Hall $\vert$ 541-346-3175 $\vert$ \href{oied.uoregon.edu}{oied.uoregon.edu}
+- Center on Diversity and Community: 54 Susan Campbell Hall $\vert$ 541-346-3212 $\vert$ \href{codac.uoregon.edu}{codac.uoregon.edu}
+- Bias Response Team: 164 Oregon Hall | 541-346-1134 $\vert$ \href{mailto:brt@uoregon.edu}{brt@uoregon.edu} $\vert$ \href{bias.uoregon.edu}{bias.uoregon.edu}
+
+## Academic Integrity
+The University Student Conduct Code (available at \href{conduct.uoregon.edu}{conduct.uoregon.edu}) defines academic misconduct. Students are prohibited from committing or attempting to commit any act that constitutes academic misconduct. By way of example, students should not give or receive (or attempt to give or receive) unauthorized help on assignments or examinations without explicit permission from the instructor. Students should properly acknowledge and document all sources of information (e.g. quotations, paraphrases, ideas).
+If there is any question about whether a particular activity constitutes academic misconduct, it is the student's obligation to clarify the matter with the instructor before engaging in or attempting to engage in the activity. Please contact me with any questions you have about academic misconduct. Additional information about maintaining your academic integrity is available at \href{integrity.uoregon.edu}{integrity.uoregon.edu}.  
+---from the Office of the Dean of Students
+
+## Accessibility and Special Accommodations
+The University of Oregon is working to create inclusive learning environments. Please notify me if there are any aspects of this course that result in disability-related barriers to your participation. For more information or assistance, contact the Accessible Education Center: 164 Oregon Hall $\vert$ 541-346-1155 $\vert$ \href{aec.uoregon.edu}{aec.uoregon.edu}. 
+If you require special accommodations of any kind due to a documented disability you will need to provide a letter from the Accessible Education Center verifying your need and detailing the appropriate accommodations. So that I can plan for any necessary accommodations please get this letter to me by the end of the first week of classes.
+ 
+If your accommodations involve any proctoring of exams at the AEC you will be responsible for scheduling those exams with sufficient anticipation with the AEC. Keep in mind that proctored midterms need to be scheduled at least seven days in advance and that proctored final exams need to be scheduled by the 5:00pm of the Friday of week 8 of the course.
+
+## Inclement Weather and Class Cancellations
+In the event of inclement weather, the UO home webpage (\href{www.uoregon.edu}{www.uoregon.edu}) will include a banner at the top of the page displaying information about delay or closure decisions for the Eugene campus. Local television, radio, and print media will be notified as well. In the event of a class cancellation an announcement will be sent via Canvas to all students.
