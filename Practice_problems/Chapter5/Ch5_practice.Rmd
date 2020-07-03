@@ -1,0 +1,88 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 5 - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+\textbf{QUESTION 1} 
+
+Explain why you would be more or less willing to buy Microsoft bonds in the following situations . 
+
+(a) Everything else held constant, your wealth falls.
+
+(b) Everything else held constant, you expect the Microsoft stock to appreciate in value.
+
+(c) Everything else held constant, the stock market becomes more liquid.
+
+(d) Everything else held constant, you expect gold to appreciate in value. 
+
+(e) Everything else held constant, prices in the bond market become more volatile. 
+
+(f) Everything else held constant, prices in the art market become more uncertain.
+
+\vspace{1in}
+
+
+\vspace{1.5in}
+\textbf{QUESTION 2} 
+
+Use demand and supply analysis of bonds market to graphically show what will happen to interest rates if there is a sudden  increase in people's expectations of future real estate prices. 
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 3}  
+
+Use demand and supply analysis of bonds market to graphically show what will happen to interest rates if brokerage commissions on stocks fall. 
+
+
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 4}  
+
+Suppose you are in charge of the financial department of your company and you have to decide whether to borrow short or long term. Checking the news, you realize that the government is about to engage in a major infrastructure plan in the near future. Predict graphically what will happen to interest rates. Will you advise borrowing short or long term?
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 5}
+
+Suppose that many big corporations decide not to issue bonds, since it is now too costly to comply with new financial market regulations. Use demand and supply analysis of bonds market to graphically show what will happen to interest rates. 
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 6}  
+
+Suppose that people in France decide to permanently increase their savings rate. Use demand and supply analysis of bonds market to graphically show what will happen to the interest rates in French bond market. 
+
+
+
+
+

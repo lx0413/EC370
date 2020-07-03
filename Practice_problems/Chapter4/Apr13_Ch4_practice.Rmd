@@ -1,0 +1,140 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 4 - Part II - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+\textbf{QUESTION 1} 
+
+If a \$1,000 face value coupon bond has a coupon rate of 3.75 percent, then what is the coupon payment every year?
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 2} 
+
+Consider a bond with a 4\% coupon rate and a face value of \$1,000. 
+
+(1) Complete the following table.
+
+\begin{center}
+ \begin{tabular}{||c c c c||} 
+ \hline
+  Bond No. & Years to Maturity & Yield to Maturity & Current Price \\ [0.5 ex] 
+ \hline\hline
+ \#1& 2 & 2\% &  \\ 
+ \hline
+  \#2& 2 &   4\% &   \\
+ \hline
+   \#3& 3 &  4\% & \\
+ \hline
+   \#4 & 5 &   2\% &  \\
+ \hline
+   \#5 & 5 &   6\% &  \\ 
+ \hline
+\end{tabular}
+\end{center} 
+
+\vspace{3in}
+
+(2) What relationships do you observe among coupon rate, yield to maturity, face value and the current price?
+
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 3} 
+
+Today you buy a \$1,000-face value, 5\% coupon bond for \$1,000. The bond matures in 6 years. 
+
+(1) How much will this bond pay you in year 5?
+
+(2) What is the present value of the cashflow you receive in the last period from this bond?
+
+(3) Find the sum of the present values of all coupon payments
+
+(4) What is the price of this bond when it has one year left to maturity?
+ 
+
+ 
+ 
+ 
+\vspace{1.5in}
+\textbf{QUESTION 4} 
+
+Rank the following \$1,000 face-value coupon bonds by increasing order of yield to maturity (i.e. smallest to largest). 
+
+(A) a 10 percent coupon bond selling for \$1,100
+
+(B) a 10 percent coupon bond selling for \$1,500 
+
+(C) a 11 percent coupon bond selling for \$900
+
+(D) a 10 percent coupon bond selling for \$1,200
+
+
+ 
+ 
+\vspace{1.5in}
+\textbf{QUESTION 5} 
+
+There are three 1-year discount bond that has face value of 1,000. Their today's prices are shown in the following table.
+
+(1) Complete the table. You need to show the math work for each of the value you fill in.
+
+\begin{center}
+ \begin{tabular}{||c c c||} 
+ \hline
+Bond No. & Price of bond today & Yield to Maturity \\ [0.5 ex] 
+ \hline\hline
+ \#1& \$900 &  \\ 
+ \hline
+  \#2&  \$800  &  \\
+ \hline
+   \#3&\$700  &  \\
+ \hline
+\end{tabular}
+\end{center} 
+
+\vspace{1.5in}
+
+(2) What is the relationship between current price of bond and yield to maturity?
+
+
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 6} 
+
+Consider a coupon bond that has a \$1,000 face value and a coupon rate of 10\%. The bond is currently selling for \$1,044.89 and has two years to maturity. Write down the quadratic equation that solves for the yield to maturity of this bond. You don't need to solve for the value of the yield to maturity. Quadratic equation is any equation having the form $a \times x^2 +b \times x + c=0$
+
+
+
+ 
+

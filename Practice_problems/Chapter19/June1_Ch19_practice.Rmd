@@ -1,0 +1,117 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 19 - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+
+\textbf{QUESTION 1} 
+
+If velocity and aggregate output are reasonably constant (as the classical economists believed), what will happen to the price level when the money supply increases from \$1 trillion to \$4 trillion?
+
+
+
+
+
+\vspace{1in}
+\textbf{QUESTION 2} 
+
+If credit cards were made illegal by congressional legislation, what would happen to velocity? Explain your answer.
+
+
+
+
+\vspace{1in}
+\textbf{QUESTION 3} 
+
+"If nominal GDP rises, velocity must rise." Is this statement true, false, or uncertain? Explain your answer.
+
+
+
+<!---
+\vspace{1in}
+\textbf{QUESTION 4} 
+
+"Persistent budget deficits always lead to higher inflation." Is this statement true, false, or uncertain? Explain your answer.
+--->
+
+
+\vspace{1in}
+\textbf{QUESTION 4} 
+
+What three motives for holding money did Keynes consider in his liquidity preference theory of the demand for real money balances? On the basis of these motives, what variables did he think determined the demand for money?
+
+\newpage
+\textbf{QUESTION 5} 
+
+Why is Keynes's analysis of the speculative demand for money important to his view that velocity will undergo substantial fluctuations and thus cannot be treated as constant?
+
+
+
+
+\vspace{1in}
+\textbf{QUESTION 6} 
+
+Suppose the money supply M has been growing at 10\% per year, and nominal GDP, PY, has been growing at 20\% per year. The data are as follows (in billions of dollars). Calculate the velocity for each year. At what rate is the velocity growing?
+
+
+\begin{center}
+\begin{tabular}{|c p{2cm} p{2cm} p{2cm}|} 
+\hline
+ & \textbf{2018} & \textbf{2019} & \textbf{2020} \\ [1.0 ex] 
+ \hline
+ $M$ & 100 &  110 & 121 \\ 
+ \hline
+  $PY$ & 1000 & 1200  & 1440 \\
+\hline
+\end{tabular}
+\end{center} 
+
+
+
+\vspace{1in}
+\textbf{QUESTION 7} 
+
+Calculate what happens to nominal GDP if velocity remains constant at 5 and the money supply increases from \$200 billion to \$300 billion.
+
+
+
+\vspace{1in}
+\textbf{QUESTION 8} 
+
+What happens to nominal GDP if the money supply grows by 20\% but velocity declines by 30\%?
+
+
+
+\vspace{1in}
+\textbf{QUESTION 9} 
+
+If velocity and aggregate output remain constant at 5 and \$1,000 billion, respectively, what happens to the price level if the money supply declines from \$400 billion to \$300 billion?
+
+
+

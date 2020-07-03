@@ -1,0 +1,152 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 6 - Practice - Part 1}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+\textbf{QUESTION 1} 
+
+If junk bonds are junk, then why do investors buy them?
+
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 2} 
+
+Which should have the higher risk premium on its interest rates, a corporate bond with a Moody's Baa rating or a corporate bond with a C rating? Why? 
+
+
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 3}
+
+Predict what will happen to interest rates on a corporation's bonds if the federal government guarantees today that it will pay creditors if the corporation goes bankrupt in the future. What will happen to the interest rates on Treasury securities?
+
+
+
+
+
+<!-- \vspace{.5in} -->
+<!-- \textbf{QUESTION 4}   -->
+
+<!-- Initially, the yield curve is upward sloping as shown below. If bond investors decide that 30-year bonds are no longer as desirable an investment as they were previously,  predict what will happen to the yield curve, assuming (1) the expectations theory of the term structure holds and (2) the segmented markets theory of the term structure holds. -->
+
+<!-- \vspace{.3in} -->
+<!-- \textbf{SOLUTION:} -->
+
+<!-- (1) Under the expectations theory of the term structure, if 30-year bonds become less desirable, this will increase the demand for bonds of other maturities, since they are viewed as perfect substitutes. The result is a higher price and a lower yield at all other maturities, and an increase in yield at the end of the yield curve. In other words, the yield curve would steepen at the end, and flatten somewhat along the rest of the curve.  -->
+
+<!-- (2) Under the segmented markets theory, the assumption is that each type of bond maturity is an independent market, and therefore not linked in any particular way. Thus, changes in long rates won?t affect shorter- and medium-term bond yields. Thus, the yield curve under the segmented markets theory will result in a jump in the 30-year rate, with the remainder of the yield curve unchanged. -->
+
+<!-- \includegraphics[width=0.4\textwidth]{1} -->
+
+<!-- \includegraphics[width=0.4\textwidth]{Yield_curve} -->
+
+
+<!-- \vspace{.5in} -->
+<!-- \textbf{QUESTION 5}   -->
+
+<!-- If a yield curve looks like the one shown in the figure below, what is the market predicting about the movement of future short-term interest rates? What might the yield curve indicate about the market?s predictions for the inflation rate in the future? -->
+
+<!-- \includegraphics[width=0.5\textwidth]{5} -->
+
+<!-- \vspace{.3in} -->
+<!-- \textbf{Solution:} The flat yield curve at shorter maturities suggests that short-term interest rates are expected to fall moderately in the near future, while the steep upward slope of the yield curve at longer maturities indicates that interest rates further into the future are expected to rise. Because interest rates and expected inflation move together, the yield curve suggests that the market expects inflation to fall moderately in the near future but to rise later on. -->
+
+
+<!-- \newpage -->
+
+<!-- \vspace{.5in} -->
+<!-- \textbf{QUESTION 6} -->
+
+<!-- The table below shows current and expected future one-year interest rates, as well as current interest rates on multiyear bonds.  -->
+
+<!-- (1) Complete the table. You need to show the calculation for each value you fill in. -->
+
+<!-- (2) Plot the yield curve under Liquidity premium theory and yield curve predicted by the Expectations theory.  -->
+
+
+<!-- \vspace{.3in} -->
+<!-- \textbf{SOLUTION:} -->
+
+<!-- (1) -->
+
+<!-- \begin{center} -->
+<!-- \begin{tabular}{||c | p{1cm} | p{7cm}  | p{2cm}  | p{4cm}||}  -->
+<!-- \hline -->
+<!--  Year 	& One-Year Bond Rate & Multiyear Bond Rate predicted by \textbf{ExpectationTheory} & Multiyear Bond Rate predicted by \textbf{Liquidity Premium Theory} & liquidity premium\\ [1.0 ex]  -->
+<!-- \hline\hline -->
+<!--  1		&  2\% 		& \textbf{2\%} 	  		& 2\%						& \textbf{2\%-0\%=2\%}\\  -->
+<!-- \hline -->
+<!-- 2 		&    3\%  		&   \textbf{(3\%+2\%)/2=2.5\%}  		& 	3\% 			& \textbf{ 3\%-2.5\%=0.5\%} \\ -->
+<!-- \hline -->
+<!-- 3 		&  4\% 		& \textbf{(4\%+3\%+2\%)/3=3\%}  		& 	5\%		& \textbf{5\%-3\%=2\%}  \\ -->
+<!-- \hline -->
+<!-- 4 		&   6\% 		&  \textbf{(2\%+3\%+4\%+6\%)/4=3.75\%} 		& 	6\%  & \textbf{6\%-3.75\%=2.25\%}  \\ -->
+<!-- \hline -->
+<!-- 5		&   7\% 		& \textbf{(2\%+3\%+4\%+6\%+7\%)/5=4.4\%}  		&7\%   &  \textbf{7\%-4.4\%=2.6\%}    \\ -->
+<!--  \hline -->
+<!-- \end{tabular} -->
+<!-- \end{center}  -->
+
+<!-- (2) -->
+
+<!-- \includegraphics[width=1\textwidth]{2} -->
+
+<!-- \newpage -->
+
+
+
+<!-- \vspace{.5in} -->
+<!-- \textbf{QUESTION 7}   -->
+
+
+<!-- Assuming the expectations theory is the correct theory of the term structure.  -->
+
+<!-- a. 5\%, 7\%, 7\%, 7\%, 7\%  -->
+
+<!-- b. 5\%, 4\%, 4\%, 4\%, 4\%  -->
+
+<!-- (1) calculate the interest rates in the term structure for maturities of one to five years, and plot the resulting yield curves for the following paths of one-year interest rates over the plot the resulting yield curves for the following paths of one-year interest rates over the next five years: -->
+
+<!-- (2) How would your yield curves change if people preferred shorter-term bonds over longer-term bonds? -->
+
+<!-- \vspace{.3in} -->
+<!-- \textbf{Solution:} -->
+
+<!-- (1)  -->
+
+<!-- (a) The yield to maturity would be 5\% for a one-year bond, 6\% for a two-year bond, 6.33\% for a three-year bond, 6.5\% for a four-year bond, and 6.6\% for a five-year bond.So the yield curve is upward sloping.   -->
+
+<!-- (b) The yield to maturity would be 5\% for a one-year bond, 4.5\% for a two-year bond. 4.33\% for a three-year bond, 4.25\% for a four-year bond, and 4.2\% for a five-year bond. So the yield curve is downward sloping. -->
+
+<!-- (2) The upward sloping yield curve in (a) would be even steeper if people preferred short-term bonds over long-term bonds, because long-term bonds would then have a positive liquidity premium. The downward-sloping yield curve in (b) would be less steep and might have a slight positive upward slope if the long-term bonds have a positive liquidity premium. -->
+
+

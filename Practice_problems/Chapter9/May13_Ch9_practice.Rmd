@@ -1,0 +1,134 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 9 - Practice - PART II}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+\vspace{.3in}
+\textbf{QUESTION 1} 
+
+Excess reserves act as insurance against deposit outflows. Suppose that on a yearly basis Malcom Bank holds \$12 million in excess reserves and \$88 million in required reserves. Suppose that Malcom Bank can earn 3.5\% on its loans and that the interest paid on (total) reserves is 0.2\%. What would be the cost of this insurance policy?
+
+\vspace{1in}
+
+
+\textbf{QUESTION 2} 
+
+The bank you own has the following balance sheet. If the bank suffers a deposit outflow of \$50 million with a required reserve ratio on deposits of 10\%, what actions should you take?
+
+\begin{center}
+ \begin{tabular}{||c  | c||} 
+ \hline
+Assets & Liabilities+Capital \\ 
+\hline\hline
+Reserves:  \$75  & Deposits: \$500 \\ 
+\hline
+Securities:  \$0 &  Borrowings:  \$0 \\
+ \hline
+ Loans: \$525 & Capital: \$100  \\
+ \hline
+\end{tabular}
+\end{center} 
+
+\vspace{1in}
+
+
+\textbf{QUESTION 3} 
+
+Duck Bank is a commercial bank in Oregon. Below is its initial balance sheet (unit:  million USD). 
+
+\begin{center}
+ \begin{tabular}{||c  | c||} 
+ \hline
+Assets & Liabilities+Capital \\ 
+\hline\hline
+Reserves:  \$124  & Deposits: \$300 \\ 
+\hline
+Securities:  \$176 &  Borrowings:  \$200 \\
+ \hline
+ Loans: \$300 & Capital: \$100  \\
+ \hline
+\end{tabular}
+\end{center} 
+
+(1) Given the required reserve ratio is 20\%, calculating the required reserves amount. 
+
+\vspace{1in}
+
+(2) What is the largest deposit outflow that Duck Bank can sustain without making changes to other components in its balance sheet?
+
+\vspace{1in}
+
+(3) Fill in the new balance sheet after a customer withdraws \$100 million. 
+
+\begin{center}
+ \begin{tabular}{|p{4cm}|p{4cm}|} 
+ \hline
+Assets & Liabilities+Capital \\ 
+\hline\hline
+Reserves:   & Deposits: \\ 
+\hline
+Securities:  &  Borrowings:   \\
+ \hline
+ Loans:  & Capital:   \\
+ \hline
+\end{tabular}
+\end{center} 
+
+
+(4) You will see that the bank fails to meet the reserve requirement because of this deposit outflow. How much more reserves that this bank needs to meet the requirement?
+
+\vspace{1in}
+
+(5) Duck bank chooses to \textbf{selling securities} to make up for this shortfall in reserves. Complete the final balance sheet after this securities sale is completed. 
+
+\begin{center}
+ \begin{tabular}{|p{4cm}|p{4cm}|} 
+ \hline
+Assets & Liabilities+Capital \\ 
+\hline\hline
+Reserves:    & Deposits:  \\ 
+\hline
+Securities:  &  Borrowings:   \\
+ \hline
+ Loans: & Capital:  \\
+ \hline
+\end{tabular}
+\end{center} 
+
+
+(6) What is cost of this option? Note that this cost is not reflected in the balance sheet. 
+
+\vspace{1in}
+
+(7) Give one more option to make up for this shortfall in reserves.
+
+
+
+
+

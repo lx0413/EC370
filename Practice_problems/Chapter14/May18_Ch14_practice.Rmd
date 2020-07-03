@@ -1,0 +1,173 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 14 Part 2 - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+
+
+\textbf{QUESTION 1} 
+
+(1) The First National Bank receives an extra \$100 of reserves but decides not to lend out any of these reserves. How much deposit creation takes place for the entire banking system?
+
+\vspace{1in}
+
+
+(2) If a bank depositor withdraws \$1,000 of currency from an account, what happens to reserves, checkable deposits, and the monetary base?
+
+\vspace{1in}
+
+(3) If you decide to hold \$100 less cash than usual and therefore deposit \$100 more cash in the bank, what effect will this have on checkable deposits in the banking system if the rest of the public keeps its holdings of currency constant?
+
+\vspace{1in}
+
+(4) If lending rates that banks can charge increase, all else equal what effect, if at all, will this have on the money multiplier?
+
+\vspace{1in}
+
+
+(5) In October 2008, the Federal Reserve began paying interest on the amount of excess reserves held by banks. How, if at all, might this affect the multiplier process and the money supply?
+
+\vspace{1in}
+
+(6) If the Fed sells \$1 million of bonds and banks reduce their borrowings from the Fed by \$1 million, predict what will happen to the money supply.
+
+\vspace{1in}
+
+\newpage
+
+
+\textbf{QUESTION 2} 
+
+The required reserve ratio on checkable deposits is \textbf{5\%}. Suppose banks do not hold any excess reserves, and the public does not hold currency.  Suppose all banks in the banking system choose to turn excess reserves into loans. If the Fed \textbf{lends} \$2 million to a commercial bank, show the changes in the balance sheet of the banking system, after the deposit creation process continues infinitely.
+
+_Instruction: To complete the balance sheet in this question, show the **changes** of values for each item. For example, if you think the value of an item decreased by $10, write down -$10. If you think the value of an item increases by $10, write down +$10. If you think the value of an item isn't changed, leave it blank_
+
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|} 
+\hline
+\multicolumn{2} {|c|} {\textbf{Banking System}} \\
+\hline
+\textbf{Assets} & \textbf{Liabilities+Capital} \\ 
+\hline\hline
+Reserves: & Deposits:  \\ 
+\hline
+Securities:  &  Borrowings:    \\
+ \hline
+ Loans:  & Capital:   \\
+\hline
+\end{tabular}
+\end{center} 
+
+
+
+\vspace{1in}
+\textbf{QUESTION 3}
+
+The required reserve ratio on checkable deposits is 10\%. Suppose banks do not hold any excess reserves, and the public does not hold currency.  Suppose all banks in the banking system choose to turn excess reserves into loans. If the Fed reduces reserves by selling \$5 million worth of bonds to one bank, show the changes in each of the items, after the deposit creation process continues infinitely. 
+
+_Instruction: To complete the balance sheet in this question, show the **changes** of values for each item. For example, if you think the value of an item decreased by $10, write down -$10. If you think the value of an item increases by $10, write down +$10. If you think the value of an item isn't changed, leave it blank_
+
+\begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|} 
+\hline
+\multicolumn{2} {|c|} {\textbf{Banking System}} \\
+\hline
+\textbf{Assets} & \textbf{Liabilities+Capital} \\ 
+\hline\hline
+Reserves:     & Deposits:  \\ 
+\hline
+Securities:  &  Borrowings: \\
+ \hline
+ Loans:  & Capital:   \\
+ \hline\hline\hline
+ \multicolumn{2} {|c|} {\textbf{Federal Reserve System}} \\
+ \hline
+\textbf{Assets} & \textbf{Liabilities} \\ 
+\hline\hline
+Securities: & Currency in circulation:  \\ 
+\hline
+Lending to banks: &  Reserves:   \\
+\hline
+\end{tabular}
+\end{center} 
+
+
+\newpage
+\textbf{QUESTION 4} 
+
+Suppose the required reserves in the banking system is \$500 million, currency in circulation is \$2000 million, checkable deposits are \$5000 million, and excess reserves is \$1000 million. Suppose the central bank \textbf{purchases} \$1000 million bonds from from a commercial bank.
+
+(1) What is currency-to-deposit ratio, required reserve ratio, excess reserve-to-deposit ratio, and money multiplier?
+
+\vspace{1in}
+
+(2) how much does money supply increase? 
+
+\vspace{1in}
+
+(3) Suppose all banks in the banking system choose to turn excess reserves into loans. If the central bank \textbf{purchases} \$1000 million bonds from a commercial bank, show the changes in the balance sheet of the banking system, after the deposit creation process continues infinitely.
+
+_Instruction: To complete the balance sheet in this question, show the **changes** of values for each item. For example, if you think the value of an item decreased by $10, write down -$10. If you think the value of an item increases by $10, write down +$10. If you think the value of an item isn't changed, leave it blank_
+
+ \begin{center}
+\begin{tabular}{|p{6cm}|p{6cm}|} 
+\hline
+\multicolumn{2} {|c|} {\textbf{Banking System}} \\
+\hline
+\textbf{Assets} & \textbf{Liabilities+Capital} \\ 
+\hline\hline
+Reserves: & Deposits: \\ 
+\hline
+Securities:  &  Borrowings:    \\
+ \hline
+ Loans:  & Capital:   \\
+\hline
+\end{tabular}
+\end{center} 
+
+
+
+(4) Holding everything else constant, to reduce the money multiplier from the level in part (2) to 1, how much should excess reserve-to-deposit ratio be?
+
+\vspace{1in}
+
+(5)  Holding everything else constant, if money multiplier from the level in part (2) is reduced to 1, how much excess reserve the banking system must hold?
+
+\vspace{1in}
+
+
+
+
+
+
+
+
+
+
+

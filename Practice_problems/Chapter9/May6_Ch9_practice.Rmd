@@ -1,0 +1,101 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 9 - Practice - PART I}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+\textbf{QUESTION 1} 
+
+With a 10\% reserve requirement ratio, what is the maximum amount New Bank could lend if a \$100 deposit into New Bank?
+
+\vspace{.3in}
+
+
+\vspace{.3in}
+\textbf{QUESTION 2} 
+
+Rank the following bank assets from most to least liquid: (a) Commercial loans, (b) Securities, (c) Reserves, (d) Physical capital
+
+\vspace{.3in}
+
+
+
+
+\vspace{.3in}
+\textbf{QUESTION 3} 
+
+(1) If Jane brown writes a $50 check on her account at the first national bank to pay her friend Joe Green, who in turn deposits the check in his account at the second national bank, update the balance sheet.
+
+\vspace{.3in}
+\textbf{Solution:} 
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{4cm}|} 
+\hline
+\multicolumn{2} {|c|} {\textbf{First National Bank}} \\
+\hline
+\textbf{Assets} & \textbf{Liabilities+Capital} \\ 
+\hline\hline
+Reserves:   & Deposits: \\ 
+\hline
+Securities:  &  Borrowings:  \\
+ \hline
+ Loans:  & Capital:   \\
+ \hline\hline\hline
+ \multicolumn{2} {|c|} {\textbf{Second National Bank}} \\
+ \hline
+\textbf{Assets} & \textbf{Liabilities+Capital} \\ 
+\hline\hline
+Reserves:   & Deposits:  \\ 
+\hline
+Securities:  &  Borrowings:  \\
+\hline
+Loans:  & Capital:   \\
+\hline
+\end{tabular}
+\end{center} 
+
+(2) If one person withdraws \$1,000 of cash and another person deposits \$500 of cash, update the balance sheet.
+
+\vspace{.3in}
+\textbf{Solution:} 
+
+\begin{center}
+\begin{tabular}{|p{4cm}|p{4cm}|} 
+\hline
+\multicolumn{2} {|c|} {\textbf{First National Bank}} \\
+\hline
+\textbf{Assets} & \textbf{Liabilities+Capital} \\ 
+\hline\hline
+Reserves:   & Deposits: \\ 
+\hline
+Securities:  &  Borrowings:  \\
+ \hline
+ Loans:  & Capital:   \\
+ \hline
+\end{tabular}
+\end{center} 

@@ -1,0 +1,49 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 5 - Practice - Part II}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+\textbf{QUESTION 1}  
+
+Using both the supply and demand for bonds and liquidity preference frameworks (market for money), explains how interest rates are affected when the riskiness of bonds rises, assuming money and bonds are the only assets individuals hold their wealth in and total wealth of individuals is fixed.
+
+
+\vspace{2.5in}
+\textbf{QUESTION 2} 
+
+An important way in which the Federal Reserve decreases the money supply is by selling bonds to the public. Using a supply and demand analysis for bonds, and using a supply and demand analysis for money, graphically show what effect this action has on interest rates.
+
+
+
+
+\vspace{2.5in}
+\textbf{QUESTION 3} 
+
+Using a supply and demand analysis for bonds, and using a supply and demand analysis for money, graphically show why interest rates can be pro-cyclical. 
+

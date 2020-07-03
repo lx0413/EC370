@@ -1,0 +1,117 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+ 
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 4 - Part III - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+\textbf{QUESTION 1} 
+
+In which of the following situations would benefit you most as a borrower? In which of the following situations would benefit you most as a lender?
+
+(1) The interest rate is 9 percent and the expected inflation rate is 7 percent. 
+
+(2) The interest rate is 4 percent and the expected inflation rate is 1 percent. 
+
+(3) The interest rate is 13 percent and the expected inflation rate is 15 percent. 
+
+(4) The interest rate is 25 percent and the expected inflation rate is 50 percent.
+
+
+\vspace{1.5in}
+\textbf{QUESTION 2} 
+
+Suppose that you want to take out a loan and that your local bank wants to charge you an annual real interest rate equal to 3\%. Assuming that the annualized expected rate of inflation over the life of the bond is 1\%, determine the nominal interest rate that the bank will charge you. What happens if, over the life of the loan, actual inflation is 0.5\%?
+
+
+\vspace{1.5in}
+\textbf{QUESTION 3} 
+
+Mortgages are loans to households to purchase houses. If mortgage rates rise from 5\% to 10\%, but the expected rate of increase in housing prices rises from 2\% to 9\%. Are people more or less likely to buy houses? Why? 
+
+
+
+\newpage
+\textbf{QUESTION 4} 
+
+Consider four coupon bonds with the same face value of \$100 and the same coupon rate of 10\%. These bonds are held for one year. Assume interest rate \textbf{increase} from 10\% to 12\% in the next year. Complete the following table.
+
+\begin{center}
+ \begin{tabular}{||c| p{2.5cm}| p{2.5cm} |p{2.5cm} |p{2.5cm}|p{2.5cm}||} 
+ \hline
+ Bond No. & Initial Years to Maturity & Initial Current Yield & Price next year & Rate of Capital Gain & Rate of Return\\ [1.0 ex] 
+ \hline\hline
+ \#1& 20 &  10\% &   & -14.73\% & \\ 
+ \hline
+  \#2& 10 &    10\%  &  &  & -0.66\% \\
+ \hline
+   \#3& 5 &  10\% & & & \\
+ \hline
+   \#4 & 1 &   10\% & && \\
+ \hline
+\end{tabular}
+\end{center} 
+
+
+
+\newpage
+\textbf{QUESTION 5} 
+
+If the interest rates on all bonds rise from 5 to 6 percent over the course of the year, which bond would you prefer to have been holding?
+
+(a) a bond with ten years to maturity;
+
+(b) a bond with five years to maturity;
+
+(c) a bond with twenty years to maturity;
+
+(d) a bond with one year to maturity.
+
+
+
+
+\vspace{1.5in}
+\textbf{QUESTION 6} 
+
+Indicate TRUE or FALSE for the following statement. 
+
+(1) The longer a bond's maturity, the greater is the rate of return that occurs as a result of the increase in the interest rate.
+
+(2) Even though a bond has a substantial initial interest rate, its return can turn out to be negative if interest rates rise. 
+
+(3) Prices and returns for short-term bonds are more volatile than those for longer term bonds. 
+
+(4) A fall in interest rates results in capital losses for bonds whose terms to maturity are longer than the holding period. 
+
+(5) The rate of return on a bond will not necessarily equal the interest rate on that bond. 
+
+(6) The rate of return will be greater than the interest rate when the price of the bond falls during the holding period. 
+
+(7) The return can be expressed as the difference between the current yield and the rate of capital gains. 
+
+(8) With a zero-coupon bond, the return on the bond is equal to the rate of capital gain. 
+
+

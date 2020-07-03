@@ -1,0 +1,62 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 15 - PART II - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+
+\textbf{QUESTION 1} 
+
+Suppose initially, vertical portion of the supply curve intersects the demand curve on its downward portion. Using the supply and demand analysis of the market for reserves, indicate what happens to the federal funds rate, borrowed reserves, and non-borrowed reserves, if economy is surprisingly strong, leading to an increase in the amount of checkable deposits.
+
+
+
+
+
+
+
+\vspace{3in}
+\textbf{QUESTION 2} 
+
+Suppose initially, vertical portion of the supply curve intersects the demand curve on its downward portion. Using the supply and demand analysis of the market for reserves, indicate what happens to the federal funds rate, borrowed reserves, and non-borrowed reserves, if the Fed raises the interest rate on reserves above the current equilibrium federal funds rate. 
+
+\newpage
+\textbf{QUESTION 3} 
+
+Suppose initially, vertical portion of the supply curve intersects the demand curve on its downward portion. Using the supply and demand analysis of the market for reserves, indicate what happens to the federal funds rate, borrowed reserves, and non-borrowed reserves, if the Fed reduces reserve requirements.
+
+
+
+
+\vspace{3in}
+\textbf{QUESTION 4} 
+
+Suppose initially, vertical portion of the supply curve intersects the demand curve on its downward portion. Using the supply and demand analysis of the market for reserves, indicate what happens to the federal funds rate, borrowed reserves, and non-borrowed reserves, if the Fed reduces reserve requirements and then offsets this action by conducting an open market sale of securities.
+
+
+

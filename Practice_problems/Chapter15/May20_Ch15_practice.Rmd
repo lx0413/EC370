@@ -1,0 +1,51 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 15 - PART I - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+\textbf{QUESTION 1} 
+ 
+If a switch occurs from deposits into currency, what happens to the federal funds rate? Use the supply and demand analysis of the market for reserves to explain your answer.
+
+
+
+
+\vspace{2.5in}
+\textbf{QUESTION 2} 
+
+Why is it that a decrease in the discount rate does not normally lead to an increase in borrowed reserves? Use the supply and demand analysis of the market for reserves to explain.
+
+
+
+
+
+\vspace{2.5in}
+\textbf{QUESTION 3} 
+
+Suppose initially, vertical portion of the supply curve intersects the demand curve on its downward portion. Using the supply and demand analysis of the market for reserves, indicate what happens to the federal funds rate, borrowed reserves, and non-borrowed reserves, if the Fed uses an open market sale to raise the target federal funds rate.
+

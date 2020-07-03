@@ -1,0 +1,106 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 6 - Practice - Part 2}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+\textbf{QUESTION 1}
+
+Initially, the yield curve is upward sloping as shown below. If bond investors decide that 30-year bonds are no longer as desirable an investment as they were previously,  predict what will happen to the yield curve, assuming (1) the expectations theory of the term structure holds and (2) the segmented markets theory of the term structure holds.
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.width=5.5, out.width = "50%"}
+xdata <- c(5,10,15,20,25,30)
+y1 <- c(2,3,4,5,6,7)
+plot(xdata, y1, type="o", col="black", pch="o", lty=2, ylim=c(0,9), xlab="years to maturity", ylab="interest rate (%)", yaxt='n')
+```
+
+
+
+\vspace{.5in}
+\textbf{QUESTION 2}
+
+If a yield curve looks like the one shown in the figure below, what is the market predicting about the movement of future short-term interest rates? What might the yield curve indicate about the market's predictions for the inflation rate in the future?
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.width=5.5, out.width = "50%"}
+xdata <- c(5,10,15,20,25,30)
+y1 <- c(2,2,2,3,4,5)
+plot(xdata, y1, type="o", col="black", pch="o", lty=2, ylim=c(0,9), xlab="years to maturity", ylab="interest rate (%)", yaxt='n',axes=FALSE)
+Axis(side=1, labels=FALSE)
+Axis(side=2, labels=FALSE)
+```
+
+\newpage
+
+\vspace{.5in}
+\textbf{QUESTION 3}
+
+The table below shows current and expected future one-year interest rates, as well as current interest rates on multiyear bonds.
+
+(1) Complete the table. You need to show the calculation for each value you fill in.
+
+\begin{center}
+\begin{tabular}{||c | p{1cm} | p{7cm}  | p{2cm}  | p{4cm}||}
+\hline
+ Year 	& One-Year Bond Rate & Multiyear Bond Rate predicted by \textbf{ExpectationTheory} & Multiyear Bond Rate predicted by \textbf{Liquidity Premium Theory} & liquidity premium\\ [1.0 ex]
+\hline\hline
+ 1		&  2\% 		& 		& 2\%						& \\
+\hline
+2 		&    3\%  		&    		& 	3\% 			&  \\
+\hline
+3 		&  4\% 		&  		& 	5\%		& \\
+\hline
+4 		&   6\% 		& 		& 	6\%  &  \\
+\hline
+5		&   7\% 		&  		&7\%   &   \\
+ \hline
+\end{tabular}
+\end{center}
+
+
+(2) Plot the yield curve under Liquidity premium theory and yield curve predicted by the Expectations theory.
+
+
+
+\newpage
+
+
+
+\vspace{.5in}
+\textbf{QUESTION 4}
+
+
+Assuming the expectations theory is the correct theory of the term structure.
+
+a. 5\%, 7\%, 7\%, 7\%, 7\%
+
+b. 5\%, 4\%, 4\%, 4\%, 4\%
+
+(1) calculate the interest rates in the term structure for maturities of one to five years, and plot the resulting yield curves for the following paths of one-year interest rates over the plot the resulting yield curves for the following paths of one-year interest rates over the next five years:
+
+(2) How would your yield curves change if people preferred shorter-term bonds over longer-term bonds?
+
+

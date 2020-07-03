@@ -1,0 +1,77 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Chapter 4 - Part I - Practice}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+\textbf{QUESTION 1} 
+
+Would a dollar tomorrow be worth more to you today when the daily interest rate is 20\% or when it is 10\%?
+
+
+\vspace{2in}
+\textbf{QUESTION 2} 
+
+Calculate the present value of a \$1,000 discount bond with five years to maturity if the yield to maturity is 6\%. 
+
+
+\vspace{2in}
+\textbf{QUESTION 3} 
+
+If the amount payable in two years is \$2,420 for a simple loan at 10 percent interest, what is the loan amount?
+
+
+\newpage
+\textbf{QUESTION 4} 
+
+To have \$1,000 in 5 years, how much money do you need to save today, given that the bank pays you an annual interest rate of 5\% 
+
+
+
+\vspace{2in}
+\textbf{QUESTION 5} 
+
+Suppose that a commercial bank wants to buy Treasury bills. These instruments pay \$5,000 in one year and are currently selling for \$5,012. What is the yield to maturity of these bonds? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
