@@ -1,0 +1,178 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Midterm 1 - Review Guide}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+This guide is intended to give you a broad overview of the topics covered so far in the course to help you prepare for the midterm exam. The items listed are not necessarily an exhaustive list of the vocabulary or ideas discussed, but understanding these topics thoroughly will provide you with a good basis for success on the midterm exam.
+
+Topics are generally listed in the order in which they were covered in class.
+
+
+
+
+# Chapter 1
+- how to calculate nominal GDP
+- how to calculate real GDP: using prices for the base year 
+  - base year: nominal GDP = real GDP
+- how to calculate GDP deflator
+  - GDP deflator is one of the indicators that measure the aggregate price level in the economy
+  - if GDP deflator is 1 for a year: this year must be the base year
+- how to calculate inflation rate: inflation rate is growth rare of the aggregate price level
+
+
+
+
+# Chapter 2
+## Financial Intrsuments
+- maturity: short-term, intermediate and long-term
+- short-term securities: Money market instruments
+	- U.S. Treasury Bills (T-bills): 
+		- sold at discount, no interest payments (zero-coupon bonds)
+		- very liquid, low default risk
+	- Repurchase agreements (repos)
+	  - Treasury bills serve as collateral
+	- Federal Funds: 
+		- loans issued by banks to another banks
+		- federal funds rate serves as a base for other interest rate
+- intermediate and longer-term securities: Capital market instruments
+	- U.S Treasury Notes (T-Notes), U.S Treasury Bonds (T-Bonds)
+		- very liquid, low default risk
+	- municipal bonds
+		- exempt from federal income tax 
+	- Corporation Bond and Stock differ in: payment, maturity, claimant, other benefits
+	
+## Financial Intermediaries
+- Banks
+	- sources of funds: deposits
+	- uses of funds: loans and mortgages, T-bills/T-notes/T-bonds, municipal bonds
+- Contractual Saving Institutions: insurance companies, pension funds
+	- sources of funds: periodic contributions
+	- uses of funds: long-term securities
+- Investment Intermediaries: mutual funds
+	- sources of funds: pooling funds of many individuals (shareholders can sell shares anytime)
+	- uses of funds: diversified portfolios of stocks and bonds
+- Investment Intermediaries: Finance Companies
+  - source of funds: raising funds directly in the financial markets, such as issuing
+stocks and bonds
+  - make loans to purchase specialized items
+
+
+## Primary and Secondary markets
+- Firms acquire new funds only when securities are first sold in the primary market (Investment bank and underwriting)
+- Secondary markets determine the price of the securities that the issuing firm sells in the primary market (brokers and dealers)
+  - Centralized Exchange
+  - Over-the-Counter Markets
+
+
+## Regulatory Government Agencies
+- Securities and Exchange Commission (SEC): restricts insider trading
+- Federal Reserve System (the Fed): uses monetary policy tools to affect federal funds rate
+- Federal Deposit Insurance Corporation (FDIC): provides deposit insurance of up to $250,000 for each depositor at a bank; FDIC also imposes restrictions on assets banks can hold
+
+
+
+
+
+# Chapter 3
+## Functions of Money
+- Medium of Exchange
+- Unit of Account
+- Store of Value
+	- money loses value rapidly during times of inflation or hyperinflation 
+
+## Measuring Money
+- liquidity
+	- M1 include the most liquid assets: currency + traveler's checks + demand deposits + other checkable deposits
+	- M2 include M1	and less liquid assets: M1 + Small-denomination time deposits + Savings deposits + Money market mutual fund shares + money market deposit accounts
+- Growth rates of M1 and M2 tend to move together, but can move in different directions in short run
+
+
+
+
+
+
+# Chapter 4
+## Valuing Monetary Payments Now and in the Future
+- how to calculate future value of payments made today
+- how to calculate present value of payments made in the future  
+
+
+## Yield to Maturity
+- Yield to Maturity (YTM): the interest rate that equates the present value of all of its future cash flow payments received from an instrument with its value today (today's price)
+- how to calculate YTM for:
+	- Simple loan
+	- Fixed-payment loan
+	- Coupon bond
+	- Discount Bond (Zero-Coupon bond)
+- an important relationship about YTM and coupon rate $c$: 
+	- when bond price = bond face value, YTM = $c$ 
+	- when bond price < bond face value, YTM > $c$
+	- when bond price > bond face value, YTM < $c$
+- bond prices and YTM (interest rate) are negatively related
+
+
+
+## Holding Period Return (or Return, Rate of Return)
+- difference between Yield to Maturity and Rate of Return
+- how to calculate one-year holding period rate of return $R$:
+	- flexibly make full use of $C(=c \times F)$, $P_t$, $P_{t+1}$,$i_c$, $g$ to calculate $R$
+	- how to calculate $P_t$: 
+		-  $P_t$ equals: time t's value of all future payments
+		-  $P_t$ = face value: if $i_t=c$ (i.e. if $YTM_t=c$ )
+		-  $P_t$ can be calculated by $g=\frac{P_{t+1}-P_t}{P_t}$, if $g$ and $P_{t+1}$ are known
+		-  $P_t$ can be calculated by $i_c=\frac{C}{P_t}$, if $C(=c \times F)$ and $i_c$ are known
+	- how to calculate $P_{t+1}$:
+		-  $P_{t+1}$ equals: time t+1's value of all future payments
+		-  $P_{t+1}$ = face value: if $i_{t+1}=c$ (i.e. if $YTM_{t+1}=c$ )
+		-  $P_{t+1}$ can be calculated by $g=\frac{P_{t+1}-P_t}{P_t}$ if $g$ and $P_t$ are known;
+	- an important relationship about current yield $i_c (= \frac{c \times F}{P_t})$ and coupon rate $c$:
+		- when $P_t=F, i_c=c$
+		- when $P_t>F, i_c<c$
+		- when $P_t<F, i_c>c$
+
+
+
+## Interest-Rate Risk
+- after you have purchased a bond, if there is going to be a rise (fall) in interest rate, then it means that the price of the bond you are holding will fall (increase) and experience a capital loss (gain); if the loss (gain) is large enough, the bond you are holding can be a poor (good) investment
+- Prices and returns for long-term bonds are more volatile than those for shorter-term bonds. In other words, long-term bonds have substantial interest-rate risk, compared to short-term bonds
+
+
+## Real and Nominal Interest Rates
+- difference between Real and Nominal Interest Rates
+- how to use Fisher equation to calculate real interest rate
+- When the real interest rate is low, there are greater incentives to borrow and fewer incentives to lend
+
+
+
+
+
+
+
+
+

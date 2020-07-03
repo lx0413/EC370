@@ -1,0 +1,177 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Midterm 2 - Review Guide}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+
+
+This guide is intended to give you a broad overview of the topics covered so far in the course to help you prepare for the midterm exam. The items listed are not necessarily an exhaustive list of the vocabulary or ideas discussed, but understanding these topics thoroughly will provide you with a good basis for success on the midterm exam. Topics are generally listed in the order in which they were covered in class.
+
+
+# Chapter 5
+
+## Demand and Supply in the Bond Market
+- what does demand curve for bond look like 
+	- negative relationship between bonds price and bonds demand
+	- negative relationship between bonds price and interest rate
+- what does supply curve for bond look like
+- bond market equilibrium, excess demand, excess supply
+	- excess demand: P will rise, i will fall
+	- excess supply: P will fall, i will rise
+
+
+## Shift of Demand and Supply in the Bond Market
+- Changes in factors that affect how many bonds people will want to hold will make demand curve for bonds shift
+	- wealth: 
+		- business cycle expansion/recession
+		- propensity to save
+	- Expected returns on bonds relative to alternative assets
+		- expected future interest rates
+		- Expected return on alternative assets
+		- Expected inflation
+	- Risk of bonds relative to alternative assets
+	- Liquidity of bonds relative to alternative assets
+- Changes in factors that affect how much of an asset corporates or government will want to issue will make supply curve shift
+	- Expected profitability of investment opportunities
+		- business cycle expansion/recession
+	- Expected inflation
+	- Government budget deficits
+
+
+
+
+## Bond Market Framework and Liquidity Preference Framework
+- what is the key assumption 
+- relationship between bond market and market for money
+  - if $B^s=B^d$, then $M^s=M^d$
+  - if $B^s>B^d$, then $M^s<M^d$
+  - if $B^s<B^d$, then $M^s>M^d$
+
+
+## Demand and Supply in the Market for Money
+- what does demand curve for money look like 
+	- price of money: interest rate
+	- negative relationship between interest rate and demand for money
+- what does supply curve for money look like
+- bond market equilibrium, excess demand, excess supply
+	- excess demand: i will rise
+	- excess supply: i will fall
+
+
+## Shift of Demand and Supply in the Market for Money
+- 2 factors cause the demand curve for money to shift
+  - income: business cycle expansion/recession
+  - price level: business cycle expansion/recession
+- increase/decrease in the money supply engineered by the Fed shifts the supply curve
+
+
+<!---
+## Money Supply and Interest Rate
+- increase/decrease in money supply leads to:
+  - Liquidity effect
+  - Income Effect
+  - Price-Level Effect
+  - Expected-Inflation Effect
+- how to analyze the change in interest rate over time by timeline plots
+--->
+
+
+
+
+# Chapter 6
+
+## Risk structure of interest rates
+- graphically explain bonds with default risk have higher interest rates
+	- corporate bonds vs. U.S Treasury bonds
+	- bonds issued by foreign government that has default risk vs.  U.S Treasury bonds
+	- corporate bonds with A rating vs. corporate bonds with B/C rating 
+-  graphically explain why bonds with less liquidity have higher interest rates
+	- corporate bonds vs. U.S Treasury bonds
+-  graphically explain bonds with favorable tax treatment has lower interest rates
+	- municipal bonds vs. U.S Treasury bonds
+
+
+## Term structure of interest rates
+- 3 important facts about yield curve
+	- fact 1: interest rates on bonds of different maturities move together over time
+	- fact 2: When short-term interest rates are low, yield curves are more likely to have an upward slope; when short-term interest rates are high, yield curves are more likely to slope downward
+	- act 3: Yield curves almost always slope upward
+- expectations theory
+	- what is key assumption
+	- formula: the n-period interest rate equals the average of the one-period interest rates expected to occur over the n-period life of the bond
+	- why this theory can explain Fact 1 and Fact 2
+- Segmented Markets Theory
+	- what is key assumption
+	- demand for long-term bonds is typically lower than that for short-term bonds
+	- why this theory can explain Fact 3
+- Liquidity Premium Theory
+	- what is key assumption
+	- formula: the n-period interest rate equals the average of the one-period interest rates expected to occur over the n-period life of the bond plus liquidity premium
+	-  liquidity premium grows with the term to maturity 
+	- why this theory can explain Fact 1, 2, 3
+
+
+
+
+
+	
+	
+
+# Chapter 9
+## Bank Balance Sheet
+
+- Liabilities
+  - checkable deposits
+  - (primary liabilities) non-transaction deposits 
+  - borrowings: discount loans, federal funds
+- Assets
+  - reserves: required reserves (required reserve ration times checkable deposits), excess reserves
+  - securities: U.S. government (secondary reserves), state and local government securities
+  - (primary assets) loans: the highest interest rate, the highest default risk, the least liquidity 
+- Bank Capital = assets - liabilities 
+
+
+## Basic Banking
+- Asset transformation: borrow short and lend long
+- Three T-account examples on the slide
+
+<!---
+## General Principles of Bank Management
+- Liquidity Management
+  - T-account example: sufficient excess reserve
+  - T-account example: insufficient excess reserve and 4 options
+- Capital Adequacy Management 
+  - T-account example: how adequate capital can prevent insolvency
+--->
+
+
+
+  
+
+
+
+  

@@ -1,0 +1,155 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 313, Fall 2019}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Final - Equation Sheet}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+\textit{Work on this page will not be graded. You can detach this page.}
+
+
+# Chapter 19
+
+\noindent  
+
+\textbf{Velocity of money}: $V=\frac{P \times Y}{M^s}$
+
+\textbf{Equation of exchange/Quantity theory of money}: $P \times Y = M^s \times V$
+
+\textbf{Inflation rate}: $\pi = \% \Delta M^s - \% \Delta Y$
+
+\textbf{$\% \Delta$ in $(x \times y)$ = $\% \Delta$ in x + $\% \Delta$ in y}
+
+<!---
+\textbf{Government budget constraint}: $DEF= G-T = \Delta MB + \Delta B$
+--->
+
+\textbf{Fisher's theory of money demand}: $M^d = \frac{1}{\bar{V}} \times P \times Y$
+
+\textbf{Keynes' theory of money demand}: $\frac{M^d}{P}=L(i,Y)$
+
+\noindent  
+$V$: velocity; \hspace{6cm}  $P$: price level; 
+
+$Y$: aggregate output/income\hspace{4cm} $M^s$: money supply; 
+
+$\pi$: inflation rate;  \hspace{6cm} $\% \Delta$: growth rate; 
+
+<!---
+$DEF$: government budget deficit;  \hspace{2.5cm} $G$: government spending;
+
+$T$: tax revenue; \hspace{4cm}  $\Delta MB$: change in the monetary base; 
+
+$\Delta B$: change in government bonds held by the public; 
+--->
+
+$M^d$: quantity demanded of money;  \hspace{2cm} $i$: interest rate;  \hspace{4cm}  
+
+# Chapter 14
+
+\textbf{Monetary base}: MB=C+R 
+
+\textbf{Monetary base}: MB=BR + $MB_n$
+
+\textbf{M1}: M1=C+D
+
+\textbf{currency-to-deposit ratio}: $c=\frac{C}{D}$
+
+\textbf{excess reserves-deposit ratio}: $er=\frac{ER}{D}$
+
+\textbf{required reserves ratio}: $rr=\frac{RR}{D}$
+
+\textbf{reserves}: ${R=ER+RR}$
+
+\textbf{Checkable deposits:} $D= \frac{1}{rr} \times R$
+
+\textbf{Change in checkable deposits}: $\Delta D = \frac{1}{rr} \times \Delta R$
+
+\textbf{money multiplier}: $m=\frac{1+c}{c+rr+er}$
+
+\textbf{Money supply}: $M=m \times MB$
+
+\textbf{Change in money supply}: $\Delta M=m \times \Delta MB$
+
+$MB$: monetary base;   \hspace{4cm}  $C$: currency in circulation; 
+
+$R$: reserves;  \hspace{5cm} $BR$: borrowed reserves; 
+
+$MB_n$: non-borrowed monetary base;  \hspace{2cm} $D$: checkable deposits; 
+
+$RR$: requires reserves;  \hspace{4cm} $ER$: excess reserves; 
+
+$\Delta M$: change in M;  \hspace{4cm} $\Delta MB$: change in MB; 
+
+$\Delta D$: change in D;  \hspace{4cm} $\Delta R$: change in R
+
+# Chapter 6
+
+\textbf{Expectation Theory:} $i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}$
+
+\textbf{Liquidity Premium Theory:} $i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}+l_{nt}$
+
+$i_{nt}$:  interest rate on a n-year bond at year t (in \%);
+
+$i_t$: interest rate on a 1-year bond at year t (in \%); 
+
+$i^e_{t+1}$: interest rate on a 1-year bond expected for year t+1 at year t (in \%); 
+
+$l_{nt}$: liquidity premium for the n-year bond at year t (in \%)
+
+# Chapter 4
+
+**Future value**: $FV_n=PV \times (1+i)^n$ 
+
+**Present value**: $PV=\frac{FV_n}{(1+i)^n}$ 
+
+**Fixed-Payment Loan**: Loan Value = $\frac{FP}{(1+i)}+ \frac{FP}{(1+i)^2} + \frac{FP}{(1+i)^3} + \ldots + \frac{FP}{(1+i)^n}$
+
+**Coupon Bond**: Price = $\frac{C}{(1+i)}+ \frac{C}{(1+i)^2} + \frac{C}{(1+i)^3} + \ldots + \frac{C}{(1+i)^n} + \frac{F}{(1+i)^n}$
+
+**Coupon payment**: $C=c \times F$
+
+**Discount Bond**: Price = $\frac{F}{(1+i)^n}$
+
+**Holding Period Return**:  $R=\frac{C+P_{t+1}-P_t}{P_t}=i_c+g$
+
+**Current Yield**: $i_c=\frac{C}{P_t}$
+
+**Capital Gain**: $g=\frac{P_{t+1}-P_t}{P_t}$
+
+**Fisher Equation**: $i=r+\pi^{e}$
+
+
+$PV$: present value (in $\$$);  \hspace{2cm}  $FV_n$: future value in n years (in $\$$); 
+
+$n$: years to maturity;  \hspace{2.5cm}  $i$: (nominal) interest rate (in $\%$); 
+
+$FP$: fixed payment (in $\$$); \hspace{2cm}  $C$: coupon payment (in $\$$); 
+
+$c$: coupon rate (in $\%$); \hspace{2.5cm}  $F$: face value (in $\$$); 
+
+$P_t$: price at year t (in $\$$); \hspace{2cm}  $P_{t+1}$: price at year t+1(in $\$$); 
+
+$r$: real interest rate (in $\%$); \hspace{2cm} $\pi^e$: expected inflation (in $\%$).
