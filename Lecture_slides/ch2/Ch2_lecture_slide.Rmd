@@ -1,0 +1,880 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 2: An Overview of the Financial System"
+author: "Xiang LI"
+date: "Apr 1, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+
+# Functions of Financial Markets 
+Those who save are frequently not the same people who have profitable investment opportunities
+
+--
+
+- first, financial markets contribute to higher production and efficiency for the overall economy by allowing funds to flow from SAVERS/LENDERS to BORROWERS/SPENDERS
+
+--
+
+- second, financial markets improve the well-being of consumers by allowing them to time their purchases better 
+
+
+---
+# 2 Routes of Flow of Funds
+## Direct Finance
+
+--
+
+**Direct finance**: spenders borrow funds directly from savers by selling **financial instruments** 
+
+--
+
+- Financial instruments: also called **securities**
+  - a claim on the issuer's future income or asset 
+  - bond, stock
+
+
+---
+# 2 Routes of Flow of Funds
+## Direct Finance
+Example: you buy U.S. government securities directly from website TreasuryDirect.gov
+
+--
+
+- federal government issues securities and sells them to you 
+  
+--
+
+- you can periodically claim interest payment from federal government in the future, so U.S. government securities that you have purchased are your assets
+  
+--
+
+- but federal government is liable to pay interest, so U.S. government securities that they have issued are their liability 
+
+
+---
+# 2 Routes of Flow of Funds
+## Direct Finance
+In summary,
+
+- securities are **ASSETS** for the person who buys (holds) them; 
+
+--
+
+- securities are **LIABILITIES** (IOUs or DEBTS) for the individual or firm that sells (issues) them
+
+--
+
+- **securities are sold by borrowers/issuers/spenders to lenders/holders/savers**
+
+
+---
+# 2 Routes of Flow of Funds
+## Indirect Finance
+**Indirect finance**: a **financial intermediary** stands between SAVERS/LENDERS and BORROWERS/SPENDERS to help transfer funds 
+
+--
+
+- Example: you deposit money at Chase. Chase then use these funds to buy U.S. government securities
+
+--
+
+- In this example, federal government gets funds indirectly from you
+
+--
+
+In today's class, we need to understand how **financial instruments** transfer funds from savers/lenders to spenders/borrowers; and we also need to understand how do **financial intermediaries** get funds and how do they use them
+
+
+---
+# Today's Content
+
+1. [Financial Instruments](#Financial Instruments)
+
+2. [Financial Intermediaries](#Financial Intermediaries)
+  
+3. [Structure of Financial Markets](#Structure of Financial Markets)
+
+4. [Government Regulatory Agencies](#Government Regulatory Agencies)
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Financial Instruments
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Financial Instruments
+
+- **Maturity**: number of years until securities’s expiration
+  - short-term (less than 1y)
+  - intermediate term (between 1y and 10) and long-term (10y or longer)
+
+--
+
+- short-term securities: **money market instruments**
+  - U.S. Treasury Bills (1m, 3m, 6m)
+  - Repurchase agreements 
+  - Federal Funds (overnight)
+
+
+---
+# Financial Instruments
+## Money Market Instruments
+### (1) U.S. Treasury Bills (T-bill)
+Issued by the U.S. Treasury in 1-, 3-, and 6-month maturities to finance the deficits of the **federal** government
+
+--
+
+- No interest payments (Why?)
+
+--
+
+- Reason: sold at a price lower than face value paid at maturity (**sold at discount**)
+
+--
+
+- Example: In Jan 2018, you bought a 6-month Treasury bill for $9,000 that can be redeemed in July 2018 for 10,000 face value
+
+--
+
+  - you actually earn an interest equaling $1,000
+
+---
+# Financial Instruments
+- U.S. Treasury bills are the most **liquid** and actively traded among all money market instruments 
+
+--
+
+- **Liquidity**: The relative ease and speed with which an asset can be converted into cash
+
+<img src="../ch2/chpt2_Image/liquidity.png" width=400>
+
+
+---
+# Financial Instruments
+Why is U.S. Treasury bills are **the most liquid** among all money market instruments? 
+
+--
+
+- First, U.S. Treasury bills have **low probability of default** 
+
+--
+
+  - default: the party issuing the debt instrument is unable to make interest payments or pay off the amount owed when the instrument matures
+
+--
+
+  - the US government can always raise tax to make interest payments or pay off the face value when the instrument matures
+  
+--
+
+- Second, its very **short maturity represents less uncertainty**
+
+
+---
+# Financial Instruments
+## Money Market Instruments
+### (2) Repurchase agreements (repos)
+Loans with a maturity term of less than two weeks, for which **Treasury bills serve as collateral**
+
+--
+
+- Example: a large corporation, such as Microsoft have some 1 million idle funds, which it would like to lend for a week
+
+--
+
+  - Microsoft uses this $1 million to buy Treasury bills from Chase
+  
+--
+
+  - Chase agrees to repurchase T-bills the next week at a price slightly above Microsoft’s purchase price, say 1.1 millions 
+
+
+---
+# Financial Instruments
+- Recall: U.S. Treasurys bills (T-bills) are regarded as **safe** harbor investments
+
+--
+
+- Demand for safe assets usually increases amid deeply unsettled markets conditions, such as during the coronavirus outbreak
+
+--
+
+- Mar 13: https://www.newyorkfed.org/markets/domestic-market-operations/monetary-policy-implementation/repo-reverse-repo-agreements/repurchase-agreement-operational-details
+
+--
+ 
+- The moves of the Fed (the central bank) are designed to preserve **liquidity** in the market
+  - to prevent “freezes” in the financial market and make sure buyers and sellers still have the cash to trade 
+  
+
+
+---
+# Financial Instruments
+## Money Market Instruments
+### (3) Federal (Fed) Funds
+Overnight loans issued by **banks to another banks**, using the Fed’s wire transfer system
+
+--
+
+- Fed fund are NOT issued by the federal government or by the Federal Reserve 
+
+--
+
+- Why would banks borrow loan **overnight**?
+
+--
+
+  - Regulations set by the Fed calls for financial institutions to meet the required amount in banks' deposit accounts at the Fed *each day* (will talk more about the "required amount" in Chapter 9)
+
+
+
+---
+# Financial Instruments
+**Federal Funds Rate (ffr)**: interest rate on Fed Funds
+
+--
+
+- ffr that borrowing banks pays to lending banks are determined between the banks
+
+--
+
+- ffr serves as a base for other interest rates 
+  - if ffr increases, banks may increase the interest rate on the credit card/loans accordingly
+  - ffr is therefore seen as the *benchmark* interest rate
+  
+
+
+---
+# Financial Instruments
+https://fred.stlouisfed.org/series/FEDFUNDS
+
+<img src="../ch2/chpt2_Image/fredgraph.png" width=700>
+
+- Shadow bars: periods of recessions 
+
+--
+
+- Does ffr tend to rise or decrease during recessions?  
+
+--
+
+Recall: interest rate $\downarrow$ $\Rightarrow$ C $\uparrow$, I $\uparrow$
+
+
+---
+# Financial Instruments
+https://fred.stlouisfed.org/series/FEDFUNDS
+
+<img src="../ch2/chpt2_Image/fredgraph.png" width=700>
+
+- To stimulate economy during the 2007-2009 Great Recession: ffr falling down 
+
+--
+
+- To further stimulate economy after the Great Recession: ffr remaing nearly zero 
+
+
+---
+# Financial Instruments
+
+- Although ffr is essentially determined by negotiations between banks, it is also influenced by the Fed 
+
+--
+
+- The Fed sets a target range for ffr, and then can use open market operations so that the realized ffr can reach the target  
+
+--
+
+- If the Fed believes the economy is growing too fast and there are inflation pressures, the Fed may set a higher ffr target to temper economic activity
+
+--
+
+- In the opposing scenario, the Fed may set a lower ffr target to spur greater economic activity
+
+
+
+---
+# Financial Instruments
+https://apps.newyorkfed.org/markets/autorates/fed%20funds
+
+- Given that the economy has recovered from the 2007-2009 Great Recession and there is rising inflation, the Fed has raised the ffr target since Dec 2015 
+
+--
+
+- By the end of 2018, the Fed has raised the target range for ffr for 3 times in the year. 
+
+--
+
+- The Fed is holding its last regular meeting in the year on Dec 18, 2018
+
+--
+
+- However, right before the meeting, on Dec 17, 2018: 
+
+<img src="../ch2/chpt2_Image/trump.png" width=400>
+
+
+
+---
+# Financial Instruments
+- Trump is concerned that if interest rates is raised, that will pump the brakes on the economic growth he’s promised
+
+--
+
+* Dec 19, 2018: the Federal Reserve raised the ffr target, to 2.25% to 2.5%, marking the fourth such increase of 2018
+  - the Fed is free from presidential and congressional pressures
+  - the Fed believes that labor market remains strong and economic activity has been rising
+  
+--
+
+- Since the end of the 2007-2009 Great Recession, the Fed has never cut the ffr target range until almost 10 years later
+
+---
+# Financial Instruments
+* Sept 17, 2019: the Fed lowered ffr targer range, to 1.75% to 2.00% 
+  - the Fed is concerned about global economic growth slowdown
+  
+--
+
+* Mar 3, 2020: to combat the economic impacts of the coronavirus, the Fed held a unscheduled meeting and lowered the ffr target range, to 1% to 1.25% 
+
+--
+
+- Mar 15, 2020: the Fed held another unscheduled meeting and lowered the ffr target range, to 0% to 0.25% 
+
+--
+
+- When is the Fed's next meeting: Apr 28-29, 2020 (https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm)
+
+--
+
+- we will discuss extensively the monetary policy tools the Fed can use to have an impact on economy in chapter 15
+
+
+---
+# Financial Instruments
+
+- **Maturity**: number of years until securities’s expiration
+  - short-term (less than 1y)
+  - intermediate term (between 1y and 10) and long-term (10y or longer)
+  
+--
+
+- Intermediate and longer-term securities: **capital market instruments**
+  - U.S Treasury Note, U.S Treasury Bond, State and Local Government Bonds
+  - Loans
+  - Stock & Corporate Bond
+  
+  
+---
+# Financial Instruments
+## Capital market instruments
+### (1) U.S Treasury Notes (T-Notes), U.S Treasury Bonds (T-Bonds)
+- Just like T-bills, T-Notes and T-Bonds are:
+
+  - issued by the U.S. Treasury to finance the deficits of the **federal** government
+
+--
+
+  - the most **liquid** and actively traded among all capital market instruments (Why?)
+  
+--
+
+- Maturity: 
+  - T-Notes: 2-10 yr
+  - T-bonds: 20-30 yr
+
+
+
+---
+# Financial Instruments
+## Capital market instruments
+### (1) State and Local Government Bonds (municipal bonds)
+Issued by **state and local** governments to finance expenditures on schools, roads, and other large programs
+
+--
+
+- Unlike T-notes or T-bonds: interest payments on municipal bonds are exempt from federal income tax and generally from state taxes 
+  - Entities and individuals subjected to high tax bracket like to hold these bonds
+
+--
+
+- We'll study the implications of tax treatment status on the interest rates of municipal and federal bonds in Chapter 5
+
+
+  
+---
+# Financial Instruments
+## Capital market instruments
+### (2) Loans
+- The borrower of loans, who can be either an individual or a firm, needs funds to make an investment or purchase, while the lender of loans is looking for a way to store value into the future
+
+--
+
+- Q: suppose Winterfell, an imaginary corporation, plan to borrow $2,000 at 10% annual interest to finance a new business project. For this loan to be profitable, what is the minimum amount this project must generate in annual earnings? 
+  - $202
+  - $201
+  - $200
+  - $199
+
+
+
+---
+# Financial Instruments
+- **Mortgages**: loans to households or firms to purchase land, housing, or other real structures, while the structure or land serves as **collateral**
+
+--
+
+- If the payments aren’t made, the lender can take the collateral
+  - this procedure is called **foreclosure**
+  
+--
+
+- FUNNY COLLATERAL: A bank in Italy that accepts Parmesan cheese as collateral (https://www.forbes.com/sites/hbsworkingknowledge/2015/07/01/a-bank-that-accepts-parmesan-as-collateral-the-cheese-stands-a-loan/#3e2a766610a2)
+
+
+
+  
+---
+# Financial Instruments
+## Capital market instruments
+### (3) Corporation Bond & Stock
+- Corporations can obtain funds by:
+  - issuing debt security such as bonds
+  - issuing equity security, i.e. stocks
+  
+--
+
+- **Corporate bonds**: are issued by corporations with very strong credit ratings
+  - when you buy a firm’s bond, you become its LENDER/CREDITOR
+
+--
+
+- **Stocks**: equity claims on the net income and assets of a corporation
+  - when you buy a firm’s stock, you become its OWNER
+
+
+
+---
+# Financial Instruments
+
+```{r table, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+dt <- data.frame(matrix(ncol = 2, nrow = 4))
+
+colnames(dt)<-c("BONDS", "STOCKS")
+row.names(dt)<-c("Payment", "Maturity", "Claimant", "Other benefits")
+
+dt[1,1] <- c("Steady: interest payments are made periodically and face values are paid off at maturity date. Bondholders know exactly when and how much interest payments to be made by bond issuers")
+dt[1,2] <- c("Inconsistent: dividends fluctuates, because board of directors sets the level and schedule of the dividend. A firm can decide not to pay dividend and keep all retained earnings to reinvest")
+
+dt[2,1] <- c("Fixed")
+dt[2,2] <- c("No maturity (long-term security)")
+
+dt[3,1] <- c("Prioritized: when a company goes bankrupt, it must pay bondholders first")
+dt[3,2] <- c("Residual: stock holders take what is left (maybe nothing left) after the firm pays bondholders")
+
+dt[4,1] <- c("Earnings from bonds are fixed: less volatile and uncertainty")
+dt[4,2] <- c("Right to vote; gains from stock price appreciation (when stock price rises, virtually you are wealthier)")
+
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, font_size = 16)
+```
+
+- Convertible bonds: convertible into a specified number of shares of stock
+
+- The size of the corporate bond market is substantially smaller than that of the stock market, while the volume of new corporate bonds issued each year is substantially greater than that of the new stock
+
+
+
+
+---
+# Financial Instruments
+Recall: money markets instruments have short term to maturity, while capital market instruments have long term to maturity
+
+--
+
+- Q: suppose Winterfell, the imaginary corporation, expects to have surplus funds only temporarily. Should Winterfell actively use money market instruments to earn interest or capital market instruments to earn interest?
+
+--
+
+- Q: suppose Tarth, another imaginary corporation, is an insurance company that receives periodic premiums on a contractual basis, and can predict with reasonable accuracy how much they will have to pay out in benefits in the coming years. Should Tarth hold more money market instruments or capital market instruments?
+
+ 
+---
+class: inverse, center, middle
+name: Motivation
+
+# Financial Intermediaries
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+  
+---
+# Financial Intermediaries
+Types of Financial Intermediaries:
+
+--
+
+- Depository Institutions 
+  - banks
+  
+--
+
+- Contractual Saving Institutions 
+  - insurance companies
+  - pension funds
+
+--
+
+- Investment Intermediaries
+  - finance company
+  - mutual fund
+
+
+
+
+
+
+
+---
+# Financial Intermediaries
+## (1) Depository Instutions: Banks
+- sources of funds: deposits 
+  - checkable deposits: deposits on which checks can be written
+  - savings deposits: deposits that are payable on demand but do not allow their owners to write checks
+  - time deposits: deposits with fixed terms to maturity; withdrawing prior to maturity often incurs penalty (anyone of you has invested in time deposits? :))
+
+
+
+
+
+---
+- uses of funds: 
+  - to make loans and mortgages
+  - to buy T-bills, T-notes, T-bonds, State and Local Government Bonds (also called municipal bonds)
+  
+--
+
+- the largest financial intermediary 
+
+--
+
+- we will discuss the operation of banks in chapter 9, and how banks help to "create" money in chapter 14
+
+
+
+---
+# Financial Intermediaries
+## (2) Contractual Saving Institutions 
+### insurance companies 
+- source of funds: periodic premiums on a contractual basis
+- use of funds: primarily in long-term securities, in return for good compensation to insurance holders when certain events occur
+
+
+--
+
+### pension funds
+- source of funds: take employer and employee contributions at periodic intervals on a contractual basis
+- use of funds: primarily in long-term securities, in order to provide payments to retired workers 
+- Example: US Social Security Trust Fund, on behalf of Treasury ($2.7 trillion, world largest)
+
+
+
+
+
+---
+# Financial Intermediaries
+## (3) Investment Intermediaries
+### Finance Companies
+- source of funds: raising funds directly in the financial markets, such as issuing stocks and bonds
+- use of funds: make loans to purchase specialized items 
+  - loan to consumers: furniture, automobiles, home improvements
+  - loan to businesses: business equipment 
+- Example: Ford Motor Credit Company, Toyota Credit Service (organized by a parent corporation to help sell its product)
+  
+.pull-left[<img src="../ch2/chpt2_Image/toyota.png" width=300, height=150>]
+
+.pull-right[<img src="../ch2/chpt2_Image/ford.png" width=300, height=150>]
+
+
+
+---
+# Financial Intermediaries
+## (3) Investment Intermediaries
+### Mutual Funds
+- source of funds: pooling funds of many individuals by selling shares to them (i.e. shareholders)
+
+--
+
+- use of funds: to purchase diversified portfolios of stocks and bonds
+
+--
+
+- shareholders can sell shares anytime, at a price determined by the prices of mutual fund's holding of securities
+
+--
+  
+- hedge funds: do the same as mutual funds but for small groups of wealthy investors ($100,000, 1 million)
+  - Example: JPMorgan Asset Management
+
+
+
+<!---
+#### Money Market Mutual Funds
+* similar to mutual funds
+* acquire funds by selling shares 
+* then use these funds to buy *money market* instruments that are both safe and very liquid
+* a key feature of these funds is that shareholders can write *checks* against the value of their shareholdings
+  + shares function like checking account deposits that pay interest
+--->
+
+
+<!---
+#### Investment bank
+* Investment bank: not a bank or a financial intermediary in ordinary sense
+  + does not take in funds and then lend them out
+* It helps a corporation issue and **underwrite** securities; it also help corporations acquire other companies through mergers or acquisitions
+--->
+  
+  
+  
+---
+class: inverse, center, middle
+name: Motivation
+
+# Structure of Financial Markets
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Structure of Financial Markets
+- primary market
+- secondary market
+  - exchange market
+  - over-the-counter market
+
+
+
+---
+# Structure of Financial Markets
+## Primary Markets
+**Primary market**: **newly issued** securities are sold to **initial** buyers by the corporation or government agency borrowing the funds
+
+--
+
+- **Investment bank** assists in the initial sale of securities in the primary market by **underwriting** securities
+
+--
+
+  - Investment banks examine the company’s financial health to determine whether the proposed issue is sound
+  
+--
+
+  - Investment banks guarantee a price for securities, and purchase securities from the corporation at this predetermined price
+  
+--
+
+  - Then investment banks resell securities to the public in the secondary market
+  
+  
+
+---
+# Structure of Financial Markets
+## Secondary Markets
+**Secondary market**: **existing** securities that have been previously issued are **resold**
+
+--
+
+- When you buy corporate bonds/stocks in the secondary market, the person who sells the security to you receives money, not the corporation. Firms acquire new funds only when securities are first sold in the primary market 
+
+--
+
+- Brokers and dealers link buyers with sellers in secondary market
+  - **brokers**: only act as middlemen between sellers and buyers, and execute the trade on behalf of sellers or buyers
+  - **dealers**: have rights and freedom to make trade decisions on their own behalf, so they are themselves sellers or buyers 
+
+
+
+
+
+---
+- secondary markets determine the price of the securities that the issuing firm sells in the primary market
+  - investors who buy securities in the primary market will pay the issuing corporation no more than the price they think the secondary market will set for this security
+  
+--
+
+- Historically, secondary markets is organized in two ways
+  - Centralized Exchange
+  - Over-the-Counter Markets
+
+
+
+---
+- **Exchange market** (open outcry): dealers meet in one central and organized location to conduct trades in securities
+  - Example: New York Stock Exchange, Chicago Board of Trade for Commodities
+
+- **Over-the-Counter market** (decentralized): dealers stand ready to buy and sell securities electronically
+  - Example: NASDAQ
+
+
+.pull-left[<img src="../ch2/chpt2_Image/exchange.png" width=700, height=250>]
+
+.pull-right[<img src="../ch2/chpt2_Image/NASDAQ.png" width=700, height=250>]
+
+
+
+  
+---
+class: inverse, center, middle
+name: Motivation
+
+# Regulatory Government Agencies
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+  
+  
+  
+---
+# Regulatory Government Agencies
+## (1) Securities and Exchange Commission (SEC)
+
+- requires corporations issuing securities to disclose information about their sales, assets, and earnings to the public 
+
+--
+
+- restricts trading of individuals who with access to nonpublic information can manipulate prices (insider trading is illegal)
+
+---
+.pull-left[<img src="../ch2/chpt2_Image/elon.png" width=700, height=250>]
+
+.pull-right[<img src="../ch2/chpt2_Image/tesla.png" width=700, height=250>]
+
+--
+
+- Musk’s tweet on Aug 7 contained information required to be disclosed in Tesla’s SEC filings. The tweet is inaccurate
+
+--
+
+- It causes "significant" market distortion: TSLA jumped 6% the next day
+
+--
+
+- on Sept 27, **SEC lawsuit against Elon Musk**. The SEC alleged that Musk committed fraud when he said he had secured the funding needed to take Tesla private
+
+
+
+---
+- Sept 28: 
+
+<img src="../ch2/chpt2_Image/elon2.png" width=450>
+
+--
+
+- Sept 29: Elon Musk’s settlement with SEC is approved by judge
+  - Musk stepped down as Tesla’s Chairman, remains CEO
+  - Ineligible to be re-elected Chairman for three years
+  - Musk and Tesla will each pay a separate $20 million penalty
+  
+  
+---
+# Regulation of Financial System
+## (2) Federal Reserve System (the Fed)
+- examines the books of commercial banks
+- sets reserve requirements for all banks
+  - the overnight T-bills exist because banks are required to meet the reserve requirements set by the Fed
+
+--
+  
+FUN FACTS: 
+- American public historically did not like centralized power. Two experiments in central banking failed (1811, 1832)
+- The public was convinced only after 20+ financial panics (1870 to 1907)
+
+
+---
+
+<img src="../ch2/chpt2_Image/fed.png" width=500>
+
+- Federal Reserve System has 12 Federal Reserve Banks
+
+<!---
+Federal Reserve Banks in New York, Chicago, San Fransisco are the biggest
+--->
+
+
+---
+# Regulation of Financial System 
+## Federal Deposit Insurance Corporation (FDIC)
+
+First, FDIC Provides **insurance** of up to $250,000 for each depositor at a bank
+
+- During the financial panic that causes the Great Recession, regulators were concerned that depositors worried their banks would fail, and that depositors would pull money from banks, leaving cash-starved banks with even less cash to satisfy customer demands and day-to-day operations. This could create a contagious bank panic in which otherwise healthy banks would fail. 
+
+- Hence, the FDIC raised the limit on insured losses to bank depositors from 100,000 dollars per account to 250,000 dollars per account
+
+- Raising the insurance limit would reassure depositors that their money was safe in banks and prevent a bank panic, helping to stabilize the financial system. 
+
+  
+
+---
+# Regulation of Financial System 
+## Federal Deposit Insurance Corporation (FDIC)
+
+Second, FDIC imposes restrictions on assets banks can hold
+  - separate banks from securities industry so that banks cannot do risky ventures 
+  - banks are not allowed to hold common stock
+  
+--
+
+- Here is the end of Chapter 2. Practice problems and keys for this chapter have been posted on Canvas. 
+
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Ch2_lecture_slide.html"))
+webshot(file_name, "Ch2_lecture_slide.pdf")
+--->
