@@ -14,6 +14,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width=6, fig.height=5) 
 library(knitr)
 library(tidyverse)
 # library(gdtools)
@@ -22,6 +23,8 @@ library(plotly)
 library(lubridate)
 library(kableExtra)
 library(htmlTable)
+library(ggplot2)
+library(grid)
 ```
 
 
@@ -104,10 +107,76 @@ Let’s consider purchasing a discount bonds
 # Demand Curve for Bond
 
 - **negatively** related: if P $\uparrow$, then $B^d$ $\downarrow$
-  
-<img src="../ch5/chpt5_Image/demand_bond.png" width=400>
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+# slate <- "#314f4f"
+# orange <- "#FFA500"
+
+# line1 <- function(q) (-0.5*q+1000)
+# x_range <- 100:500
+
+# ggplot(
+#   # data = data.frame(x=c(100,500)),
+#   # aes(x=x)
+# ) +
+#   stat_function(aes(x_range), fun = line1, color = "#FFA500", size = 1)+
+  #geom_segment(aes(x=300, y=850, xend=300, yend=750), color="#314f4f", linetype="dashed")+
+  #geom_point(aes(300, 850), color = "#314f4f", size=4.5)+
+  #geom_segment(aes(x=300, y=850, xend=100, yend=850), color="#314f4f", linetype="dashed")+
+  # annotate(
+  # geom = "text",
+  # x = 300, y = 860,
+  # label = "C",
+  # size = 5,
+  # hjust = 0,
+  # vjust = 0,
+  # color = "#314f4f")+
+  #geom_segment(aes(x=100, y=950, xend=100, yend=750), color="#314f4f", linetype="dashed")+
+  #geom_point(aes(100, 950), color = "#314f4f", size=4.5)+
+  #geom_segment(aes(x=100, y=950, xend=90, yend=950), color="#314f4f", linetype="dashed")+
+  # annotate(
+  # geom = "text",
+  # x = 100, y = 960,
+  # label = "A",
+  # size = 5,
+  # hjust = 0,
+  # vjust = 0,
+  # color = "#314f4f")+
+  #theme(axis.text.y = element_blank())+
+  #annotate("text", label = "plot mpg vs. wt", x = -10, y = 930, size = 3, colour = "red")+
+  # coord_cartesian(ylim = c(750, 950))+
+  # coord_cartesian(xlim = c(100, 500))+
+  # theme_classic()+
+  # xlab("Quantity of Bonds, B ($ billions)")+
+  # ylab("Price of Bonds, P ($)")
 
 
+df1 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(100,300,500),
+                     y=c(950,850,750))
+    
+ggplot(df1,aes(x=x,y=y)) +
+  geom_line(color="blue")+
+  annotate(geom = "text", x= 110, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 310, y=860, label = "(i=17.6%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 450, y=760, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 950), color = "blue", size=3)+
+  geom_point(aes(300, 850), color = "blue", size=3)+
+  geom_point(aes(500, 750), color = "blue", size=3)+
+  annotate(geom = "text", x= 90, y=960, label = "A", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 290, y=860, label = "C", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 490, y=760, label = "E", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 800, label = "B^d",parse = TRUE,size=5) #+
+  # geom_segment(aes(x=100, y=950, xend=100, yend=750), color="#314f4f", linetype="dashed")+
+  # geom_segment(aes(x=500, y=750, xend=100, yend=750), linetype="dashed")+
+  # geom_segment(aes(x=300, y=850, xend=300, yend=750), linetype="dashed")+
+  # geom_segment(aes(x=300, y=850, xend=100, yend=850), linetype="dashed")
+```
 
 
 ---
@@ -115,7 +184,29 @@ Let’s consider purchasing a discount bonds
 
 - At lower P (higher i), quantity supplied of bonds is lower
 
-<img src="../ch5/chpt5_Image/supply_bond.png" width=400>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df2 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(500,300,100),
+                     y=c(950,850,750))
+    
+ggplot(df2,aes(x=x,y=y)) +
+  geom_line(color="blue")+
+  annotate(geom = "text", x= 480, y=980, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 300, y=880, label = "(i=17.6%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 100, y=780, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 750), color = "blue", size=3)+
+  geom_point(aes(300, 850), color = "blue", size=3)+
+  geom_point(aes(500, 950), color = "blue", size=3)+
+  annotate(geom = "text", x= 490, y=960, label = "I", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 290, y=860, label = "C", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 90, y=760, label = "F", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 900, label = "B^s",parse = TRUE,size=5)
+```
 
 
 
@@ -131,7 +222,48 @@ Let’s consider purchasing a discount bonds
   - equilibrium price (P*): $850
   - equilibrium interest rate (i*): 17.6%
   
-<img src="../ch5/chpt5_Image/eq_bond.png" width=400>
+
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(100,300,500),
+                     y=c(950,850,750))
+df2 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(500,300,100),
+                     y=c(950,850,750))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  annotate(geom = "text", x= 110, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 450, y=760, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 950), color = "blue", size=3)+
+  geom_point(aes(500, 750), color = "blue", size=3)+
+  annotate(geom = "text", x= 90, y=960, label = "A", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 490, y=760, label = "E", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 800, label = "B^d",parse = TRUE,size=5)+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  annotate(geom = "text", x= 450, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 310, y=860, label = "(i=17.6%)", hjust = 0, vjust=0,size = 3, color ="red") +
+  annotate(geom = "text", x= 100, y=780, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 750), color = "blue", size=3)+
+  geom_point(aes(300, 850), color = "red", size=3)+
+  geom_point(aes(500, 950), color = "blue", size=3)+
+  annotate(geom = "text", x= 490, y=960, label = "I", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 290, y=860, label = "C", hjust = 0, vjust=0,size = 4, color = "red") +
+  annotate(geom = "text", x= 90, y=760, label = "F", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 900, label = "B^s",parse = TRUE,size=5)+
+  geom_hline(yintercept=850, linetype="dashed", color = "red")
+```
   
 
 
@@ -144,7 +276,46 @@ Let’s consider purchasing a discount bonds
   - P will rise until reaching P\*, i will fall until reaching i\*
   - move along supply curve from F to C, move along demand curve from E to C 
   
-<img src="../ch5/chpt5_Image/excess_demand_bond.png" width=400>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(100,300,500),
+                     y=c(950,850,750))
+df2 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(500,300,100),
+                     y=c(950,850,750))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  annotate(geom = "text", x= 110, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 450, y=760, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "red") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 950), color = "blue", size=3)+
+  geom_point(aes(500, 750), color = "red", size=3)+
+  annotate(geom = "text", x= 90, y=960, label = "A", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 490, y=760, label = "E", hjust = 0, vjust=0,size = 4, color = "red") +
+  annotate('text', x = 450, y = 800, label = "B^d",parse = TRUE,size=5)+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  annotate(geom = "text", x= 450, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3,color = "blue") +
+  annotate(geom = "text", x= 310, y=860, label = "(i=17.6%)", hjust = 0, vjust=0,size = 3, color ="blue") +
+  annotate(geom = "text", x= 100, y=780, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "red") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 750), color = "red", size=3)+
+  geom_point(aes(300, 850), color = "blue", size=3)+
+  geom_point(aes(500, 950), color = "blue", size=3)+
+  annotate(geom = "text", x= 490, y=960, label = "I", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 290, y=860, label = "C", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 90, y=760, label = "F", hjust = 0, vjust=0,size = 4, color = "red") +
+  annotate('text', x = 450, y = 900, label = "B^s",parse = TRUE,size=5)+
+  geom_hline(yintercept=750, linetype="dashed", color = "red")
+```
 
 
 
@@ -157,7 +328,46 @@ Let’s consider purchasing a discount bonds
   - P will fall until reaching P\*, i will rise until reaching i\*
   - move along supply curve from I to C; move along demand curve from A to C 
   
-<img src="../ch5/chpt5_Image/excess_supply_bond.png" width=400>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(100,300,500),
+                     y=c(950,850,750))
+df2 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(500,300,100),
+                     y=c(950,850,750))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  annotate(geom = "text", x= 110, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "red") +
+  annotate(geom = "text", x= 450, y=760, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 950), color = "red", size=3)+
+  geom_point(aes(500, 750), color = "blue", size=3)+
+  annotate(geom = "text", x= 90, y=960, label = "A", hjust = 0, vjust=0,size = 4, color = "red") +
+  annotate(geom = "text", x= 490, y=760, label = "E", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 800, label = "B^d",parse = TRUE,size=5)+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  annotate(geom = "text", x= 450, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "red") +
+  annotate(geom = "text", x= 310, y=860, label = "(i=17.6%)", hjust = 0, vjust=0,size = 3, color ="blue") +
+  annotate(geom = "text", x= 100, y=780, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 750), color = "blue", size=3)+
+  geom_point(aes(300, 850), color = "blue", size=3)+
+  geom_point(aes(500, 950), color = "red", size=3)+
+  annotate(geom = "text", x= 490, y=960, label = "I", hjust = 0, vjust=0,size = 4, color = "red") +
+  annotate(geom = "text", x= 290, y=860, label = "C", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 90, y=760, label = "F", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 900, label = "B^s",parse = TRUE,size=5)+
+  geom_hline(yintercept=950, linetype="dashed", color = "red")
+```
 
 
 
@@ -169,7 +379,53 @@ Let’s consider purchasing a discount bonds
 --
 - **move along** the demand/supply curve until reaching the **equilibirum interest rate**
 
-<img src="../ch5/chpt5_Image/moving_bond.png" width=400>
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(100,300,500),
+                     y=c(950,850,750))
+df2 <- data.frame(n=c("(i=5.3%)","(i=17.6%)","(i=33%)"),
+                     x=c(500,300,100),
+                     y=c(950,850,750))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  annotate(geom = "text", x= 110, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 450, y=760, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 950), color = "blue", size=3)+
+  geom_point(aes(500, 750), color = "blue", size=3)+
+  annotate(geom = "text", x= 90, y=960, label = "A", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 490, y=760, label = "E", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 800, label = "B^d",parse = TRUE,size=5)+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  annotate(geom = "text", x= 450, y=960, label = "(i=5.3%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  annotate(geom = "text", x= 310, y=860, label = "(i=17.6%)", hjust = 0, vjust=0,size = 3, color ="red") +
+  annotate(geom = "text", x= 100, y=780, label = "(i=33%)", hjust = 0, vjust=0,size = 3, color = "blue") +
+  coord_cartesian(xlim = c(100, 500), clip = 'off') +
+  theme(plot.margin = unit(c(1,3,1,1), "lines"))+
+  theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  geom_point(aes(100, 750), color = "blue", size=3)+
+  geom_point(aes(300, 850), color = "red", size=3)+
+  geom_point(aes(500, 950), color = "blue", size=3)+
+  annotate(geom = "text", x= 490, y=960, label = "I", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate(geom = "text", x= 290, y=860, label = "C", hjust = 0, vjust=0,size = 4, color = "red") +
+  annotate(geom = "text", x= 90, y=760, label = "F", hjust = 0, vjust=0,size = 4, color = "blue") +
+  annotate('text', x = 450, y = 900, label = "B^s",parse = TRUE,size=5)+
+  geom_hline(yintercept=950, linetype="dashed")+
+  geom_hline(yintercept=850, linetype="dashed", color="red")+
+  geom_hline(yintercept=750, linetype="dashed")+
+  geom_segment(aes(x =100, y = 930, xend = 100, yend = 870),
+                  arrow = arrow(length = unit(0.5, "cm")), color="red")+
+  geom_segment(aes(x =100, y = 770, xend = 100, yend = 830),
+                  arrow = arrow(length = unit(0.5, "cm")), color="red")
+```
  
 
 
