@@ -1,0 +1,91 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Participation 6 (Chapter 6)}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+**INSTRUCTIONS**: Answer the following questions. Write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm (PDT), Sunday, June 7**. 
+
+\vspace{.3in}
+
+\textbf{QUESTION 1} 
+
+Higher default risk of corporate bonds relative to U.S. Treasury bonds increases the spread between the interest rates on these two bonds
+	\begin{figure}[!htb]
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{corporate bonds}
+	\end{minipage}\hfill
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{Treasury bonds}
+	\end{minipage}
+	\end{figure}
+	
+
+\textbf{QUESTION 2} 
+
+Lower liquidity of corporate bonds relative to Treasury bonds increases the spread between the interest rates on these two bonds 
+	\begin{figure}[!htb]
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{corporate bonds}
+	\end{minipage}\hfill
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{Treasury bonds}
+	\end{minipage}
+	\end{figure}
+	
+	
+\newpage
+
+\textbf{QUESTION 3} 
+
+Favorable tax treatment of municipal bonds relative to Treasury bonds increases the spread between the interest rates on these two bonds 
+	\begin{figure}[!htb]
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{Municipal bonds}
+	\end{minipage}\hfill
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{Treasury bonds}
+	\end{minipage}
+	\end{figure}
+	
+
+
+
+
+	
+

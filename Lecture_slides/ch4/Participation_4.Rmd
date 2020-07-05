@@ -1,0 +1,42 @@
+---
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(kableExtra)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Participation 4 (Chapter 4)}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+**INSTRUCTIONS**: Answer the following questions. Write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm (PDT), Sunday, June 7**. 
+
+\vspace{.3in}
+
+\textbf{QUESTION 1} 
+
+At $t$ (today), you spend 1,000 to buy a 10%-coupon-rate coupon bond that has face value of 1,000. The current interest rate is 10%. At $t+1$, you sell the bond after holding for 1 year. Suppose at $t+1$ (1 year from today), the interest rate rises to 20%. Complete this table.
+
+```{r table-1, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+dt <- data.frame(matrix(ncol = 5, nrow = 3))
+colnames(dt)<-c("Price of bonds today($)", "Current yield", "Price of bond next year($)", "Rate of capital gain", "Rate of return")
+row.names(dt)<-c("5 years to maturity when bond is purchased", "2 years to maturity when bond is purchased", "1 year to maturity when bond is purchased")
+dt[,1] <- c(1000, 1000, 1000)
+
+kable(dt, "latex", booktabs = T) %>%
+  kable_styling(latex_options = c("striped"), font_size = 9, position = "center") %>%
+  column_spec(1:5, width = "7em", border_right = T)
+```
+	
+	

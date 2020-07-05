@@ -1,0 +1,463 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 15: Tools of Monetary Policy - PART II"
+author: "Xiang LI"
+date: "May 27, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.remark-slide-content > h1 {
+  font-family: 'Fira Sans';
+  font-weight: normal;
+  font-size: 35px;
+  margin-top: -95px;
+  margin-left: -00px;
+  color: #FAFAFA;
+}
+
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+# III. Reserve Requirements
+
+- Depository Institutions Deregulation and Monetary Control Act of 1980: all depository institutions are subject to the same reserve requirements
+
+--
+
+- Reserve Requirements was once a powerful way of affecting money supply and interest rates but is rarely used today
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+colnames(dt)<-c("Checkable deposits(millions)", "Required reserve ratio")
+
+dt[1,] <- c("<$15.5", "0%")
+dt[2,] <- c("$15.5 to $115.1", "3%")
+dt[3,] <- c(">$115.1", "8%-14%")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+``` 
+
+
+---
+# III. Reserve Requirements
+
+- required reserve ratio $\uparrow$ $\Rightarrow$ required reserves $\uparrow$ $\Rightarrow$ quantity of reserves demanded $\uparrow$ demand curve shifts to right $\Rightarrow$ fed funds rate $\uparrow$
+
+```{r echo=FALSE, out.width = '60%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/required_reserve_ratio.png")
+```
+
+
+---
+# III. Reserve Requirements
+
+- required reserve ratio $\downarrow$ $\Rightarrow$ required reserves $\downarrow$ $\Rightarrow$ quantity of reserves demanded $\downarrow$ demand curve shifts to left $\Rightarrow$ fed funds rate $\downarrow$
+
+- **Participation #10** Exercise: graphically show the impact on fed funds rate of a decrease in the required reserve ratio, when the vertical section of the supply curve intersects the demand curve at the downward-sloped section
+
+
+---
+# III. Reserve Requirements - Summary
+
+- Reserve Requirements: the Fed's regulation requiring banks to hold **a fraction of CHECKABLE DEPOSITS** as vault cash or deposits with the Fed
+
+--
+
+- **demand** curve shifts to **right or left**
+
+--
+
+when the vertical section of the supply curve intersects the demand curve at the downward-sloped section: 
+
+  - when the Fed raises reserve requirements, the fed funds rate rises
+
+--
+
+  - when the Fed decreases reserve requirements, the fed funds rate falls
+
+  
+---
+# IV. Interest Rate on Reserves
+##### (1) intersecting the downward-sloped section of the demand curve
+
+- initially: $i_{ff}^1 > i_{or}^1$
+- interest rate on reserves $\uparrow$ $\Rightarrow$ **horizontal section** of the demand curves shifts up $\Rightarrow$ fed funds rate unchanged
+
+```{r echo=FALSE, out.width = '35%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/reserve_rate1.png")
+```
+
+
+---
+# IV. Interest Rate on Reserves
+##### (1) intersecting the downward-sloped section of the demand curve
+
+- initially: $i_{ff}^1 > i_{or}^1$
+
+- interest rate on reserves $\downarrow$ $\Rightarrow$ **horizontal section** of the demand curves shifts down $\Rightarrow$ fed funds rate unchanged
+
+- **Participation #10** Exercise: graphically show the impact on fed funds rate of a decrease in the interest rate on reserves, when the vertical section of the supply curve intersects the demand curve at the downward-sloped section
+
+
+---
+# IV. Interest Rate on Reserves
+##### (2) intersecting the flat section of the demand curve
+
+- initially: $i_{ff}^1 = i_{or}^1$
+- interest rate on reserves $\uparrow$ $\Rightarrow$ **horizontal section** of the demand curves shifts up $\Rightarrow$ fed funds rate $\uparrow$
+
+```{r echo=FALSE, out.width = '40%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/reserve_rate2.png")
+```
+
+
+---
+# IV. Interest Rate on Reserves
+##### (2) intersecting the flat section of the demand curve
+
+- initially: $i_{ff}^1 = i_{or}^1$
+
+- interest rate on reserves $\downarrow$ $\Rightarrow$ **horizontal section** of the demand curves shifts down $\Rightarrow$ fed funds rate $\downarrow$
+
+- **Participation #10** Exercise: graphically show the impact on fed funds rate of a decrease in the interest rate on reserves, when the vertical section of the supply curve intersects the demand curve at the flat section
+
+---
+# IV. Interest Rate on Reserves - Summary
+
+- **horizontal section** of **demand** curves shifts **up or down**
+
+- if supply curve initially intersects demand curve on the downward-sloped section
+  - initially: $i_{ff}^1 > i_{or}^1$
+  - changes in interest rate on reserves have no effect on the fed funds rate 
+
+- if supply curve initially intersects demand curve on the flat section
+  - initially: $i_{ff}^1 = i_{or}^1$
+  - raise the interest rate on reserves causes the fed funds rate to rise
+  - lower the interest rate on reserves causes the fed funds rate to fall
+
+
+---
+# Application
+## How the Fed Limit Fluctuations in the Fed Funds Rate
+
+- if demand for reserves experiences a **large** increase: demand curve shifts to right over a **long** distance, so that it intersects **supply curve** on the **flat** portion
+
+```{r echo=FALSE, out.width = '60%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/exercise.png")
+```
+
+
+---
+# Application
+
+```{r echo=FALSE, out.width = '60%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/exercise.png")
+```
+
+- No matter how far the demand curve shifts to right, fed funds rate cannot be higher than discount rate 
+
+
+---
+# Application
+
+- if demand for reserves experiences a **large** decrease: demand curve shifts to left over a **long** distance, so that supply curve intersects **demand** curve on the **flat** portion
+
+```{r echo=FALSE, out.width = '60%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/exercise.png")
+```
+
+
+---
+# Application
+
+```{r echo=FALSE, out.width = '60%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/exercise.png")
+```
+
+- No matter how far left the demand curve shifts, federal funds rate cannot be lower than the interest rate paid on reserves
+
+---
+# Application
+
+- the Fed sets discount rate and interest rate on reserves to limit fluctuations in the fed funds rate
+- If the range between $i_{or}$ and $i_d$ is kept narrow enough, then fluctuations around the target rate will be small: **ceiling** and **floor** 
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/exercise.png")
+```
+
+
+
+---
+# Advantages of Open market operations
+
+Open market operations: the most important conventional tools 
+- occur at the initiative of the Fed, which has complete **control** over their volume
+  - Discount loans depend in part on the willingness of banks to request the loans and so are not as completely under the Fed’s control
+-  **flexible** and precise: can be used to the exact extent desired
+  - a small or a large trading volumn 
+- easily **reversed**
+  - Discount loans and reserve requirement changes are more difficult to reverse quickly
+- can be implemented **quickly**, with no administrative delays
+  - places orders with securities dealers who executed the trades immediately
+  - changing the discount rate or reserve requirements requires lengthier deliberation
+
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+
+# Nonconventional Monetary Policy Tools
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Nonconventional Monetary Policy Tools
+
+- when the economy experiences a full-scale financial crisis (like the Great Recession), conventional monetary policy tools we have discussed so far fail to expand the money supply and lower interest rates
+
+- from Dec 2008 to Dec 2015, and in Mar 2020: https://www.federalreserve.gov/monetarypolicy/openmarket.htm
+
+- because fed funds rate has hit a floor of zero, the Fed is unable to lower the fed funds rate further: **zero-lower-bound problem**
+
+- nonconventional monetary policy tools:  
+  - liquidity provision
+  - Large-Scale asset purchases
+  - negative interest rates on bank deposits at a central bank
+  - Forward Guidance
+  
+
+---
+# I. Liquidity Provision
+
+- the Fed increases its lending to provide liquidity (i.e. cash) to the financial markets
+
+- ** (1) Discount Window Expansion**: 
+  - conventional discount rate = fed funds rate target + 1%
+  - (Aug 2007) discount rate = fed funds rate target + 0.5%
+  - (Mar 2008) discount rate = fed funds rate target + 0.25%
+  - banks are hence encouraged to borrow from the Fed
+  
+  
+  
+  
+---
+# I. Liquidity Provision
+
+- ** (2) Term Auction Facility**: 
+  - the Fed made loans at a rate determined through competitive auctions, rather than charging the discount rate 
+  - enabled banks to borrow at a rate **lower** than the discount rate, as the rate was determined competitively 
+  - a total outstanding of over $400 billion loans were made during the 2007-2009 Great Recession 
+
+
+---
+# I. Liquidity Provision
+
+- ** (3) New Lending Programs**:
+  - the Fed lends to investment banks 
+  - e.g.: the Fed engaged in lending to J.P. Morgan to assist in its purchase of Bear Stearns 
+  - e.g.: the Fed lends to AIG to prevent its failure
+  - a total outstanding of over $1 trillion loans have been made by the end of 2008
+
+
+---
+# II. Large-Scale Asset Purchases
+
+- **Quantitative Easing 1 (QE1)**:
+  - Nov 2008: the Fed purchased $1.25 trillion of securities backed by **residential mortgages**
+  - interest rates on residential mortgages were lowered (why?)
+  - housing market is stimulated
+
+--
+
+- short-term interest rates on Treasury securities hit a floor of zero, but long-term interest rates did not: **Quantitative Easing 2 (QE2)**
+  - Nov 2010: the Fed purchased $600 billion of **long-term Treasury securities** 
+  - long-term interest rates were lowered (why?)
+  - investment projects that usually have a long life are stimulated
+
+  
+  
+---
+# II. Large-Scale Asset Purchases
+
+- **Quantitative Easing 3 (QE3)**: combining QE1 and QE2
+  - Sept 2012: the Fed conducted monthly purchases of 40 billion of mortgage-backed securities and 45 billion of long-term Treasuries
+  
+```{r echo=FALSE, out.width = '70%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/unconventional.png")
+```
+
+
+
+---
+# II. Large-Scale Asset Purchases
+
+- On March 15, 2020, to boost economic activity among the Covid-19 pandemic, the Fed brought back this unconventional monetary policy tool. The FOMC directed the New York Fed’s Open Market Trading Desk to purchase at least 500 billion worth of Treasury securities and at least 200 billion worth of mortgage-backed securities. 
+
+- The FOMC statement: https://www.federalreserve.gov/newsevents/pressreleases/monetary20200315a.htm
+
+- https://www.federalreserve.gov/monetarypolicy/bst_recenttrends.htm (look at the "selected assets of the Fed")
+
+
+
+---
+# II. Large-Scale Asset Purchases
+
+- weaknesses of QE: banks add to their holdings of excess reserves instead of making loans
+- we discussed this in chapter 14 part II: $M=m \times MB = \frac{1+c}{c+er+rr} \times MB$
+  - because a much higher er leads to a much smaller $m$  
+  - so the increase in $M <$ the increase in $MB$
+  
+```{r echo=FALSE, out.width = '60%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/excess.png")
+```
+  
+
+
+
+---
+# III. Negative Interest Rates
+
+- Negative Interest Rates on Banks’ Deposits: banks pay central bank to keep deposits in the central bank
+  - to encourage banks to lend out the deposits they are keeping at the central bank, thereby encouraging households and businesses to spend more
+
+- Sweden (July 2009), Denmark (July 2012), the European Central Bank (June 2014), Switzerland (December 2014), Japan (January 2016)
+
+
+---
+# III. Negative Interest Rates
+
+https://www.ecb.europa.eu/stats/policy_and_exchange_rates/key_ecb_interest_rates/html/index.en.html
+
+ECB: European Central Bank (central bank of Euro zone)
+
+- **rate on the deposit facility**: interest banks receive for depositing money with the ECB overnight (similar to $i_{or}$)
+
+- rate on the main refinancing operations: interest rate banks pay when borrowing from ECB for one week (similar to $i_d$)
+
+- rate on the marginal lending facility: interest rate banks pay when borrowing from the ECB overnight (similar to $i_d$)
+
+---
+# III. Negative Interest Rates
+
+- weaknesses of this tool: 
+  - banks might not lend out their deposits at the central bank, but instead move them into vault cash 
+  - charging banks interest on their deposits might be very costly to banks if they still have to pay positive interest rates to their depositors
+      - bank profitability falls, and are less likely to lend 
+    
+--
+
+- Janet Yellen announced in 2016 that the Fed was not considering using this tool to stimulate the economy (Recall chapter4: U.S. have never had negative nominal interest rates)
+
+- on May 11, 2020, a WSJ article talks about the possibility of negative interest rates in the U.S among the pandemic, even though the Fed is showing reluctance to go negative (https://www.wsj.com/articles/never-say-never-on-negative-rates-11589220649)
+
+
+---
+# IV. Forward Guidance
+
+-  forward guidance: the Fed committing to the future policy action of keeping the federal funds rate at zero for an extended period
+  - the Fed lowers the market’s expectations of future short-term interest rates, thereby causing the long-term interest rate to fall 
+
+--
+
+- (narrative) using the type of language in FOMC statements: “the Committee anticipates that weak economic conditions are likely to warrant exceptionally low levels of the federal funds rate **for some time**”
+
+
+---
+# IV. Forward Guidance
+
+- on the FOMC meeting on March 15, 2020, and on the FOMC meeting on April 29, 2020, the Committee announced the target range for fed funds rate to 0 to 1/4 percent. It also said it would hold rates there “**until it is confident that** the economy has weathered recent events and is on track to achieve its maximum employment and price stability goals” (https://www.federalreserve.gov/monetarypolicy/fomcpresconf20200429.htm)
+
+--
+
+- the wording of the March 15 and April 29 statement leaves too much room for interpretation
+
+--
+
+- the Fed still has to decide if more should be said to be clear with the public about how long the target range for fed funds rate will stay there to get the maximum boost for the economy: **the guidance about the future path of interest rates**
+
+
+---
+# IV. Forward Guidance
+
+- For example, the Fed could have said something like "keeping the benchmark rate at zero at least until the unemployment rate is back to 4%" or "keeping to zero rates until inflation since the beginning of 2020 rises to 2.5% on average"
+  - All of that would anchor longer-term interest rates by sending a message to the public that the central bank won’t prematurely tighten policy
+
+--
+
+- "It is urgent that the Federal Reserve should provide strong forward guidance commitments as soon as possible to strengthen expectations for a strong recovery, lower real interest rates by shoring up inflation expectations and convince businesses to take on the additional debt its credit market programs are making available -- rather than reduce costs and wait-and-see" (News source: Bloomberg)
+
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("May27_Ch15_lecture_slide.html", output = "May27_Ch15_lecture_slide.pdf")
+pagedown::chrome_print("May27_Ch15_lecture_slide.html", output = "May27_Ch15_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("May27_Ch15_lecture_slide.html"))
+webshot(file_name, "May27_Ch15_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```
+

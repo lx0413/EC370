@@ -1,0 +1,518 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 4: The Meaning of Interest Rates (Cont'd)"
+author: "Xiang LI"
+date: "April 13, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+
+
+
+# Today's Contents
+
+- [Yield to Maturity - Cont'd](#Yield to Maturity - Cont'd)
+- [Holding Period Returns](#Holding Period Returns)
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Yield to Maturity - Cont'd
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+
+---
+# (3) Coupon Bond
+- **Coupon bond**: pays the owner of the bond a fixed interest payment (**coupon payment**) every year until the **maturity date**, when a specified final amount (**face value** or par value) is repaid 
+
+--
+
+- KEY:
+  - principal and interest are paid separately
+  - interest are paid through multiple fixed coupon payments, until maturity date
+  - principal is paid in the last payment, at the maturity date
+
+
+
+---
+# (3) Coupon Bond
+FUN FACTS:
+
+<img src="../ch4/chpt4_Image/coupon.png" width=250, height=300>
+
+- In the past, people purchased "physical bond". To claim the coupon payments, the bond owner would cut off the coupons and mail them to the bond issuer. At maturity, the investor would redeem the certificate for the final payment.
+
+---
+# (3) Coupon Bond
+FUN FACTS:
+
+<img src="../ch4/chpt4_Image/coupon2.png" width=250, height=350>
+
+- Today: bonds are in digital form
+- Examples of Coupon Bond: U.S. Treasury bonds, U.S. Treasury notes, corporate bonds 
+
+---
+# (3) Coupon Bond
+* A coupon bond with $1,000 face value pays you a coupon payment of $100 per year for 10 years, and then repay you the face value amount of $1,000 at the maturity date
+  - **coupon rate**: coupon payment/face value
+  - $\frac{100}{1,000}=0.10=10\%$
+  
+  
+---
+# Participation 3
+
+- Here comes the participation exercise again! I have uploaded the document "Participation_3" in module "Chapter 4", which contains exercises we are going to practice 
+
+--
+
+- Although it is due 11:59pm (PDT), Sunday June 7, you are strongly encouraged to complete it now and submit it right after this lecture to earn 1 point
+
+--
+
+- Make sure you compile all pages into one pdf document and submit **one and only one LEGIBLE pdf document** to Canvas
+
+
+---
+# Participation 3
+
+* Q1: What is the coupon rate of an $800 face-value coupon bond with a price of $1000 and a $40 coupon payment every year?
+
+--
+
+- **coupon rate**: coupon payment/face value
+
+--
+
+- Answer: $\frac{40}{800}=5\%$
+  
+--
+
+- Q2: For a 10% coupon bond with a face value of $1000, a 12.25% YTM and 8 years to maturity: how much does this bond pay you in period 6?
+
+--
+
+- Answer: $100 (same answer applies to all periods from 1 to 7)
+
+  
+  
+
+---
+# Participation 3
+
+- Q3: what is the price of a 10% coupon bond with a face value of $1,000, a 12.25% yield to maturity, and 8 years to maturity? You do not need to solve for the value of the unknown variable. 
+
+
+--
+
+  - What is today's price of this bond? Assume that it is $p$
+  - How many future payments will the bond holder receive from the bond issuer? And how much will each of the future payments be? 
+  - What is the present value of ALL of its future payments?
+
+
+
+
+---
+# Participation 3
+
+- There will be 8 coupon payments plus 1 face value payment
+
+--
+
+- Each coupon payment is $1000 \times 10\%=100$; payment for face value is $1000
+
+--
+
+- Equating $p$ with the present value of **ALL** future cash flow: 
+$$p=\frac{100}{1+12.25\%}+\frac{100}{(1+12.25\%)^2}+...+
+  \frac{100+1000}{(1+12.25\%)^8}$$
+  
+
+
+
+
+
+
+---
+# (3) Coupon Bond 
+
+- **Summary:**
+
+$$P=\frac{C}{(1+i)}+\frac{C}{(1+i)^2}+\frac{C}{(1+i)^3}+...+\frac{C}{(1+i)^n}+\frac{F}{(1+i)^n}$$
+- P: price of coupon bond
+- C: yearly coupon payment
+- F: face value of the bond
+- n: years to maturity date 
+- i: yield to maturity (YTM)
+
+
+
+
+
+
+---
+# Participation 3
+
+- Let's return to Participation #3
+
+--
+
+- Q4: A $100 face value 5% coupon bond has 1 year to maturity. Find the price of the bond for each value of YTM: i= 5%, 4%, and 6%
+
+--
+
+  - What is today's price of this bond? Assume it is $p$
+  - How many future payments will the bond holder receive from the bond issuer? And how much will each of the future payments be? 
+  - What is the present value of ALL of its future payments?
+
+
+
+---
+# Participation 3
+$P=\frac{C}{(1+i)^1}+\frac{F}{(1+i)^1}=\frac{C+F}{1+i}=\frac{105}{1+i}$
+
+--
+
+- when $i=5\%: P=\frac{105}{1.05}=100$
+
+--
+
+- when $i=4\%: P=\frac{105}{1.04}=100.96$
+
+--
+
+- when $i=6\%: P=\frac{105}{1.06}=99.06$
+
+--
+
+Coupon rate: $c=\frac{C}{F}=\frac{5}{100}=5\%$
+
+
+
+---
+# Participation 3
+$P=\frac{C}{(1+i)^1}+\frac{F}{(1+i)^1}=\frac{C+F}{1+i}=\frac{105}{1+i}$
+
+when $i=5\%: P=\frac{105}{1.05}=100$
+
+when $i=4\%: P=\frac{105}{1.04}=100.96$
+
+when $i=6\%: P=\frac{105}{1.06}=99.06$
+
+--
+
+- Regardless of n, when $YTM=c$, $P=F$; when $YTM>c$, $P<F$; when $YTM<c$, $P>F$ 
+
+--
+
+- Price of coupon bond $P$ and YTM $i$ are **negatively** related, holding $C$ and $F$ constant
+
+
+ 
+
+
+---
+# (4) Discount Bond (Zero-Coupon bond)
+
+- **Discount bond (Zero-Coupon bond)**: bought at a price below its face value, and the face value is repaid at the maturity date
+
+--
+
+- Recall: chapter 2, U.S. Treasury bill is **sold at a discount**
+  
+--
+  
+- KEY:
+  - no interest payments (Zero coupon)
+  - one face-value payment at the maturity date
+  
+
+
+
+---
+# (4) Discount Bond (Zero-Coupon bond)
+$$P=\frac{C}{(1+i)}+\frac{C}{(1+i)^2}+...+\frac{C}{(1+i)^n}+\frac{F}{(1+i)^n}= \frac{F}{(1+i)^n}$$
+
+- P: price of discount bond
+- C: yearly coupon payment, which is zero
+- F: face value of the bond
+- n: years to maturity date 
+- i: yield to maturity (YTM)
+
+
+
+
+---
+# (4) Discount Bond (Zero-Coupon bond)
+$$P=\frac{C}{(1+i)}+\frac{C}{(1+i)^2}+...+\frac{C+F}{(1+i)^n}=\frac{F}{(1+i)^n}$$
+
+- When $i>0$: $P<F$
+
+--
+
+- Recall: when $P<F$, $YTM>c$ (when $P<F$, $i>0\%$)
+
+--
+
+- Again, current bond prices $P$ and yield to maturity (interest rate) $i$ are **negatively** related, holding other variables constant
+  
+  
+  
+
+---
+# Participation 3
+
+- Let's keep going with Participation #3
+
+--
+
+$$P=\frac{F}{(1+i)^n}$$
+
+* Q5: What is the yield to maturity on a 1-year, $1,000-face value discount bond with a current price of $900? 
+
+--
+
+- Answer: $900=\frac{1000}{(1+i)}, i=0.111=11.1\%$
+  
+--
+  
+- Q6: Find the price of a $100-face value, 2% annual interest rate U.S. T-bill maturing in 6 months
+  
+--
+
+- Answer: $\frac{100}{(1+0.02)^{0.5}}=99.01$
+  
+ 
+ 
+
+---
+# Summary
+
+- **Yield to maturity** for an instrument is the **interest rate** that equates the **present value of ALL future payments** on that instrument to its **price today**
+
+--
+
+- Current bond prices and yield to maturity (interest rate) are **negatively** related
+  - Coupon Bond
+  - Discount Bond (Zero-Coupon bond)
+
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Holding Period Returns
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+
+---
+# Holding Period Return
+
+- **Bond are traded before they mature**: it is not always the case that bond holders keep the bond until its maturity, especially for long-term bonds 
+
+--
+
+- Yield to maturity that measures the rewards for bond holders for holding the bonds **until its maturity** 
+
+--
+
+- To quantify the rewards for bond holders if they sell the bond **before maturity date**, we need a measure called **holding period return** (also called **return**, **rate of return**)
+
+$$\text{holding period return} = \frac{\text{payments to owner}+\text{change in value}}{\text{purchase price}}$$
+
+
+
+
+---
+# Participation 3
+
+- Let's learn "holding period return" via an exercise
+
+--
+
+* Q7 (1): A $1,000-face-value coupon bond with a coupon rate of 10% matures in 2 years. Suppose today's price for this bond is $1,000. A bond holder buys this bond today and holds it until maturity. What is yield to maturity for him?
+
+--
+
+- Method I: because $P=F, YTM=c=10%$
+  
+--
+
+- Method II: $1000=\frac{100}{1+i}+\frac{100+1,000}{(1+i)^2}$, solve for i = 10%
+
+---
+# Participation 3
+
+* Q7 (2): if after holding it for 1 year, the bond holder sells it for $1,200. What is holding period return for him? 
+
+--
+
+- Recall: $\text{holding period return} = \frac{\text{payments to owner}+\text{change in value}}{\text{purchase price}}$
+
+
+---
+# Participation 3
+
+$\text{holding period return} = \frac{\text{payments to owner}+\text{change in value}}{\text{purchase price}}$
+
+--
+
+- Purchase price: 1,000
+
+--
+
+- Payment of this security: after 1 year, receive a coupon payment of $1000 \times 10\%=100$
+
+--
+
+- Change of security's value when selling: 1200-1000=200
+
+--
+
+- Rate of return: $\frac{100+200}{1000}=0.30=30\%$
+
+--
+
+- **Holding period return** on a bond will **not** necessarily equal the **yield to maturity** on that bond 
+
+
+---
+# Holding Period Return
+## One-year holding period return Formula I
+**$$R=\frac{C+P_{t+1}-P_t}{P_t}$$**
+
+
+- R: return from holding the bond from time t to time t + 1
+- C: coupon payment (future payment) 
+- $P_t$: price of the bond at time t 
+- $P_{t+1}$: price of the bond at time t + 1
+
+
+
+---
+# Holding Period Return
+
+- $R=\frac{C+P_{t+1}-P_t}{P_t}=\frac{C}{P_t}+\frac{P_{t+1}-P_t}{P_t}$
+
+--
+
+
+- $\frac{C}{P_t}$: **current yield**, $i_c$ (the coupon payment over today's price)
+
+--
+  
+  
+- $\frac{P_{t+1}-P_t}{P_t}$: **rate of capital gain**, $g$ (change in the bond’s price relative to the initial price)
+  
+--
+  
+## One-year holding period return Formula II
+
+**$$R=i_c+g$$**
+  
+
+
+---
+# Holding Period Return
+$$g=\frac{P_{t+1}-P_t}{P_t}$$
+
+RECALL: bond prices and interest rate are negatively related
+
+--
+
+- $i$ $\downarrow$: bond price $\uparrow$, $P_{t+1}>P_t$; capital gain, $g>0$
+
+--
+
+- $i$ constant: bond price constant, $P_{t+1}=P_t$; neither gain nor loss, $g=0$
+
+--
+
+- $i$ $\uparrow$: bond price $\downarrow$, $P_{t+1}<P_t$; capital loss, $g<0$
+
+
+
+
+---
+# Holding Period Return
+$$i_c=\frac{C}{P_t}$$
+
+RECALL: coupon rate = $c=\frac{C}{F}$
+
+--
+
+- if you buy the bond at face value, $P_t=F$: $i_c=c$
+
+--
+
+- if you buy the bond at premium, $P_t>F$: $i_c<c$
+
+--
+
+- if you buy the bond at discount, $P_t<F$: $i_c>c$
+  - RECALL: for discount bond, $P<F$
+
+
+---
+
+- This is the end of today's lecture
+
+- Problem set #2 has been posted on Canvas, consisting of 6 questions
+
+- It is due 11:59 (PDT), Sunday April 19. No late submission will be accepted
+
+- With this lecture and the previous lecture, you have everything you need to finish Question 1, 2, 3, 4, and 5 of this problem set. It's highly recommended that you start working on Problem set #2 today
+
+- After the next lecture, you will be able to finish Question 6 of this problem set. 
+
+- Practice problems and answer key have been posted too. Make use of them to help you work on Problem set #2. 
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Apr13_Ch4_lecture_slide.html"))
+webshot(file_name, "Apr13_Ch4_lecture_slide.pdf")
+--->
+

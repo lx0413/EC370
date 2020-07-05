@@ -1,0 +1,399 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 3: What is Money"
+author: "Xiang LI"
+date: "Apr 6, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+
+# Today's Content
+
+1. [Functions of Money](#Functions of Money)
+  
+2. [M1 and M2 Money Supply](#M1 and M2 Money Supply)
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Functions of Money
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Meaning of Money
+
+**Money**: anything that is generally accepted as payment for goods or services or in the repayment of debts
+
+--
+
+- Money is also called **money supply**
+
+--
+
+- Example: 
+  - currency: dollar bills and coins
+  - checking/saving account deposit...
+  
+--
+
+- Are bonds, common stock, art, land, furniture, cars, houses... money? 
+
+
+
+<!---
+# Meaning of Money
+- **money** vs. **wealth** 
+  - wealth: all resources owned by an individual, including all assets
+- wealth includes:    
+  - money
+  - bonds, common stock, art, land, furniture, cars, houses...
+- **money** vs. **income** 
+  - income: flow of earnings per unit of time (**flow** concept) 
+  - money: amount measured at a given point in time (**stock** concept)
+--->
+
+  
+<!---
+- Anything that is used as a means of payment must be a store of value and thus is very likely to become a unit of account
+- The function as a **medium of exchange** is what distinguishes money from other assets such as stocks, bonds, and houses  
+--->
+
+
+---
+# Functions of Money
+## (1) Medium of Exchange (Means of Payment)
+- barter economy: goods and services are exchanged directly for other goods and services
+  - double coincidence of wants
+  
+--
+  
+- money being used as a **medium of exchange** promotes economic efficiency
+  - minimizes transaction cost: the time spent trying to exchange goods or services
+  - allows people to specialize in what they do best 
+  
+
+
+---
+# Functions of Money
+## (2) Unit of Account
+in barter economy: if there are N goods in economy, need $\frac{N(N-1)}{2}$ prices to exchange one good for another: $(N-1)+(N-2)+...+1=\frac{N(N-1)}{2}$
+
+
+--
+  
+- if money is used as **unit of account**: 
+  - quoting the price of goods in terms of dollar
+  - if there are N goods in economy, only need N prices 
+  - minimizes transaction cost and promotes economic efficiency
+
+
+
+---
+# Functions of Money
+## (3) Store of Value
+- a **store of value** is used to save purchasing power from the time income is received until the time it is spent
+
+--
+
+- Other asset can also be used as store of value
+  - pros: a higher interest rate (bonds), price appreciation (art), a roof over head (house)...
+  - cons: high transaction costs when converting into money (not liquid)
+
+--
+
+- Money can be used as store of value: 
+  - pros: money is the **most liquid** asset, because it is the **medium of exchange**
+
+
+
+---
+- How good a store of value money is depends on price level
+
+--
+
+- when price level doubles, value (purchasing power) of money drop by half; when price level drops by half, value of money doubles 
+
+--
+
+- money **loses** value rapidly during times of **inflation** or **hyperinflation** (an extreme inflation in which the inflation rate exceeds 50% per month)
+
+--
+  
+- Example: Germany, post World War II, inflation rate was 1,000% per month
+  - no one wants to hold on to money
+  - the use of money to carry out transaction fell, while barter exchange increased
+
+
+
+
+
+
+---
+# Evolution of Payments System
+payments system: the method of conducting transactions in the economy
+
+--
+
+## (1) Commodity Money
+- money made up of precious metals or another valuable commodity: gold, silver, cigar (prisoner-of-war camp during WWII)
+  
+--
+
+- pros: 
+  - universally accepted 
+  - could be made into standardized quantities
+  - durable
+- cons: heavy to carry 
+
+  
+
+
+---
+# Evolution of Payments System
+## (2) Fiat Money
+
+<!---
+In the past, paper currency was backed by the precious metal
+- paper currency was redeemable on demand for metal like gold or silver
+- if high quantities of the currencies are issued while the metal wasn't enough, currencies become worthless
+--->
+
+**Fiat money**: paper currency backed by government decree as **legal tender**
+
+- legal tender MUST be accepted as legal payment for debts
+
+<img src="../ch3/chpt3_Image/dollar.png" width=500> 
+
+<!---
+- not convertible into precious metal
+--->
+
+<!---
+Cecchetti textbook: historic stories (U.S civil war), golden standard abandon, can change fiat money as Euro in 2002 
+--->
+
+- Fiat money can be accepted as legal payment for debts only if: there is some trust in the authorities who issue it. Policymakers must be credibly committed to limiting the volume in circulation
+  
+  
+<!---
+- printing has reached a sufficiently advanced stage that counterfeiting is difficult
+--->
+
+
+
+---
+# Evolution of Payments System
+## (2) Fiat Money
+- pros: light
+- cons: expensive to transport in large amounts  
+
+<img src="../ch3/chpt3_Image/fiat.png" width=600> 
+
+
+
+
+
+---
+# Evolution of Payments System
+## (3) Checks
+An instruction to bank to transfer money from your account to someone else’s account 
+- pros: makes transactions for large amounts easier because they can be written for any amount up to the balance in the account
+- cons: paper shuffling and clearing process involves issuer’s bank, receiver’s bank, and the Fed, which takes days 
+
+- Is check is legal tender? 
+
+
+
+
+---
+# Evolution of Payments System
+## (4) Electronic Payment and E-money
+
+Electronic funds transfers are movements of funds directly from one account to another
+
+--
+
+- estimated cost savings when a bill is paid electronically rather than by a check exceed one dollar per transaction
+
+--
+
+- examples: 
+  - pay utility bill online
+  - debit card
+  - stored-value card: UO ID card, Walmart gift card, prepaid phone card (it doesn’t bear your name)
+  - e-cash: Paypal
+
+--
+
+- Credit card is not money. It represents access to someone else’s money
+
+  
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# M1 and M2 Money Supply
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Measuring Money: M1
+- The Fed has settled on the following measures of the **money**(**money supply**), which are also referred to as **monetary aggregates**
+
+--
+
+- M1: the **narrowest** measure, including only the **most liquid** assets
+
+--
+
+- M1 = <br>
+**currency** <br>
+\+ **traveler’s checks**  <br>
+\+ **demand deposits**  <br>
+\+ **other checkable deposits**
+
+
+
+
+---
+# Measuring Money: M2
+- The M2 adds to M1 other assets that are **not quite as liquid as** those included in M1
+
+--
+
+- M2 = **M1** <br>
+  \+ **Small-denomination time deposits** <br>
+  \+ **Savings deposits** <br>
+  \+ **Money market mutual fund shares** <br>
+  \+ **money market deposit accounts** <br>
+
+
+---
+# Measuring Money
+## M1 and M2
+
+- Growth rates of M1 and M2 tend to move together
+- Growth rates of M1 and M2 can move in different directions in short run 
+- the choice of monetary aggregate as the best measure of money supply is important for policymakers
+ 
+<img src="../ch3/chpt3_Image/M1_M2_growth.png" width=600> 
+
+<!---
+<img src="../ch3/chpt3_Image/liquidity.png" width=300> 
+FUN FACTS: Who are holding these much currency
+- More than $4,500 of U.S. **currency** (paper money and coins) are held per person in the United States
+  - criminals, drug dealers, gansters (less traceable), some cash businesses (tax evasion), foreigners (hedge against high inflation risk)  
+--->
+
+
+<!---
+- if M1 $\uparrow$: M2 $\uparrow$
+- if M2 $\uparrow$: M1 does not necessarily inincrease
+- transfer within M1: M1 unchanged
+- transfer between M1 and M2: M1 changed, M2 unchanged
+<img src="../ch3/chpt3_Image/M1_M2.png" width=400> 
+--->
+
+
+---
+# Measuring Money
+<img src="../ch3/chpt3_Image/M1_M2.png" width=400> 
+
+- Q1: which of the following is included in both M1 and M2?
+  - a) currency
+  - b) savings deposits
+  - c) small-denomination time deposits
+  - d) money market deposit account
+
+
+  
+---
+# Measuring Money
+<img src="../ch3/chpt3_Image/M1_M2.png" width=400> 
+
+- Q2: If an individual moves money from a savings deposit account to a money market deposit account
+  - a) M1 decreases and M2 stays the same
+  - b) M1 stays the same and M2 increases
+  - c) M1 stays the same and M2 stays the same
+  - d) M1 increases and M2 decreases
+  
+
+---
+# Measuring Money
+<img src="../ch3/chpt3_Image/M1_M2.png" width=400> 
+
+- Q3: If an individual moves money from a small-denomination time deposit to a demand deposit account
+  - a) M1 increases and M2 stays the same
+  - b) M1 stays the same and M2 increases
+  - c) M1 stays the same and M2 stays the same
+  - d) M1 increases and M2 decreases
+
+
+---
+# Measuring Money
+Answer: 
+
+Q1: currency is included in both M1 and M2
+
+Q2: both M1 and M2 stay the same
+
+Q3: M1 increases and M2 stays the same
+
+--
+
+- This is the end of Chapter 3.
+
+- Practice problem and keys for chapter 3 have been posted on Canvas.
+
+- Problem Set #1 has been posted on Canvas. It is due **11:59pm (PDT), Apr 12, Sunday**. 
+
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Ch3_lecture_slide.html"))
+webshot(file_name, "Ch3_lecture_slide.pdf")
+--->

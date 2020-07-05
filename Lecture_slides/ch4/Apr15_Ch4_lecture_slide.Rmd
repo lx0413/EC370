@@ -1,0 +1,618 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 4: The Meaning of Interest Rates (Cont'd)"
+author: "Xiang LI"
+date: "April 15, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature: 
+      countIncrementalSlides: false
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+library(dplyr)
+library(viridisLite)
+library(scales)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+# Today's Contents
+
+- [Holding Period Returns - Cont'd](#Holding Period Returns - Cont'd)
+- [Interest Rate Risk](#Interest Rate Risk)
+- [Inflation risk](#Inflation risk)
+- [Distinction Between Real and Nominal Interest Rates](#Distinction Between Real and Nominal Interest Rates)
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Holding Period Returns - Cont'd
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Participation 4
+
+- Let's review what we have discussed in previous lectures with the participation exercise
+
+--
+
+- I have uploaded the document "Participation_4" in module "Chapter 4" 
+
+--
+
+- Although it is due 11:59pm (PDT), Sunday June 7, you are strongly encouraged to complete it now and submit it right after this lecture to earn 1 point
+
+--
+
+- Make sure you compile all pages into one pdf document and submit **one and only one LEGIBLE pdf document** to Canvas
+
+
+---
+# Participation 4
+
+- Q1: At $t$ (today), you spend 1,000 to buy a 10%-coupon-rate coupon bond that has face value of 1,000. The current interest rate is 10%. At $t+1$ (one year from today), you sell the bond after holding for 1 year. Suppose at $t+1$, the interest rate rises to 20%. Complete this table. 
+
+```{r table-0, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+    
+dt <- data.frame(matrix(ncol = 5, nrow = 3))
+  
+colnames(dt)<-c("Price of bonds today($)", "Current yield", "Price of bond next year($)", "Rate of capital gain", "Rate of return")
+
+row.names(dt)<-c("5 years to maturity when bond is purchased", "3 years to maturity when bond is purchased", "1 year to maturity when bond is purchased")
+
+dt[,1] <- c(1000, 1000, 1000)
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, font_size = 16)
+```
+
+
+
+
+---
+# Participation 4
+## 5 yr to maturity 
+
+- Current yield: $i_c=\frac{C}{P_t}=\frac{c \times F}{P_t}=\frac{10\% \times 1000}{1000}=10\%$
+
+--
+
+- Price next year: $P_{t+1}=\frac{100}{1+0.2}+\frac{100}{(1+0.2)^2}+\frac{100}{(1+0.2)^3}+\frac{100}{(1+0.2)^4}+\frac{1,000}{(1+0.2)^4}=741$
+
+--
+
+- Rate of capital gain: $g=\frac{P_{t+1}-P_t}{P_t}=\frac{741-1,000}{1,000}=-25.9\%$
+
+--
+
+- Rate of return: $R=g+i_c=-25.9\%+10\%=-15.9\%$
+
+
+---
+# Participation 4
+## 5 yr to maturity 
+
+```{r table-1, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+dt <- data.frame(matrix(ncol = 5, nrow = 3))
+colnames(dt)<-c("Price of bonds today($)", "Current yield", "Price of bond next year($)", "Rate of capital gain", "Rate of return")
+row.names(dt)<-c("5 years to maturity when bond is purchased", "3 years to maturity when bond is purchased", "1 year to maturity when bond is purchased")
+dt[,1] <- c(1000, 1000, 1000)
+dt[1,2:5]<-c(0.1, 741, -0.259, -0.159)
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, font_size = 16)
+```
+
+
+
+---
+# Participation 4
+## 2 yr to maturity 
+- Current yield: same as above, $i_c=\frac{C}{P_t}=\frac{c \times F}{P_t}=\frac{10\% \times 1000}{1000}=10\%$
+
+--
+
+- Price next year: $\frac{100}{1+0.2}+\frac{1,000}{1+0.2}=917$
+
+--
+
+- Rate of capital gain: $g=\frac{P_{t+1}-P_t}{P_t}=\frac{917-1,000}{1,000}=-8.3\%$
+
+--
+
+- Rate of return: $R=g+i_c=-8.3\%+10\%=1.7\%$
+
+---
+# Participation 4
+## 2 yr to maturity 
+
+```{r table-2, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+dt <- data.frame(matrix(ncol = 5, nrow = 3))
+colnames(dt)<-c("Price of bonds today($)", "Current yield", "Price of bond next year($)", "Rate of capital gain", "Rate of return")
+row.names(dt)<-c("5 years to maturity when bond is purchased", "3 years to maturity when bond is purchased", "1 year to maturity when bond is purchased")
+dt[,1] <- c(1000, 1000, 1000)
+dt[1,2:5]<-c(0.1, 741, -0.259, -0.159)
+dt[2,2:5]<-c(0.1, 917, -0.083, 0.017)
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, font_size = 16)
+```
+
+
+---
+# Participation 4
+## 1 yr to maturity 
+
+- Current yield: same as above, $i_c=\frac{C}{P_t}=\frac{c \times F}{P_t}=\frac{10\% \times 1000}{1000}=10\%$
+
+--
+
+- Price next year: whoever buys this bond will redeem the bond and get 1,000 
+
+--
+
+- Rate of capital gain: $g=\frac{P_{t+1}-P_t}{P_t}=\frac{1,000-1,000}{1,000}=0\%$
+
+--
+
+- Rate of return: $R=g+i_c=0\%+10\%=10\%$
+
+
+---
+# Participation 4
+## 1 yr to maturity 
+
+```{r table-3, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+dt <- data.frame(matrix(ncol = 5, nrow = 3))
+colnames(dt)<-c("Price of bonds today($)", "Current yield", "Price of bond next year($)", "Rate of capital gain", "Rate of return")
+row.names(dt)<-c("5 years to maturity when bond is purchased", "3 years to maturity when bond is purchased", "1 year to maturity when bond is purchased")
+dt[,1] <- c(1000, 1000, 1000)
+dt[1,2:5]<-c(0.1, 741, -0.259, -0.159)
+dt[2,2:5]<-c(0.1, 917, -0.083, 0.017)
+dt[3,2:5]<-c(0.1, 1000, 0, 0.1)
+
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, font_size = 16)
+```
+
+
+---
+# Holding Period Returns
+
+```{r table-4, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 6, nrow = 6))
+colnames(dt)<-c("Years to maturity when bond is purchased","Initial Current yield", "Initial price($)","Price of bond next year($)", "Rate of capital gain", "Rate of return")
+dt[,1] <- c(30, 20, 10, 5, 2, 1)
+dt[,2]<-c(.1, .1, .1, .1, .1, .1)
+dt[,3]<-c(1000, 1000, 1000, 1000, 1000, 1000)
+dt[,4]<-c(503, 516, 597, 741, 917, 1000)
+dt[,5]<-c(-.497, -.484, -.403, -.259, -.083, 0)
+dt[,6]<-c(-.397, -.384, -.303, -.159, .017, .1)
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"), full_width = F, font_size = 16) %>%
+  row_spec(6, bold = T, color = "black", background = "#FFCCFF")
+```
+
+
+(1) The only bonds whose returns will equal their initial yields to maturity are those whose times to maturity are the same as their holding periods
+
+
+
+---
+# Holding Period Returns
+
+```{r table-5, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 6, nrow = 6))
+colnames(dt)<-c("Years to maturity when bond is purchased","Initial Current yield", "Initial price($)","Price of bond next year($)", "Rate of capital gain", "Rate of return")
+dt[,1] <- c(30, 20, 10, 5, 2, 1)
+dt[,2]<-c(.1, .1, .1, .1, .1, .1)
+dt[,3]<-c(1000, 1000, 1000, 1000, 1000, 1000)
+dt[,4]<-c(503, 516, 597, 741, 917, 1000)
+dt[,5]<-c(-.497, -.484, -.403, -.259, -.083, 0)
+dt[,6]<-c(-.397, -.384, -.303, -.159, .017, .1)
+
+dt %>%
+  mutate_at(c("Years to maturity when bond is purchased", "Rate of capital gain"), function(x) {
+    cell_spec(x, bold = T,
+              color = spec_color(x, end = 0.9)#,font_size = spec_font_size(x)
+              )
+  }) %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F)
+```
+
+
+(2) A **rise** in interest rates is associated with a fall in bond prices, resulting in capital losses on bonds whose terms to maturity are longer than their holding periods
+
+
+
+
+---
+# Holding Period Returns
+
+```{r table-6, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 6, nrow = 6))
+colnames(dt)<-c("Years to maturity when bond is purchased","Initial Current yield", "Initial price($)","Price of bond next year($)", "Rate of capital gain", "Rate of return")
+dt[,1] <- c(30, 20, 10, 5, 2, 1)
+dt[,2]<-c(.1, .1, .1, .1, .1, .1)
+dt[,3]<-c(1000, 1000, 1000, 1000, 1000, 1000)
+dt[,4]<-c(503, 516, 597, 741, 917, 1000)
+dt[,5]<-c(-.497, -.484, -.403, -.259, -.083, 0)
+dt[,6]<-c(-.397, -.384, -.303, -.159, .017, .1)
+
+dt %>%
+  mutate_at(c("Years to maturity when bond is purchased","Initial price($)", "Price of bond next year($)"), function(x) {
+    cell_spec(x, bold = T,
+              color = spec_color(x, end = 0.9)#,font_size = spec_font_size(x)
+              )
+  }) %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F)
+```
+
+(3) The more distant a bond’s maturity date, the greater the size of the percentage price change associated with an interest rate change
+
+
+
+
+---
+# Holding Period Returns
+
+```{r table-7, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 6, nrow = 6))
+colnames(dt)<-c("Years to maturity when bond is purchased","Initial Current yield", "Initial price($)","Price of bond next year($)", "Rate of capital gain", "Rate of return")
+dt[,1] <- c(30, 20, 10, 5, 2, 1)
+dt[,2]<-c(.1, .1, .1, .1, .1, .1)
+dt[,3]<-c(1000, 1000, 1000, 1000, 1000, 1000)
+dt[,4]<-c(503, 516, 597, 741, 917, 1000)
+dt[,5]<-c(-.497, -.484, -.403, -.259, -.083, 0)
+dt[,6]<-c(-.397, -.384, -.303, -.159, .017, .1)
+
+dt %>%
+  mutate_at(c("Years to maturity when bond is purchased", "Rate of return"), function(x) {
+    cell_spec(x, bold = T,
+              color = spec_color(x, end = 0.9)#,font_size = spec_font_size(x)
+              )
+  }) %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F) 
+```
+
+(4) The more distant a bond’s maturity date, the lower the rate of return that occurs as a result of an increase in the interest rate
+
+
+
+
+---
+# Holding Period Returns
+
+```{r table-8, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 6, nrow = 6))
+colnames(dt)<-c("Years to maturity when bond is purchased","Initial Current yield", "Initial price($)","Price of bond next year($)", "Rate of capital gain", "Rate of return")
+dt[,1] <- c(30, 20, 10, 5, 2, 1)
+dt[,2]<-c(.1, .1, .1, .1, .1, .1)
+dt[,3]<-c(1000, 1000, 1000, 1000, 1000, 1000)
+dt[,4]<-c(503, 516, 597, 741, 917, 1000)
+dt[,5]<-c(-.497, -.484, -.403, -.259, -.083, 0)
+dt[,6]<-c(-.397, -.384, -.303, -.159, .017, .1)
+
+dt %>%
+  mutate_at(c("Initial Current yield", "Rate of return"), function(x) {
+    cell_spec(x, bold = T,
+              color = spec_color(x, end = 0.9)#,font_size = spec_font_size(x)
+              )
+  }) %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F) 
+```
+
+(5) Even though a bond may have a substantial initial yield to maturity, its return can turn out to be negative if interest rates rise
+
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Interest-Rate Risk
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+
+---
+# Interest-Rate Risk
+
+- After you have purchased a bond, if there is goin to be a rise in interst rate, then it means that the price of the bond you are holding will fall and experience a capital loss; if the loss is large enough, the bond you are holding can be a poor investment
+
+--
+
+- **Changes in interest rates** lead to capital gains or losses
+
+--
+
+- **Interest-rate risk**: the possible reduction in returns associated with changes in interest rates
+  - because we never know with certainty what interest rate will be in the future
+
+ 
+---
+# Interest-Rate Risk
+
+- There is **NO interest-rate risk** for any bond whose time to maturity is equal to the holding period 
+  - the price at the end of the holding period is already fixed at the face value
+  
+--
+
+- Bonds whose terms to maturity are longer than their holding periods are subject to interest-rate risk
+  
+
+  
+---
+# Interest-Rate Risk
+  
+- When interest rate **increases**, bonds with a more distant time to maturity suffer a greater **decrease** in price, implying a greater capital **loss** and may be **negative** holding period return
+
+--
+
+- Prices and returns for long-term bonds are more volatile than those for shorter-term bonds. 
+
+--
+
+- Long-term bonds have substantial interest-rate risk, compared to short-term bonds
+
+--
+
+- **Changes in interest rates** make investments in **long-term** bonds quite **risky**
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Inflation risk
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Inflation risk
+## Bonds are risky! 
+- Risk: uncertainty in determining assets’ return
+
+--
+
+- We have discussed **Interest-rate risk** 
+
+--
+
+- In addition to interest rate risk, bonds have:
+  - default risk (will discuss this in Chapter 6)
+  - **inflation risk**
+  
+<!---
+- default risk: The issuer may not make the promised payments on time
+- We are uncertain whether the bond issuers can pay off coupon and principal
+- We usually ignore default risk in thinking about U.S. Treasury bonds
+- Default risks cannot be ignored for bonds issued by many other governments or by private corporations
+--->
+
+  
+<!---
+- Inflation Risk: Inflation may turn out to be higher than expected, reducing the real return on holding the bond
+- we are uncertain whether our money turn out to be worthless
+--->
+
+---
+# Inflation risk
+
+* At the beginning of 2018, you lend $100 over one year with an interest rate of 5%. By the end of 2018, you receive $105. If inflation over the year is 5%, do you think that you really earn $105?
+
+--
+
+- The answer is NO. Because of inflation, the real value of your money is $100 (105/1.05)
+  - At the beginning of 2018, bagel price is 1 dollar. $100 could buy 100 bagels
+  - Over the year, the inflation rate is 5%, which means that the price of all goods and services increase by 5%. Hence, bagel now costs 1*1.05 = 1.05
+  - At the end of 2018, $105 can only buy 100 bagels
+  - With an inflation of 5%, $100 at the beginnig of 2018 has the same purchasing power as $105 at the end of 2018
+ 
+
+
+---
+# Inflation risk
+
+- If you knew that inflation would be 5% over the year, then you would have required an interest rate greater than 5%
+
+--
+
+- No one cares only about the number of dollars. People also care about what those dollars can buy. In other words, everyone cares about **real interest rates** 
+
+--
+
+- **Nominal interest rate**: interest rate that does not take inflation into account (the ones that appear in the newspaper and on bank statements)
+
+--
+
+- **Real interest rate**: is adjusted for changes in the price level, i.e. inflation (it reflects more accurately the true cost of borrowing or benefits of lending)
+
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Distinction Between Real and Nominal Interest Rates
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Fisher Equation: $r=i-\pi^{e}$
+
+- nominal interest rate $i$: observable 
+
+--
+
+- $\pi^{e}$: expected inflation
+  - Twice a year the Federal Reserve Bank of Philadelphia publishes professional forecasts
+  - Once a month, the Survey Research Center of the University of Michigan computes consumer inflation expectations
+  
+--
+
+- real interest rate $r$: unobservable, but can be estimated by Fisher equation 
+
+--
+
+- Fisher Equation: $r=i-\pi^{e}$
+
+
+
+---
+# Fisher Equation: $r=i-\pi^{e}$
+
+- When the real interest rate is low, is there greater incentives to borrow or to lend?
+
+--
+
+- Answer: To borrow!
+
+--
+
+* If you expect the inflation rate to be 15% next year and a one-year bond has a yield to maturity of 7%, what is the real interest rate on this bond?  
+
+--
+
+- Answer: $r=i-\pi^{e} = 7\%-15\% =-8\%$
+
+---
+# Fisher Equation: $r=i-\pi^{e}$
+
+<img src="../ch4/chpt4_Image/real_interest.png" width=500>
+
+- blue line: nominal interest rate
+- red line: estimated real interest rate 
+- expected inflation: gap between two lines
+- when red line goes above blue line, expected inflation is negative
+
+
+
+---
+# Fisher Equation: $r=i-\pi^{e}$
+
+<img src="../ch4/chpt4_Image/real_interest1.png" width=500>
+
+- real and nominal interest rate usually move together but do not always do so (recall Fisher Equation)
+
+
+  
+  
+---
+# Fisher Equation: $r=i-\pi^{e}$
+
+<img src="../ch4/chpt4_Image/real_interest2.png" width=500>
+
+How much was NOMINAL interest rate between 2009 to 2015?
+- Roughly nominal interest rate reached a lower limit of zero
+- https://ycharts.com/indicators/3_month_t_bill
+
+
+
+---
+# Fisher Equation: $r=i-\pi^{e}$
+
+<img src="../ch4/chpt4_Image/real_interest2.png" width=500>
+
+- Historically were there any period that NOMINAL interest rate became negative? 
+- negative nominal interest rate: Switzerland (1970), Sweden (2009-10), Denmark (2012), EU (2014), Japan (2016)
+
+  
+  
+<!---  
+- Nominal interest rate has a zero lower bound
+  - Policymakers deliberately set interest rate above zero so they have room to conduct expansionary monetary policies (lower interest rate)
+  - When nominal interest rate is negative, people who save (lenders) would see their savings account decrease bit by bit. They would rather withdraw their deposits and hold cash instead
+--->
+
+
+---
+# Fisher Equation: $r=i-\pi^{e}$
+
+<img src="../ch4/chpt4_Image/real_interest3.png" width=600>
+
+- Can REAL interest rate be negative? (recall Fisher Equation: when expected inflation exceed nominal interest rate)
+
+---
+- This is the end of Chapter 4. Practice problems and answer key have been posted to Canvas, which will help you work on Problem Set #2. 
+
+- Problem Set #2 is due **11:59 (PDT), Sunday April 19**. No late submission will be accepted. Compile all pages into one pdf document and submit **one and only one legible pdf document**. Points will be deducted if submissions do not follow the instructions.
+
+- Participation #2, #3, and #4 are due 11:59 (PDT), Sunday June 7. However, an extra credit assignment has been created for early submissions. If you submit Participation #2, #3, and #4 by **11:59 (PDT), Sunday April 19**, you will get 1 extra credit. 
+
+- An announcement will be made on Canvas soon about logistics of this exam and how to prepare for this exam. 
+
+<!---
+- Until recently, real interest rates in the United States were not observable; only nominal rates were reported
+
+- This all changed when, in January 1997, the U.S. Treasury began to issue **indexed bonds**, whose interest and principal payments are adjusted for changes in the price level
+
+- the interest rate on these bonds provides a direct measure of a real interest rate
+
+- subtracting their interest rate from a nominal interest rate on a nonindexed bond generates more insight into expected inflation
+--->
+
+
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Apr15_Ch4_lecture_slide.html"))
+webshot(file_name, "Apr15_Ch4_lecture_slide.pdf")
+--->
+

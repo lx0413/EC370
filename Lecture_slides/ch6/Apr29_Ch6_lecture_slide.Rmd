@@ -1,0 +1,572 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 6: The Risk and Term Structure of Interest Rates - PART I"
+author: "Xiang LI"
+date: "April 29, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+<!---
+# to allow for incremental bulltes in the pdf: uncomment out this css
+```{css, echo = F, eval = T}
+@media print {
+  .has-continuation {
+    display: block !important;
+  }
+}
+```
+--->
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+- Chapter 5: the determination of just ONE interest rate
+  - supply and demand analysis of bonds market
+
+--
+
+- Chapter 6: Why do interest rates differ from bond to bond? 
+  - the determination of just DIFFERENT interest rates
+  - Risk structure of interest rates (**Today's lecture**)
+    - bonds with the same term to maturity
+  - Term structure of interest rates (**Next lecture**)
+    - bonds with the different term to maturity
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Risk structure of interest rates
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Risk Structure of Interest Rates
+
+
+![yield](chpt6_Image/yield.png)
+
+
+
+--
+
+- interest rates on different categories of bonds generally move together
+- interest rates differ from one another: Baa > Aaa > T-bonds > municipal
+
+
+
+
+---
+# Risk Structure of Interest Rates
+
+- Bonds with the **same maturity** have different interest rates due to: 
+
+--
+
+  - Default Risk
+
+--
+
+  - Liquidity
+
+--
+
+  - Tax Considerations
+
+
+
+
+---
+# Default Risk
+
+- **default**: the issuer of the bond doesn't make interest payments when promised or pay off the face value when the bond matures
+
+--
+
+- **default-free bonds**: U.S. Treasury bonds 
+  - the federal government can always increase taxes or print money to pay off
+
+- bonds with default risk: corporate bonds, municipal bonds
+
+
+--
+
+- **risk premium**: spread between interest rates on bonds with default risk and interest rates on default-free bonds, both of the same maturity
+  - how much additional interest people must earn to be willing to hold the risky bond
+
+
+
+
+---
+# Participation 6: Default Risk
+
+- Q1: use supply and demand analysis of the bond market to explain why interest rates of corporate bonds are higher than those of U.S. Treasury bonds. 
+
+- Assume: initially, corporate bonds have the same default risk as U.S. Treasury bonds
+
+
+
+
+---
+# Participation 6: Default Risk
+
+- Assume: initially zero risk premium ${P_1}^C={P_1}^T, {i_1}^C={i_1}^T$
+
+--
+
+![risk-0](chpt6_Image/risk-0.png)
+
+
+
+---
+# Participation 6: Default Risk
+
+- step 1: coporation suffers losses, and default risk increases
+  
+  - demand $\downarrow$ 
+  
+--
+
+![risk-1](chpt6_Image/risk-1.png)
+
+
+
+
+
+---
+# Participation 6: Default Risk
+
+- step 2: relative riskiness of Treasury bonds declines
+
+  - demand $\uparrow$
+  
+--
+  
+![risk-2](chpt6_Image/risk-2.png)
+
+
+
+---
+# Participation 6: Default Risk
+
+- net result: $P^C$ $\downarrow$, $i^C$ $\uparrow$; $P^T$ $\uparrow$, $i^T$ $\downarrow$
+  
+- risk premium on coporate bonds: rises from 0 to ${i_2}^C-{i_2}^T$
+
+--
+
+![risk-3](chpt6_Image/risk-3.png)
+
+
+
+---
+# Default Risk
+
+- Conclusion: **a bond with defualt risk will always have a positive risk premium, and an increase in its defualt risk will raise the risk premium** 
+
+--
+
+- **Credit-rating**: a measure of default risk, indicating how likely the issuers default on the bonds
+
+--
+
+- Credit-rating agencies: rate the quality of corporate and municipal bonds in terms of default probability 
+
+
+
+
+
+---
+# Default Risk
+
+<div class="column-left">
+<img src="chpt6_Image/rating.png" width=400> 
+</div>
+<div class="column-center">
+investment-grade bonds: low default risk
+</div>
+
+
+---
+# Default Risk
+
+<div class="column-left">
+<img src="chpt6_Image/rating.png" width=400> 
+</div>
+<div class="column-right">
+speculative-grade or junk bonds: high default risk (Such bonds always have higher interest rates than investment-grade bonds, so they are also called high-yield bonds)
+</div>
+
+
+
+
+---
+# Default Risk
+
+<div class="column-left">
+<img src="chpt6_Image/rating.png" width=400> 
+</div>
+<div class="column-right">
+US government bonds in 1780s (US had lots of debt), General Motors, IBM, JP Morgan in early 1900s (start-ups firms) used to be junk bonds
+</div>
+
+
+
+
+---
+# Default Risk
+
+- What role did credit ratings play in the 2008 crisis? 
+
+https://www.youtube.com/watch?v=uM19CBGhhas
+
+- During the 2008 financial crisis, a lot of worthless subprime-mortgage securities were given AAA ratings: the highest and safest investment grade.
+
+- The agencies have been blamed for exaggerated ratings of risky mortgage-backed securities, giving investors false confidence that they were safe for investing.
+
+- Paul Krugman: “The skewed assessments, in turn, helped the financial system take on far more risk than it could safely handle.”
+
+
+---
+# Default Risk
+
+- In 2011, the Financial Crisis Inquiry Commission found that these ratings agencies “were key enablers of the financial meltdown.”
+
+- 2015: Standard & Poor’s paying $1.5 billion to settle suits with the U.S. Justice Department
+
+- 2017: Moody's paying out nearly $864m to U.S. justice department, 21 states and District of Columbia 
+
+
+
+
+---
+# Liquidity 
+
+- liquid assets: can be quickly and cheaply converted into cash 
+
+--
+
+- The more liquid an asset is, the more desirable it is (holding everything else constant)
+
+--
+
+- Liquidity of a bond depends on
+  - Cost of selling that bond (e.g. brokerage commissions)
+  - Number of buyers/sellers in a bond market
+
+--
+
+- U.S. Treasury bonds are the most liquid of all long-term bonds
+  - widely traded, easy to sell quickly, low cost of selling 
+  
+- Corporate bonds are not as liquid 
+
+
+
+
+
+
+
+---
+# Participation 6: Liquidity
+
+- Q2: use supply and demand analysis to show that the lower liquidity of corporate bonds relative to Treasury bonds increases the spread between the interest rates on these two bonds
+
+--
+
+![risk-2](chpt6_Image/risk-2.png)
+
+
+
+
+
+
+
+---
+# Liquidity
+
+**Coporate bonds vs. Treasury bonds**: 
+
+--
+
+- Treasury bonds less defualt risk, while coporate bonds more defualt risk
+  
+--
+
+- Treasury bonds more liquid, while coporate bonds less liquid
+
+--
+
+
+- Conclusion: the spread between interest rates on corporate bonds and Treasury bonds reflect not only the corporate bonds’ **default risk** but also their lesser **liquidity**
+
+
+
+
+---
+# Income Tax Considerations
+
+- Municipal bonds are bonds issued by state and local governments
+  - Municipal bonds are not default-free (Detroit, 2013)
+  - Municipal bonds are not as liquid as U.S. T-bonds either 
+
+--
+
+- Hence, municipal bonds should have had a higher interest rate than Treasury bonds, just like corporation bonds
+
+--
+
+- But why municipal bond have had lower interest rates than U.S. Treasury bonds? 
+
+--
+
+- Because interest payments on municipal bonds are exempt from **federal income taxes**
+
+
+
+
+
+---
+# Income Tax Considerations
+
+- Let’s imagine that your income is high enough to put you in the 40% income tax bracket, where for every extra dollar of income you earn you have to pay 40 cents to the government
+
+--
+
+* If you own a $1,000-face-value U.S. Treasury bond that has a coupon payment of $100, you keep only $60 of the coupon payment after taxes
+  - Although the bond has a 10% interest rate, you actually earn only 6% after taxes
+  
+--
+
+* Suppose, however, that you put your savings into a $1,000-face-value municipal bond that pays only $80 in coupon payments
+  - because it is a tax-exempt security, you pay no taxes on the $80 coupon payment, so you earn 8% after taxes
+  
+
+
+
+---
+# Participation 6: Income Tax 
+
+- you earn more on the municipal bond **after taxes**, so you are willing to hold the **riskier and less liquid** municipal bond rate than the U.S. Treasury bond
+  
+--
+
+- Q3: use supply and demand analysis to show that municipal bonds have lower interest rates than Treasury bonds. 
+  - Assume: initially, municipal and Treasury bonds have identical attributes 
+  - municipal bonds have no default risk, and are as liquid as Treasury bonds
+
+
+
+---
+# Participation 6: Income Tax 
+
+- Initially, ${P_1}^m={P_1}^T, {i_1}^m={i_1}^T$
+
+--
+
+![risk-0-m](chpt6_Image/risk-0-m.png)
+
+
+
+
+
+
+---
+# Participation 6: Income Tax 
+
+- step 1: municipal bonds are given tax advantage, and hence after-tax expected return relative to Treasury bonds rises
+  
+  - demand $\uparrow$ 
+
+--
+
+![risk-1-m](chpt6_Image/risk-1-m.png)
+
+
+
+
+
+---
+# Participation 6: Income Tax 
+
+- step 2: Treasury bonds become less desirable relatively
+
+  - demand $\downarrow$
+  
+--
+
+![risk-2-m](chpt6_Image/risk-2-m.png)
+  
+  
+  
+---
+# Participation 6: Income Tax 
+
+- net result: $P^m$ $\uparrow$, $i^m$ $\downarrow$; $P^T$ $\downarrow$, $i^T$ $\uparrow$
+
+  - municipal bonds end up with lower interest rates than Treasury bonds
+
+--
+
+![risk-2-m](chpt6_Image/risk-2-m.png)
+
+
+
+
+---
+# Income Tax Considerations
+
+Effects of the Obama Tax Increase on Bond Interest Rates:
+
+- In 2013, Congress approved legislation favored by the Obama administration to increase the
+income tax rate on high-income taxpayers from 35% to 39%
+
+- Consistent with supply and demand analysis, the increase in income tax rates for wealthy
+people helped to lower the interest rates on municipal bonds relative to the interest rate on
+Treasury bonds
+
+
+
+
+---
+How does U.S. corporate bonds perform during the coronavirus pandemic? 
+
+--
+
+- Since late March 2020, as ratings firms reassessed the ability of corporate borrowers to repay their debts, U.S. corporate bonds are being downgraded at breakneck speeds, due to fears of:
+  - bankruptcies spurred by the crisis
+  - a prolonged recession
+  
+--
+
+- Investors are being compensated more to hold corporate bonds. Adjusted for options, the spread, or extra yield investors demanded to hold investment-grade U.S. corporate bonds
+
+
+<small><small>
+News source: Wall Street Journal
+</small></small>
+
+---
+How does Treasury bills/notes/bonds perform during the coronavirus pandemic? 
+
+- U.S. government bonds held firm, reflecting continued demand for safer assets among investors 
+
+--
+
+- The price on these bonds increases, and the yield on these bonds declines
+
+<small><small>
+News source: Wall Street Journal
+</small></small>
+
+---
+How does municipal bonds perform during the coronavirus pandemic? 
+
+- U.S. state and local governments borrow from investors in the form of municipal bonds, pledging  a range of taxes and fees to repay the debt.
+
+--
+
+- But with many businesses shut down, cities and counties are collecting far less in taxes on restaurant meals, hotel stays and car rentals. 
+
+--
+
+- Meanwhile, states are being forced to distribute hundreds of millions of dollars in unemployment checks to residents from whom they recently collected income taxes.
+
+--
+
+- Major ratings firms are lowering municipal bonds outlooks 
+
+<small><small>
+News source: Wall Street Journal
+</small></small>
+
+---
+# Summary
+
+- The risk structure of interest rates (the relationships among interest rates on bonds with the same maturity) is explained by three factors: 
+
+  - if default risk $\uparrow$, then risk premium $\uparrow$, and interest rate $\uparrow$
+    
+  - if liquidity $\uparrow$, then interest rate $\downarrow$
+    
+  - if favorable tax treatment $\uparrow$, then interest rate $\downarrow$
+
+
+---
+- Practice problem and answer key for today's content have been uploaded
+
+--
+
+- Problem set 3 has been posted
+  - Make full use of the practice problem to help you with this problem set
+  - Submit one legible pdf document to Canvas by 11:59pm (PDT), **Sunday, May 3**
+
+--
+
+- Today's participation exercise (Participation #6) is due on Sunday of week 10. But you are strongly encouraged to submit it now
+
+--
+
+- We will finish chapter 6 in the next lecture, and the content covered in the second part of chapter 6 will be included in Problem set #4
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("Apr29_ch6_lecture_slide.html", output = "Apr29_ch6_lecture_slide.pdf")
+pagedown::chrome_print("Apr29_ch6_lecture_slide.html", output = "Apr29_ch6_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("Apr29_Ch6_lecture_slide.html"))
+webshot(file_name, "Apr29_Ch6_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```
+  
+

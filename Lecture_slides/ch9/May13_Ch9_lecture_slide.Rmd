@@ -1,0 +1,564 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 9: Banking and the Management of Financial Institutions - PART II"
+author: "Xiang LI"
+date: "May 13, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+
+
+
+
+# Today's Contents
+## Chapter 9: Banking and the Management of Financial Institutions - PART II
+- [Principles of Bank Management](#Principles of Bank Management)
+
+
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Principles of Bank Management 
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# General Principles of Bank Management
+
+- principles for banks to manage assets and liabilities include: 
+  - Liquidity management
+  - Capital adequacy management
+
+--
+
+## (1) Liquidity Management
+
+- **deposit outflows**: depositors make withdrawals and demand payment, and banks lose deposits 
+
+- **liquidity management**: to maintain enough liquid assets and to keep enough cash on hand to pay its depositors when there are **deposit outflows**
+
+
+---
+# (1) Liquidity Management - Participation
+
+Q1: The bank is required to keep 10% of deposits as reserves. Initial balance sheet is as follows. (Unit: millions)
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $10 million", "Deposits: $100 million")
+dt[2,] <- c("Securities: $10 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $90 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+_Instruction: To complete the following balance sheets, do **NOT** show **changes** of values for each item. Instead, you should write **levels** of updated values for each item. For example, an item starts with value $100. If you think its value decreases by $10, write down $90 **instead of** -$10; if you think its value increases by $10, write down $110, **instead of** +$10; if you think its value isn't changed, write down $100_
+
+---
+# (1) Liquidity Management - Participation
+
+(1) How much excess reserves does this bank hold?
+
+--
+
+- Required reserve  = required reserve ration $\times$ deposits = 10% $\times$ 100 million = $10 million
+
+* Excess reserve = total reserves - required reserve = $10 million - $10 million = $0 million  
+
+
+
+
+---
+# (1) Liquidity Management - Participation
+
+(2) Suppose a deposit outflow of $10 million occurs. Update the balance sheet.
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+  
+
+
+
+---
+# (1) Liquidity Management - Participation
+
+- a  deposit outflow of $10 million occurs
+  - loses $10 million of deposits and $10 million of reserves
+  - therefore, no reserves left
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $0 million", "Deposits: $90 million")
+dt[2,] <- c("Securities: $10 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $90 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+
+
+---
+# (1) Liquidity Management - Participation
+
+(3) After deposit outflow occurs, does this bank meet the 10% required reserve requirement? If so, how much excess reserves does this bank hold?
+
+--
+
+* reserve requirement = required reserve ration $\times$ deposits = 10% $\times$ $90 = $9 million
+
+- but it has 0 reserves
+  - to borrow from: banks or the Fed
+  - to sell securities
+  - to reduce or sell loans
+
+
+
+
+---
+# (1) Liquidity Management - Participation
+
+(4) In order to meet the requirement, this bank decides to borrow fed funds from other banks in the fed funds market. Update the balance sheet. What is cost of option?
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+  
+
+
+---
+# (1) Liquidity Management - Participation
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $9 million", "Deposits: $90 million")
+dt[2,] <- c("Securities: $10 million", "Borrowings: $9 million")
+dt[3,] <- c("Loans: $90 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+- Cost of this option: interest rate on borrowings, such as the **federal funds rate**
+
+
+
+
+---
+# (1) Liquidity Management - Participation
+
+(5) In order to meet the requirement, this bank decides to borrow discount loans from the Fed. Update the balance sheet. What is cost of option?
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+  
+
+
+---
+# (1) Liquidity Management - Participation 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $9 million", "Deposits: $90 million")
+dt[2,] <- c("Securities: $10 million", "Borrowings: $9 million")
+dt[3,] <- c("Loans: $90 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+- Cost of this option: interest rate that must be paid to the Fed, called **discount rate**
+
+
+
+
+---
+# (1) Liquidity Management - Participation 
+
+(6) In order to meet the requirement, this bank decides to sell some of its securities. Update the balance sheet. What is cost of option?
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+  
+
+
+---
+# (1) Liquidity Management - Participation
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $9 million", "Deposits: $90 million")
+dt[2,] <- c("Securities: $1 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $90 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+- Cost of this option: brokerage and other transaction costs
+  - if selling **secondary reserves**: modest cost 
+  - if selling less liquid securities: high cost 
+
+
+
+
+---
+# (1) Liquidity Management - Participation
+
+(7) In order to meet the requirement, this bank decides to reduce loans. Update the balance sheet. What is cost of option?
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+  
+
+
+---
+# (1) Liquidity Management - Participation
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $9 million", "Deposits: $90 million")
+dt[2,] <- c("Securities: $10 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $81 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+- This option is the **costliest** way:
+  - calling in loans will lose customers
+  - other banks not willing to buy the loans at full value
+
+
+
+
+---
+# (1) Liquidity Management - Participation
+
+- Conclusion: when a deposit outflow occurs, excess reserves enable the bank to escape the costs of 
+  - borrowing from other banks or corporations
+  - borrowing from the Fed 
+  - selling securities
+  - calling in or selling off loans
+  
+--
+  
+- Excess reserves are insurance against the costs associated with deposit outflows
+
+--
+
+- The higher the costs associated with deposit outflows, the more excess reserves a bank will want to hold
+  
+  
+  
+---
+# (2) Capital Adequacy Management 
+
+- **Capital adequacy management**:the amount of bank capital bank should maintain 
+
+--
+
+- Why holding adequate capital? Let's use an Participation exercise to understand this
+
+--
+
+## Participation 9
+
+- Q2: The initial balance sheet is as follows. High Capital Bank has a ratio of capital to assets of 10%, while Low Capital Bank has a ratio of 4%
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 4, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities", "Assets", "Liabilities")
+
+dt[1,] <- c("Reserves: $10 million", "Deposits: $90 million", "Reserves: $10 million", "Deposits: $96 million")
+dt[2,] <- c("Securities: $0 million", "Borrowings: $0 million", "Securities: $0 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $90 million", "Capital: $10 million", "Loans: $90 million", "Capital: $4 million")
+
+dt %>%
+  kable() %>%
+  column_spec(1:4, width = "12em", border_right = T, border_left = T) %>%
+  row_spec(0, bold=TRUE, align = "c") %>%
+  kable_styling(font_size = 9, position = "center") %>%
+  add_header_above(c("High Capital Bank" = 2, "Low Capital Bank" = 2), bold=TRUE, align = "c")
+```
+
+
+---
+# (2) Capital Adequacy Management 
+
+(1) $5 million of housing loans become worthless. Update the balance sheet.
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 4, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities", "Assets", "Liabilities")
+
+dt[1,] <- c("Reserves", "Deposits", "Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings", "Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital", "Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  column_spec(1:4, width = "12em", border_right = T, border_left = T) %>%
+  row_spec(0, bold=TRUE, align = "c") %>%
+  kable_styling(font_size = 9, position = "center") %>%
+  add_header_above(c("High Capital Bank" = 2, "Low Capital Bank" = 2), bold=TRUE, align = "c")
+```
+
+_Instruction: To complete the following balance sheets, do **NOT** show **changes** of values for each item. Instead, you should write **levels** of updated values for each item. For example, an item starts with value $100. If you think its value decreases by $10, write down $90 **instead of** -$10; if you think its value increases by $10, write down $110, **instead of** +$10; if you think its value isn't changed, write down $100_
+
+
+---
+# (2) Capital Adequacy Management 
+
+- 5 million of housing loans become worthless
+  - these bad loans are written off (valued at zero)
+  
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 4, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities", "Assets", "Liabilities")
+
+dt[1,] <- c("Reserves: $10 million", "Deposits: $90 million", "Reserves: $10 million", "Deposits: $96 million")
+dt[2,] <- c("Securities: $0 million", "Borrowings: $0 million", "Securities: $0 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $85 million", "Capital: $5 million", "Loans: $85 million", "Capital: -$1 million")
+
+dt %>%
+  kable() %>%
+  column_spec(1:4, width = "12em", border_right = T, border_left = T) %>%
+  row_spec(0, bold=TRUE, align = "c") %>%
+  kable_styling(font_size = 9, position = "center") %>%
+  add_header_above(c("High Capital Bank" = 2, "Low Capital Bank" = 2), bold=TRUE, align = "c")
+```
+
+- the total value of assets for both banks declines by $5 million
+- bank capital declines by $5 million (capital = assets - liabilities)
+
+---
+# (2) Capital Adequacy Management 
+
+(2) which bank becomes insolvent?
+
+--
+
+- Low Capital Bank has a negative net worth
+  - it is **insolvent**
+  - government regulators will close this bank: **bank failure**
+  
+--
+  
+- **A bank maintains bank capital to lessen the chance that it will become insolvent**
+
+
+
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("May13_Ch9_lecture_slide.html", output = "May13_Ch9_lecture_slide.pdf")
+pagedown::chrome_print("May4_Ch6_lecture_slide.html", output = "May4_Ch6_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("May6_Ch9_lecture_slide.html"))
+webshot(file_name, "May6_Ch9_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```
+
+
+
+
+
+
+

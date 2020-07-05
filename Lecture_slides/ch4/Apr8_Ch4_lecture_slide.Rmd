@@ -1,0 +1,601 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 4: The Meaning of Interest Rates"
+author: "Xiang LI"
+date: "April 8, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+
+
+
+# Today's Contents
+
+- [Valuing Monetary Payments Now and in the Future](#Valuing Monetary Payments Now and in the Future)
+- [Yield to Maturity](#Yield to Maturity)
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Valuing Monetary Payments Now and in the Future
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+
+
+---
+# Future Value
+- Today, you invest $100 in a savings account that guarantees 5% interest per year
+
+--
+
+* The value (or price) of this investment made today is of course $100. But what is the value of this investment on some future date of this $100? 
+
+--
+
+- After one year, how much would you have saved? 
+
+--
+  - you’ll have $105
+  
+--
+
+* the **future value** of $100 one year from now at an interest rate of 5% is $105!
+
+--
+
+* $100 investment **yields** $5
+
+--
+  
+- **Time has value!**
+
+
+
+---
+# Future Value
+- Interest also **yields** interest: compound interest 
+
+--
+
+- Today, you deposit $100 in a savings account that earns interest rate i
+
+--
+
+- In 1 yr from today, how much would you have earned? 
+
+--
+
+- you earn: $100 + 100 \times i$
+  - your principal: $100$
+  - plus 1-yr interest **yielded** on that: $100 \times i$
+      
+--
+
+- In 1 yr, your initial investment becomes $100 \times (1+i)$ 
+
+
+
+---
+# Future Value
+- In 2 yr from today, how much would you have earned?
+
+--
+
+- you will earn: $[100 \times (1+i)]+[100 \times (1+i)] \times i$
+  - what you have earned after 1 yr: $100 \times (1+i)$
+  - plus 1-yr interest **yielded** on that: $[100 \times (1+i)] \times i$
+      
+--
+
+- $= [100 \times (1+i)] \times (1+i) = 100 \times (1+i)^2$
+
+--
+
+- In 2 yr, your investment becomes $100 \times (1+i)^2$
+
+
+
+---
+# Future Value
+- In 3 yr from today, how much would you have earned?
+
+--
+
+- you will earn: $[100\times (1+i)^2]+[100 \times (1+i)^2]\times i$
+  - what you have earned after 2 yr: $100 \times (1+i)^2$
+  - plus 1-yr interest **yielded** on that: $[100 \times (1+i)^2] \times i$
+
+--
+
+- $=[100\times (1+i)^2] \times (1+i) = 100 \times (1+i)^3$
+
+--
+
+- In 3 yr, your investment becomes: $100 \times (1+i)^3$
+  
+--
+
+- In n yr from today, your initial $100 investment becomes:
+  - $100 \times (1+i)^n$
+  
+
+
+
+---
+# Future Value
+## Formula
+
+**$$FV_n = PV \times (1+i)^n$$**
+
+- $FV_n$: future value in $n$ years
+- $PV$: present value (today's value) of the investment
+- $i$: yearly interest rate
+- $n$: years into future 
+  - 6 months into future: $n = 1/2$
+  - 1 month into future: $n = 1/12$
+  
+--
+
+- In computing future value, both i and n must be measured in the same time units, say, both are measured in months, or both are measured in years
+
+
+---
+# Participation 2
+
+- Let's do the second participation exercise together
+
+--
+
+- I have uploaded the document "Participation_2" in module "Chapter 4", which contains exercises we are going to practice 
+
+--
+
+- Just like how you did in the first participation exercise, you can either print this document and write down your answers in the blank space, or write down your answers on a piece of paper
+
+--
+
+- Again, it is your responsibility to submit a legible pdf document to Canvas by **11:59pm, PDT, Sunday, June 7** to earn 1 point for Participation #2
+
+
+
+---
+# Participation 2
+- Q1: if you put $1,000 into the bank at 4% annual interest, how much would you have saved after 40 years?  
+
+--
+
+- $FV_n = PV \times (1+i)^n$
+
+--
+
+- Answer: $1,000 \times (1+0.04)^{40}=4,801$
+  
+--
+
+- Buying one less soda or candy bar per day isn’t just good for your physical health; it’s good for your financial health, too :)
+
+
+
+
+
+
+---
+# Present Value
+- **Future value**: the value on some future date of an investment made today
+
+--
+
+- **Present value**: the value today of a payment that is promised to be made in the future 
+
+--
+
+- Present value is the amount that must be invested today in order to realize a specific amount on a given future date
+
+--
+  
+- Financial instruments promise future cash payments, so we need to know how to value those payments when you decide to buy financial instruments today 
+
+
+
+---
+# Present Value
+- At a 5% interest rate, the **future value** 1 yr from now of a 100 investment today is 105
+
+--
+
+- $100 + 100 \times 0.05 = 105$
+  
+--
+
+* At this same 5% interest rate, the **present value** of $105 1 yr from now is $100  
+  - this is **discounting the future**
+
+
+
+
+---
+# Present Value
+## Formula
+
+**$$PV=\frac{FV_n}{(1+i)^n}$$**
+
+--
+  
+Holding $n$ and $i$ constant, if $FV_n$ $\uparrow$: $PV$ $\uparrow$
+
+--
+
+- The relationship between $PV$ and $FV$ is positive, holding $n$ and $i$ constant
+  
+--
+
+- without changing the time of the payment or the interest rate, a financial instrument will have higher price if the payments it promises to deliver in the future are larger
+
+
+
+---
+# Present Value
+## Formula
+
+**$$PV=\frac{FV_n}{(1+i)^n}$$**
+
+--
+
+Holding $FV_n$ and $i$ constant, $n$ $\downarrow$: $PV$ $\uparrow$
+
+--
+
+- The relationship between $PV$ and $n$ is negative, holding $FV_n$ and $i$ constant
+  
+--
+
+- holding $FV_n$ and $i$ constant, the sooner the payment is to be made, the more it is worth
+
+
+
+
+
+<!---
+- if you CANNOT compare payments made in different time periods
+
+- if the interest rate is constant, $\$250$ to be paid in 2 years and $250 to be paid in 1 year have different values in today's money 
+
+  - Bring the payment to a future/later date: you compound the payment 
+  - Bring the payment to an earlier date: you discount the payment
+--->
+
+
+---
+# Present Value
+## Formula
+
+**$$PV=\frac{FV_n}{(1+i)^n}$$**
+
+--
+
+Holding $FV_n$ and $n$ constant, $i$ $\downarrow$: $PV$ $\uparrow$
+
+--
+
+- The relationship between $PV$ and $i$ is negative, holding $FV_n$ and $n$ constant
+  
+--
+
+- holding $FV_n$ and $n$ constant, higher interest rates are associated with lower present values
+
+--
+
+- you can expect a bond will become cheaper if there will be a surge in interest rate 
+
+
+
+---
+# Participation 2
+
+**$$PV=\frac{FV_n}{(1+i)^n}$$**
+
+- Let's continue with the exercise in Participation #2
+
+--
+
+- Q2: what is the present value of $250 to be paid in 2 years if the interest rate is 15%? 
+
+--
+
+- Answer: $\frac{250}{(1+0.15)^2}=189.04$
+  
+--
+
+* Q3: suppose the interest rate is constant at 10%, what is the present value of a security that pays you $1,100 next year, $1,210 the year after, and $1,331 the year after that?
+
+--
+
+- Answer: $\frac{1,100}{(1+0.10)}+\frac{1,210}{(1+0.1)^2}+\frac{1,331}{(1+0.1)^3}=3,000$
+
+
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Yield to Maturity
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+
+---
+# Yield to Maturity
+- **Yield to maturity**: the **interest rate** that equates the **present value of all of its future cash flow** payments received from an instrument with its value today (**today's price**) 
+
+--
+
+- Let's learn how to calculate yield to maturity for these instruments
+  - simple loan
+  - Fixed-payment loan
+  - Coupon bond
+  - Discount Bond (Zero-Coupon bond)
+  
+--
+  
+- KEY of calculating yield to maturity: we are **equating today's price of the instrument with the present value of ALL of its future cash flow payments**
+
+
+
+
+---
+# (1) Simple loan 
+- **simple loan**: the lender provides the borrower with an amount of funds (**principal**) that must be repaid to the lender at the **maturity date**, along with an additional **payment for the interest** 
+
+--
+
+- KEY: 
+  - one future payment only
+  - principal and interest are repaid together in this one-time payment
+
+
+
+
+
+---
+# Participation 2
+
+- Let's practice solving for the yield to maturity on simple loans Participation #2
+
+--
+
+* Q4: if Pete borrows $100 from his sister and next year she wants $110 back from him, what is the yield to maturity on this loan? 
+
+--
+
+- Always ask yourself: 
+  - What is today's price of this loan?
+  - How many future payments will the lender receive from the borrower? And how much will the future payments be? 
+  - What is the present value of ALL of its future payments?
+
+
+
+---
+# Participation 2
+
+- today's price: 100
+
+--
+
+- lender will receive only 1 future payment, $110 
+
+--
+
+- present value of all future payments: $PV=\frac{FV}{(1+i)^n}=\frac{110}{(1+i)^1}=\frac{110}{1+i}$
+
+--
+
+- equating: $100=\frac{110}{1+i}$. Solve for yield to maturity: $i=10%$
+
+--
+
+- Simple loan interest rate is = interest/principal= $\frac{10}{100}=10\%$. Simple loan interest rate equals yield to maturity
+
+
+---
+# Participation 2
+
+* Q5: What is the yield to maturity on a simple loan for $100 that requires a repayment of $110 in 2 years' time? 
+
+--
+
+  - What is today's price of this loan?
+  - How many future payments will the lender receive from the borrower? And how much will the future payments be? 
+  - What is the present value of ALL of its future payments?
+
+
+
+---
+# Participation 2
+
+- today's price: 100
+
+--
+
+- lender will receive only 1 future payment, $110
+
+--
+
+- present value of all future payments: $\frac{110}{(1+i)^2}$
+
+--
+
+- equating: $100=\frac{110}{(1+i)^2}$. Solve for yield to maturity: $i=4.88\%$ 
+
+
+
+
+
+---
+# (2) Fixed-payment loan
+
+- **Fixed-payment loan**: the lender provides the borrower with an amount of funds that the borrower must repay by making the **same payment**, consisting of part of the principal and interest, every period until the maturity date 
+
+--
+
+- KEY:
+  - principal and interest are repaid together through multiple future payments
+  - same amount for each future payment
+
+
+
+---
+# Participation 2
+
+- Let's practice solving for yield to maturity on fixed-payment loans in Participation #2
+
+--
+
+* Q6: if you borrow $1,000, a fixed-payment loan might require you to pay $126 every year for 25 years, what is the yield to maturity on this loan? 
+
+--
+
+  - What is today's price of this loan?
+  - How many future payments will the lender receive from the borrower? And how much will each of the future payments be? 
+  - What is the present value of ALL of its future payments?
+
+
+
+
+---
+# Participation 2
+
+- today's price of this loan: 1,000 
+
+--
+
+- 25 times of payments, $126 each 
+
+--
+
+- present value of **ALL** future cash flow: $\frac{126}{1+i}+\frac{126}{(1+i)^2}+...+\frac{126}{(1+i)^{25}}$
+
+--
+
+- equating: $1000=\frac{126}{(1+i)}+\frac{126}{(1+i)^2}+...+\frac{126}{(1+i)^{25}}$
+
+--
+
+- I won't ask you to solve for $i$ from equations like this one in exams. **Correctly** writing down this **equation** will earn full credits :)
+
+  
+  
+  
+---
+# Participation 2
+
+- Q7: You decide to purchase a new home and need a $100,000 mortgage. You take out a loan from the bank that has an interest rate of 7%. What is the yearly payment to the bank if you wish to pay off the loan in 20 years? 
+
+--
+
+  - What is today's price of this loan?
+  - How many future payments are there? 
+  - How much does lender receive for each future payment? This is exactly what the question is asking for. Assume it is $x$
+  - What is the present value of ALL of its future payments?
+  
+
+
+
+---
+# Participation 2
+
+- today's value of this loan: 100,000
+
+--
+
+- 20 times of payment, x dollars each
+
+--
+
+- present value of **ALL** future cash flow: 
+  $\frac{x}{(1+7\%)}+\frac{x}{(1+7\%)^2}+...+\frac{x}{(1+7\%)^{20}}$
+  
+--
+
+- equating and solve for $x$: $100,000=\frac{x}{(1+7\%)}+\frac{x}{(1+7\%)^2}+...+\frac{x}{(1+7\%)^{20}}$
+
+
+
+
+
+---
+# (2) Fixed-payment loan 
+
+**Summary:**
+
+$$LV=\frac{FP}{(1+i)}+\frac{FP}{(1+i)^2}+\frac{FP}{(1+i)^3}+...+\frac{FP}{(1+i)^n}$$
+
+- LV: loan value (today's price)
+- FP: fixed yearly payment
+- n: number of years until maturity
+- i: yield to maturity (YTM)
+
+
+---
+# Summary
+
+- A dollar received n years from now is worth only $\frac{1}{(1+i)^n}$ today
+
+--
+
+- **Present value** of a set of future cash flow payments on a debt instrument equals the sum of the present values of each of the future payment
+
+--
+
+- **Yield to maturity** for an instrument is the **interest rate** that equates the **present value of ALL future payments** on that instrument to its **price today**
+  - Simple loan 
+  - Fixed-payment loan
+  - We will discuss hot to calculate yield to maturity for coupon bonds and discount bonds (zero-coupon bonds)
+
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Apr8_Ch4_lecture_slide.html"))
+webshot(file_name, "Apr8_Ch4_lecture_slide.pdf")
+--->

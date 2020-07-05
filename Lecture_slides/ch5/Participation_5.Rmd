@@ -1,0 +1,99 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Participation 5 (Chapter 5)}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+**INSTRUCTIONS**: Answer the following questions. Write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm (PDT), Sunday, June 7**. 
+
+\vspace{.3in}
+
+\textbf{QUESTION 1} 
+
+If there is an increase in expected inflation, how will interest rate change?
+
+\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\linewidth]{fig1}
+		\caption*{}
+\end{figure}
+
+\textbf{QUESTION 2} 
+
+If the economy is in a business cycle expansion, how will interest rate change?
+	
+\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\linewidth]{fig1}
+		\caption*{}
+\end{figure}
+
+\newpage
+
+\textbf{QUESTION 3} 
+
+In the aftermath of the global financial crisis, in Europe and the United States, as well as in Japan, inflation has fallen to very low levels, sometimes even going negative, same as the expected inflation; at the same time, all of these countries have been experiencing a lack of profitable investment opportunities. Use supply and demand analysis for bond market, and explain graphically why interest rates in these countries are at such low levels.
+
+\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\linewidth]{fig1}
+		\caption*{}
+\end{figure}
+
+
+
+\textbf{QUESTION 4} 
+
+In a business cycle expansion, when income is rising, how will interest rate change?
+
+\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\linewidth]{fig1}
+		\caption*{}
+\end{figure}
+
+\newpage
+
+\textbf{QUESTION 5}
+
+In a business cycle expansion, when the price level rises, how will interest rate change?
+
+\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\linewidth]{fig1}
+		\caption*{}
+\end{figure}
+
+\textbf{QUESTION 6}
+
+If there is an increase in the money supply due to expansionary monetary policy by the Fed, how will interest rate change?
+
+\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.6\linewidth]{fig1}
+		\caption*{}
+\end{figure}
+

@@ -1,0 +1,75 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Participation 2 (Chapter 4)}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+**INSTRUCTIONS**: Answer the following questions. Write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm (PDT), Sunday, June 7**. 
+
+\vspace{.2in}
+
+\textbf{QUESTION 1: Future Value} 
+
+If you put $1,000 per year into the bank at 4 percent interest, how much would you have saved after 40 years?
+
+\vspace{2in}
+
+\textbf{QUESTION 2: Present Value} 
+
+What is the present value of $250 to be paid in 2 years if the interest rate is 15%?
+
+\vspace{2in}
+
+\textbf{QUESTION 3: Present Value} 
+
+Suppose the interest rate is constant at 10%, what is the present value of a security that pays you \$1,100 next year, \$1,210 the year after, and \$1,331 the year after that?
+
+\vspace{2in}
+\textbf{QUESTION 4: Yield to Maturity - Simple Loan} 
+
+If Pete borrows \$100 from his sister and next year she wants \$110 back from him, what is the yield to maturity on this loan?
+
+\vspace{2in}
+
+\textbf{QUESTION 5: Yield to Maturity - Simple Loan} 
+
+What is the yield to maturity on a simple loan for \$100 that requires a repayment of \$110 in 2 years' time?
+
+\vspace{2in}
+
+
+\textbf{QUESTION 6: Yield to Maturity - Fixed Payment Loan} 
+
+If you borrow \$1,000, a fixed-payment loan might require you to pay $126 every year for 25 years, what is the yield to maturity on this loan? You do not need to solve for the value of the unknown variable. 
+
+\vspace{2in}
+
+
+\textbf{QUESTION 7: Yield to Maturity - Fixed Payment Loan} 
+
+You decide to purchase a new home and need a \$100,000 mortgage. You take out a loan from the bank that has an interest rate of 7%. What is the yearly payment to the bank if you wish to pay off the loan in twenty years? You do not need to solve for the value of the unknown variable. 
+
+\vspace{2in}

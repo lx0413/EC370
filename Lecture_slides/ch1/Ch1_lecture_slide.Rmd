@@ -1,0 +1,760 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Syllabus and Chapter 1"
+author: "Xiang LI"
+date: "Monday, March 30, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+
+# Welcome to Money & Banking!
+
+1. [Course Syllabus](#Course Syllabus)
+
+2. [Chapter 1: Why Study Money and Banking](#Chapter 1: Why Study Money and Banking)
+
+3. [Appendix to Chapter 1](#Appendix to Chapter 1)
+
+<!---
+syllabus-review(use numerical examples to help students understand concepts)-chpt1
+--->
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Course Syllabus
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+
+---
+# Course Syllabus
+
+- In this class we will study financial markets, financial instruments, and financial institutions. 
+
+--
+
+- Along with these topics, we will discuss the determinants of market interest rates, the role of central banks, and the conduct of monetary policy. 
+
+--
+
+- Financial and economic news, especially the recent ones will be related to this course.
+
+
+---
+# Course Syllabus
+- This course will be delivered remotely as per the university's Academic Continuity Plan
+
+--
+
+- While we are operating under remote instruction, **Canvas** will be our main resource and method of communication
+
+--
+
+- **I will upload lecture slides to Canvas along with pre-recorded lectures by 8:30am, PDT, Monday and Wednesday**
+
+--
+
+- **You may watch the lectures at any time that is convenient for you but I suggest that you watch them on the days that face-to-face class would be taking place.** 
+
+
+---
+# Course Syllabus
+## About me:
+
+- Xiang (*sh EE ah ng*), fourth-year PhD student in Economics
+
+--
+
+- Research interest: empirical time series macroeconomics 
+
+--
+
+- Email: xli4@uoregon.edu
+
+--
+
+- Office hour: via **Zoom**, **Tuesday and Thursday, 10:00-11:00am, PDT**. I will make an annoucement on Canvas with a link to join the meeting before it starts.
+  - https://provost.uoregon.edu/introducing-zoom-uo-faculty-and-instructors
+
+--
+
+- You are always welcome to ask questions by email or in office hours :)
+
+
+
+---
+# Course Syllabus
+- Prerequisite: Introductory Macro (EC 202)
+
+--
+
+- Textbook: The Economics of Money, Banking, and Financial Markets, by Frederic S. Mishkin. Old editions are fine. Digital books are fine. 
+
+--
+
+- Tentative Plan: 
+  - ch 1, 2, 3: course introduction
+  - ch 4, 5, 6: financial markets
+  - ch 9: financial institution
+  - ch 14, 15: central banking and conduct of monetary policy
+  - ch 19: monetary theory
+  
+
+
+
+
+---
+# Evaluation
+## Participation
+
+- We will practice 10 short exercises during lectures: 10% in total (1% each)
+
+--
+
+- The exercise sheet will be uploaded on Canvas before the lecture starts
+
+--
+
+- Although I will go through problems and share with you how I am apporaching the problem in the video, you are required to write down your answers on the sheet and submit it on Canvas by **11:59 p.m., PDT** on the day that it is due.
+
+--
+
+- All exercises will be graded **for completion**
+
+
+
+
+---
+# Evaluation
+## Problem Sets and Exams
+
+- **5 problem sets**: 20% in total (4% each)
+
+--
+
+- **Midterm #1**: 20% 
+  - will cover chapter 1, 2, 3, 4
+
+--
+
+- **Midterm #2**: 20% 
+  - will cover chapter 5, 6, 9
+
+--
+
+- **Final**: 30%
+  - comprehensive but will be more heavily weighted toward the materials that we will cover in chapter 14, 15, 19
+
+
+---
+# Evaluation
+## Problem Sets and Exams
+- All problem sets and exams will be posted on Canvas, and you will submit your work on Canvas by **11:59 p.m., PDT** on the day that it is due.
+
+- Keys will be posted to Canvas immediately after they are due, and therefore **no late submission of any problem set or exam** will be accepted 
+
+--
+
+- All exams are **open book**. Information about administration of exams will be conveyed via Canvas as we get closer to the time.
+
+--
+
+- If a serious illness or emergency prevents you from completing an exam, contact me ASAP before the exam
+
+
+
+---
+# Evaluation
+## Problem Sets and Exams
+- **Make sure what you upload on Canvas can be recognized by our grader**. That is to say, it is your responsibility to: 
+
+--
+
+  - write legibly and take a high quality scan of your responses (an easy option is downloading a free scanning app)
+
+  - compile all pages into one pdf 
+
+  - and upload only one pdf document to Canvas
+  
+--
+
+- **Points will be deducted if submissions do NOT follow the above instructions.**
+
+---
+# Evaluation
+## Pass/Not Pass
+
+- Given that the COVID-19 pandemic has shifted our university to a system of remote learning, the deadline to change grade-optional courses from graded to P/NP (pass/no pass) will be extended 30 days after the date that spring 2020 final grades are posted. 
+
+--
+
+- All students will have until July 16, 2020, to decide whether to change to P/NP once they see their final grades. 
+
+--
+
+- Students taking the course Pass/Not Pass are expected to do all of the course work and must take the final exam. 
+
+--
+
+- P/NP students need to earn a C- or above for their overall grade to pass the course. 
+
+
+---
+# Evaluation
+## Re-grade Requests
+- If you notice an arithmetic mistake in totaling the number of points on problem sets or midterm, simply point this out to me as soon as possible, and the correction will be made. 
+
+--
+
+- For any other reconsideration of a grade on your problem sets or midterm, you must submit a formal re-grade request explaining why you believe your answer(s) should be given more points. 
+
+--
+
+- This request must be made in writing and given to me no later than one week after the problem sets or midterm is returned. 
+
+--
+
+- There will never be a re-grade for the final exam. 
+
+
+
+
+
+---
+- I will use Canvas to send announcements to the course **regularly**. Be sure to check your Canvas UO email regularly so that you receive course-related information quickly and reliably. 
+
+--
+
+- Sexual Violence and Survivor Support, Diversity, Academic Integrity, Accessibility and Special Accommodations, Inclement Weather and Class Cancellations: please read syllabus about university policies and expectations 
+
+
+---
+# Tentative Schedule
+
+<img src="../ch1/chpt1_Image/1.png" width=450>
+
+---
+# Tentative Schedule
+<img src="../ch1/chpt1_Image/2.png" width=450>
+
+
+
+---
+<img src="../ch1/chpt1_Image/are-there-any-questions.png" width=500>
+
+- Please ask!
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Chapter 1: Why Study Money & Banking
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Chapter 1: Why Study Money & Banking
+<img src="../ch1/chpt1_Image/intro.png" width=800>
+
+
+---
+class: inverse, center
+background-image: url('../ch1/chpt1_Image/bg.png')
+background-size: contain
+
+# 6 parts of the financial system
+
+
+<!---
+means of payment; store of wealth 
+--->
+  
+<!---
+transfer resources from savers to investors and to transfer risk; 
+stocks: transfer money to facebook, and risk of profitness of facebook is shared by buyers 
+mortgages: transfer money to consumers, and the risk of no payments is shared by banks
+--->
+
+<!---
+where we buy and sell financial instruments quickly and cheaply;
+the New York Exchange 
+--->
+
+<!---
+collection of information about prospective borrowers to ensure they are creditworthy;
+Banks, insurance companies, investment banks
+--->
+
+<!---
+making sure that the financial system operate in a safe and reliable manner
+--->
+
+<!---
+monitor and stabilize the economy
+--->
+
+
+
+
+
+---
+# Great Recession 2007–2009
+
+- Beginning in Aug 2007, defaults in the subprime mortgage leads to the worst financial crisis since the Great Depression of the 1930s
+
+--
+
+- Here is a video clip from The Big Short (2015) that shows the skyrocketing housing prices and the large quantity adjustable-rate mortgages existing on the eve of the Great Recession
+
+https://www.youtube.com/watch?v=MesrrYyuoa4&fbclid=IwAR1UWNXay-CIKNJ4j_5ZiPfrkBqAvWYPQ5ck0HnsQsa2YueM0yyMk2OKZjY
+
+
+
+---
+# Great Recession 2007–2009
+- interest rate $\uparrow$
+- harder to get credits: consumer spending $\downarrow$, firm investment $\downarrow$ 
+- stock markets crashed
+- real GDP $\downarrow$, unemployment rate $\uparrow$
+
+.pull-left[<img src="../ch1/chpt1_Image/crisis_house.png" width=700, height=250>]
+
+.pull-right[<img src="../ch1/chpt1_Image/crisis_stock.png" width=700, height=250>]
+
+<small><small>
+subprime mortgage: normally issued to borrowers with low credit ratings
+</small></small>
+
+
+
+
+---
+# Great Recession 2007–2009
+to prop up financial markets and stimulate the economy: 
+
+--
+
+- the Federal Reserve System (central bank of the U.S): easing monetary policy 
+  - federal funds rate (i.e. benchmark interest rate) $\downarrow$
+  - liquidity provision (i.e. cash) $\uparrow$ 
+  
+--
+  
+- Other government regulatory agencies:
+  - tax rebates
+  - bailouts of weakening financial institutions or purchasing subprime mortgage assets from them 
+  - raise the federal deposit insurance limit to $250,000 to limit withdrawals from banks
+
+  
+   
+<!---
+https://www.federalreserve.gov/newsevents/speech/bernanke20080513.htm
+--->
+
+
+
+
+
+
+
+<!---
+## Why Study Money and Banking
+Money, banking and financial systems are important to economic well-being:
+- **Financial markets** (bond market, stock market...) play an important role in financial system   
+  - so that we can buy and sell financial instruments quickly and cheaply
+- **Financial intermediaries** (banks, insurance companies...) play a crucial role in the economy
+  - collecting information about prospective borrowers to ensure they are creditworthy
+- **Money** and **monetary policy** affect economic variables such as business cycle, inflation, interest rates
+  - central banks using monetary policy to monitor and stabilize the economy
+--->
+
+
+
+---
+# Financial Markets
+- **Financial market**: the market in which funds are transferred from people who have an excess of available funds to people who have a shortage
+
+--
+
+- Examples: New York Stock Exchange, Chicago Board of Trade for commodities
+
+--
+  
+- Roles: channels funds from people who do not have a productive use for them to those who do
+  
+
+
+---
+# Financial Instruments
+- **Financial instrument** (also called **security**): a claim on the issuer's future income or asset 
+  - sold by borrower (issuer) to lender (holder)
+  - debt security: bond
+  - equity security: stock 
+  
+  
+---
+# Financial Instruments
+## Bond 
+- **Bond**: a security that promises to make periodic payments for a specified period of time
+ 
+--
+
+- Examples: 
+  - Corporate Bonds 
+  - U.S. Government Securities, State and Local Government Bonds
+  
+--
+  
+- Role: 
+  - enables corporations and governments to borrow to finance their activities 
+  - determines **interest rates**
+  
+
+
+---
+# Financial Instruments
+## Interest Rate (chpt 4, 5, 6)
+- **Interest rate**: the cost of borrowing 
+  
+--
+
+- Examples:
+  - interest rates on many different types of bonds 
+  - mortgage interest rates, car loan rates 
+
+--
+
+- Changes in interest rates affect individuals, financial institutions, businesses, and the overall economy
+  - interest rate $\uparrow$: C $\downarrow$, S $\uparrow$; I $\downarrow$
+  - interest rate $\downarrow$: C $\uparrow$, S $\downarrow$; I $\uparrow$
+
+<small><small>
+C: consumer consumption; S: consumer saving; I: firm investment 
+</small></small>
+
+
+
+
+---
+# Financial Instruments
+<img src="../ch1/chpt1_Image/different_interest.png" width=600>
+- Different interest rates have a tendency to move in unison
+  - economists frequently lump interest rates together and refer to “the” interest rate
+
+- Different interest rates can differ substantially
+
+
+
+<!---
+http://www.wsj.com/mdc/public/page/2_3020-moneyrate.html
+--->
+
+
+
+
+
+---
+# Financial Instruments
+## Stock 
+- **commom stock** (typically called simply **stock**): a security that claims on the earnings and assets of the corporation
+  - With more shares of common stock issued and outstanding, the previous stockholders' percentage of ownership decreases
+  - Issuing stock and selling it to the public is a way for corporations to raise funds to finance their activities
+  
+- Changes in stock prices affect individuals, financial institutions, businesses, and the overall economy
+  - Stock prices $\uparrow$: W $\uparrow$, C $\uparrow$, I $\uparrow$
+    
+<br />   
+<small><small>
+W: consumer wealth
+</small></small>
+
+<!---
+https://www.investopedia.com/ask/answers/difference-between-preferred-stock-and-common-stock/
+--->
+
+
+<!---
+#### Stock Market 
+- Stock prices are extremely volatile. It is a place where people can get rich or poor quickly :)
+
+<img src="../ch1/chpt1_Image/stock_volatility.png" width=700>
+--->
+
+<!---
+Do changes in stock values affect the wealth of households?
+https://fred.stlouisfed.org/series/MVEONWMVBSNNCB
+ADD SERIES
+https://fred.stlouisfed.org/series/TNWBSHNO
+--->
+
+
+
+---
+# Financial Instruments
+## Debt vs. Equity
+- Equity holders is **residual claimant**: corporation must pay all its debt holders before it pays its equity holders 
+
+- Equity holders benefit directly from any increases in the corporation’s profitability or asset value: equities confer ownership rights on equity holders
+
+- Size of the debt market is often substantially larger than the size of the equities market: debt is generally less risky: interest and principal are paid at specified dates 
+
+
+---
+# Financial intermediaries (chpt 2, 9)
+- **Financial intermediaries**: institutions that borrow funds from people who have saved and in turn make loans to people who need funds
+
+
+- Examples:
+  - **banks**: accept deposits and make loans
+  - insurance companies
+
+
+- Because banks are the largest financial intermediaries in our economy, they deserve the most careful study in this course
+
+
+
+
+
+
+<!---
+#### Financial crises 
+- **financial crises**: major disruptions in financial markets that are characterized by sharp decline in asset prices and the failures of many financial and nonfinancial firms
+
+
+- Examples: U.S. Great Recession
+  + Defaults in subprime residential mortgages led to major losses in financial institutions, notably Bear Stearns and Lehman Brothers, two of the largest investment banks in the U.S
+--->
+
+
+
+---
+# Money (chpt 3)
+- **Money** is also referred to as **money supply**
+
+
+- **Money**: anything that is generally accepted in payment for goods or services or in the repayment of debts
+
+
+<img src="../ch1/chpt1_Image/money.png" width=700>
+
+
+<!---
+#### Money and Business Cycle (chpt 19)
+- Money plays an important role in generating **business cycles** 
+  + **business cycle**: the upward and downward movement of aggregate output in economy
+    + **expansion**, peak, **recession**, and trough
+<img src="../chpt1_Image/business_cycle.png" width=500>
+--->
+
+
+
+<!---
+#### Money and Business Cycle (chpt 19)
+- Rate of money growth has declined before almost every recession
+  + changes in money might be a driving force behind business cycle fluctuations
+- Declines in the rate of money growth are often not followed by a recession
+<img src="../chpt1_Image/money_business.png" width=600>
+--->
+
+
+
+---
+# Money and Inflation (chpt 19)
+- Price level and the money supply generally rise together
+  - a continuing increase in the money supply might be an important factor in causing inflation
+
+<img src="../ch1/chpt1_Image/inflation.png" width=600>
+
+
+
+<!---
+#### Money and Interest Rate (chpt 5)
+- Money plays an important role in interest-rate fluctuations
+- Does an increase in the rate of money supply growth lower or raise interest rates?
+  - 1960s-1970s: when the rate of money supply growth climbed, interest rates rose
+  - 1980s-1990s: when money supply growth declined, interest rates declined 
+<img src="../ch1/chpt1_Image/money_supply_interest_rate.png" width=600>
+--->
+
+
+
+
+---
+# Monetary Policy (chpt 14-15)
+- Because money can correlate with many macroeconomic variables, politicians and policymakers care about the conduct of **monetary policy**
+
+
+- **Monetary policy**: the management of **money supply** and **interest rates**
+
+
+- The organization responsible for the conduct of a nation’s monetary policy is the **central bank**
+  - In the U.S., monetary policies are conducted by the **Federal Reserve System** (also called **the Fed**)
+
+
+
+<!---
+#### Fiscal Policy (chpt 19)
+- The government must finance any **budget deficit** by borrowing, whereas a **budget surplus** leads to a lower government debt burden
+  - **budget deficit**: an excess of government expenditures with respect to tax revenues for a year
+  - **budget surplus**: arises when tax revenues exceed government expenditures
+
+
+- **Fiscal policy**: decisions about **government spending** and **taxation**
+--->
+
+
+
+
+<!---
+#### Fiscal Policy  (chpt 19)
+- The government must finance any **budget deficit** by borrowing, whereas a **budget surplus** leads to a lower government debt burden
+- Budget deficits might lead to a higher rate of money growth, a higher rate of inflation, and higher interest rates
+
+<img src="../chpt1_Image/surplus_deficit.png" width=600>
+--->
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Appendix to Chapter 1 
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Aggregate Output 
+- **Gross domestic product (GDP)** is the most commonly reported measure of **aggregate output**
+
+
+- GDP: the market value of all final goods and services produced in a country during the course of a year
+
+  - market price of cars in 2015 \* quantity of cars produced + market price of corn flakes in 2015 \* quantity of corn flakes produced + ...
+
+
+
+---
+# Real Versus Nominal Magnitudes
+- Growth in GDP: 
+  - from the growth in the quantity of output: beneficial
+  - from the growth in prices: not so good
+  
+--
+
+- Separating changes in the quantities from changes in the prices requires sepearing **real GDP** from **nominal GDP**
+  - nominal GDP: calculated using current prices
+  - real GDP: calculated using prices for an arbitrary base year, say 2009
+  - real GDP in 2015 = 2009 price of cars \* quantity of cars produced in 2015 + 2009 price of corn flakes \* quantity of corn flakes produced in 2015 + ...
+
+
+---
+# Aggregate Price Level
+- Aggregate price level: average prices in the economy
+
+--
+
+- GDP deflator: nominal GDP divided by real GDP
+  - GDP deflator equaling 1.11 indicates that, on average, prices have risen 11% since base year
+  
+--
+
+- Consumer price index (CPI): pricing a “basket” of goods and services bought by a typical urban household
+
+
+
+
+---
+# Growth Rates and Inflation Rate
+- Growth rate: the percentage change in a variable
+
+--
+
+- Growth rate of x = $\frac{x_t - x_{t-1}}{x_{t-1}} \times 100\%$
+
+--
+
+- Inflation rate: the growth rate of the aggregate price level
+
+---
+# Participation #1
+
+Here comes our first participation exercise. 
+
+- I have posted the document "Ch1_participation" on Canvas, which contains exercises we are going to practice 
+
+- You can either print this document and write down your answers in the blank space, or write down your answers on a piece of paper
+
+  
+
+---
+# Participation #1
+* Q1: If real GDP grew from $9 trillion in 2019 to $9.5 trillion in 2020, then the GDP growth rate for 2020 would be?
+
+--
+
+- Answer: $\frac{9.5-9}{9} \times 100\% =5.6\%$
+  
+--
+
+* Q2: If the cost of the basket rises from $500 to $600, CPI has risen by? 
+
+--
+
+- Answer: $\frac{600-500}{500}=0.2=20\%$
+  
+--
+
+- Q3: If the GDP deflator rose from 111 in 2019 to 113 in 2020, the inflation rate using the GDP deflator would be?
+
+--
+
+- Answer: inflation rate = $\frac{113-111}{111} \times 100\% = 1.8\%$
+
+
+---
+# Practice Problems
+- Note that it is your responsibility to write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm, PDT, Sunday, April 5** to earn 1 point for Participation #1
+
+--
+
+- Practice problems and keys will be posted on Canvas after we finish each chapter. It is designed for you to practice questions similar to what may appear on an exam that requires algebraic, graphical and written solutions. You don't need to submit it.
+
+--
+
+- Practice problems for chapter 1 and keys have been posted on Canvas
+
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Ch1_lecture_slide.html"))
+webshot(file_name, "Ch1_lecture_slide.pdf")
+--->

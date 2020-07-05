@@ -1,0 +1,110 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+geometry: "left=1in, right=1in, top=1in, bottom=1in"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Participation 10 (Chapter 15)}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+**INSTRUCTIONS**: Answer the following questions. Write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm (PDT), Sunday, June 7**. 
+
+\vspace{.3in}
+
+\textbf{Graph 1: the impact on fed funds rate of an open market sale} 
+
+(1) Left-hand-plot: vertical section of supply curve initially intersects demand curve at downward-sloped section
+
+(2) Right-hand-plot: vertical section of supply curve initially intersects demand curve at flat section
+	\begin{figure}[!htb]
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{}
+	\end{minipage}\hfill
+	\begin{minipage}{0.55\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{}
+	\end{minipage}
+	\end{figure}
+
+
+\textbf{Graph 2: the impact on fed funds rate of an increase in the discount rate}
+
+(1) Left-hand-plot: the vertical section of the supply curve intersects the demand curve at the downward-sloped section
+
+(2) Right-hand-plot: the flat section of the supply curve intersects the demand curve at the downward-sloped section
+	\begin{figure}[!htb]
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{}
+	\end{minipage}\hfill
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{}
+	\end{minipage}
+	\end{figure}
+	
+	
+\newpage
+
+\textbf{Graph 3: the impact on fed funds rate of a decrease in the required reserve ratio}
+
+The vertical section of the supply curve intersects the demand curve at the downward-sloped section
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=0.5\linewidth]{fig1}
+		\caption*{}
+	\end{figure}
+	
+
+\textbf{Graph 4: the impact on fed funds rate of a decrease in the interest rate on reserves}
+
+(1) Left-hand-plot: the vertical section of the supply curve intersects the demand curve at the downward-sloped section
+
+(2) Right-hand-plot: the vertical section of the supply curve intersects the demand curve at the flat section
+	\begin{figure}[!htb]
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{}
+	\end{minipage}\hfill
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{fig1}
+		\caption*{}
+	\end{minipage}
+	\end{figure}
+	
+
+	
+	
+	
+
+
+
+
+

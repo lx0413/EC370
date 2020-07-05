@@ -1,0 +1,90 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Participation 3 (Chapter 4)}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+**INSTRUCTIONS**: Answer the following questions. Write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm (PDT), Sunday, June 7**. 
+
+\vspace{.3in}
+
+\textbf{QUESTION 1: Yield to Maturity - Coupon Bond} 
+
+What is the coupon rate of an \$800 face-value coupon bond with a price of \$1000 and a \$40 coupon payment every year?
+
+\vspace{1in}
+
+\textbf{QUESTION 2: Yield to Maturity - Coupon Bond} 
+
+For a 10% coupon bond with a face value of \$1000, a 12.25% YTM and 8 years to maturity: how much does this bond pay you in period 6?
+
+
+\vspace{1in}
+
+\textbf{QUESTION 3: Yield to Maturity - Coupon Bond} 
+
+What is the price of a 10% coupon bond with a face value of \$1,000, a 12.25% yield to maturity, and eight years to maturity? You do not need to solve for the value of the unknown variable. 
+
+
+\vspace{2in}
+
+\textbf{QUESTION 4: Yield to Maturity - Coupon Bond} 
+
+A \$100 face value 5 percent coupon bond has one year to maturity. Find the price of the bond for each value of YTM: i= 5%, 4%, and 6%
+
+\vspace{2in}
+
+
+\textbf{QUESTION 5: Yield to Maturity - Discount Bond} 
+
+What is the yield to maturity on a one-year, \$1,000 discount bond with a current price of \$900?
+
+\vspace{2in}
+
+
+\textbf{QUESTION 6: Yield to Maturity - Discount Bond} 
+
+Find the price of a \$100-face value, 2% interest U.S. T-bill maturing in 6 months. 
+
+\vspace{2in}
+
+
+\textbf{QUESTION 7: Rate of Return} 
+
+A \$1,000-face-value coupon bond with a coupon rate of 10% matures in 2 years. Suppose today's price for this bond is \$1,000.
+
+(1) A bond holder buys this bond today and holds it until maturity. What is yield to maturity for him?
+
+\vspace{2in}
+
+(2) If after holding it for 1 year, the bond holder sells it for $1,200. What is holding period return for him?
+
+\vspace{2in}
+
+
+
+
+

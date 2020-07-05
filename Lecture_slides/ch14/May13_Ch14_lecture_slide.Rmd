@@ -1,0 +1,739 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 14: The Money Supply Process - PART I"
+author: "Xiang LI"
+date: "May 13, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+
+- Recall Chapter 3: Money is also called **money supply**
+  - 2 measurements of money supply 
+      - M1: the most liquid assets (currency, checkable deposits..)
+      - M2: M1 + less liquid assets (savings deposits, time deposits..)
+
+- This lecture: control of **monetary base**
+
+- Next lecture: control of **money supply**
+
+  
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Control of Monetary Base
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+There are 3 Players in the **Money Supply Process**
+
+- **central bank**
+  - The Fed’s conduct of monetary policy involves actions that affect its holdings of assets and liabilities
+  
+- **banks**: depository institutions
+  - accept deposits from individuals and institutions and make loans
+  
+- **depositors**
+  - individuals and institutions that hold deposits in banks
+  
+  
+---
+# A simplified Fed's Balance Sheet
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+``` 
+
+- Liabilities of the Fed is also called **Monetary Liabilities**, **Monetary Base**, **High-powered Money**
+
+- Liabilities of the Fed consists of:
+  - Currency in circulation 
+  - Reserves
+  
+  
+---
+# Liabilities
+## (1) Currency in Circulation
+
+- currency: Federal Reserve notes
+
+```{r echo=FALSE, out.width = '30%', fig.align = "center"}
+knitr::include_graphics("chpt14_Image/currency.png")
+``` 
+
+- **currency in circulation**: the amount of currency in the hands of the **nonbank public**
+
+- currency in circulation are assets for the nonbank public but liabilities for the Fed
+  
+
+
+---
+# Liabilities
+## (2) Reserves
+
+**Reserves** include: 
+- bank deposits at the Fed: All banks have an account at the Fed in which they hold deposits
+- currency held by banks (vault cash)
+
+--
+
+**Reserves** consists of **required reserves** and **excess reserves**
+  
+--
+
+- reserves are assets for the banks but liabilities for the Fed
+
+
+
+---
+# A simplified Fed's Balance Sheet
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+``` 
+
+- Assets of the Fed consist of:
+  - Securities
+  - Loans to financial institutions: discount loans 
+
+
+---
+# Assets
+## (1) Securities
+
+- securities: Fed's holdings of T-bills/T-notes/T-bonds issued by the U.S. Treasury
+  - ch 9: banks can buy municipal bonds but the Fed can't
+
+
+- purchasing securities is the primary way in which the Fed provides **reserves** to the banking system
+  - the Fed buys U.S. Treasury securities from banks **with reserves**
+  - this leads to an increase in the money supply 
+
+
+
+---
+# Assets
+## (2) Loans to financial institutions
+
+- The second way in which the Fed can provide **reserves** to the banking system is by making loans to banks and other financial institutions
+  - the Fed makes loans to banks **with reserves**
+  - this leads to an increase money supply 
+
+- Loans to financial institutions are also called **discount loans**, **borrowings from the Fed**, **borrowed reserves**
+
+- discount loans are liabilities for banks but assets for the Fed
+  
+
+
+---
+- interest rates on the Fed's monetary liabilities: 
+  - 0% paid by the Fed for currency in circulation
+  - interest rates paid on by the Fed reserves are very low 
+      - banks' deposits at the Fed earn very low interest rates for banks 
+
+- interest rate on the Fed's assets
+  - interest rates on U.S. Treasury securities are relatively high 
+  - interest rates on discount loans are relatively high too (**discount rate**)
+  
+- The Fed's assets earn income, and liabilities cost practically nothing
+
+
+
+---
+# Control of Monetary Base
+
+- Monetary Base $MB$ consists of:
+  - currency in circulation, $C$
+  - reserves, $R$ 
+  
+- $MB = C + R$
+
+- The Fed control the **monetary base** through:
+  - (primary) **open market operations**: purchases or sales of securities in the open market
+  - **discount loans** to banks
+
+
+---
+# Control of Monetary Base
+
+- open market purchase: a purchase of bonds by the Fed 
+  - **reserves** go from Fed to banking system 
+  
+- open market sale: a sale of bonds by the Fed 
+  - **reserves** go from banking system to Fed 
+
+- Discount loans are made to banking system: 
+  - **reserves** go from Fed to banking system 
+  
+- Discount loans are paid off: 
+  - **reserves** go from banking system to Fed 
+
+
+---
+# Participation 9 
+
+Let's continue with Participation #9
+
+_Instruction: To complete this balance sheets, show the **changes** of values for each item. For example, if you think the value of an item decreased by $10, write down -$10. If you think the value of an item increases by $10, write down +$10. If you think the value of an item isn't changed, leave it blank_
+
+
+---
+# Participation: Open Market Purchase
+
+Q3 (1): Suppose the Fed purchases $100 million of bonds from banking system, update the balance sheet. 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+---
+# Participation: Open Market Purchase
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$100m", "Deposits")
+dt[2,] <- c("Securities: -$100m", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities: +$100m", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves: +$100m")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+- the Fed pays for the bonds with reserves: causes reserves (R) to increase by an equal amount
+- monetary base equals currency plus reserves (MB=C+R): increases the monetary base by an equal amount
+  
+  
+---
+# Participation: Open Market Sale
+
+- Q3 (2): Suppose the Fed conducts an open market sale of $100 million of bonds to banking system, update the balance sheet. 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+
+---
+# Participation: Open Market Sale
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: -$100m", "Deposits")
+dt[2,] <- c("Securities: +$100m", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities: -$100m", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves: -$100m")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+- Open market sale causes reserves to decrease by an equal amount, and decreases the monetary base by an equal amount
+
+
+
+
+---
+# Participation: Loans to Banking System
+
+- Q3 (3): Suppose the Fed makes a $100 million loan to the banking system, update the balance sheet. 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+
+
+---
+# Participation: Loans to Banking System
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$100m", "Deposits")
+dt[2,] <- c("Securities", "Borrowings: +$100m")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions: +$100m", "Reserves: +$100m")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+- because the Fed lends out with reserves: reserves increased by the equal amount
+- because the monetary base equals currency plus reserves (MB=C+R): monetary base increased by the equal amount
+
+
+---
+# Participation: Loans Paid Off
+
+- Q3 (4): Suppose First National Bank pays off the $100 million loan to the Fed, update the balance sheet. 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions", "Reserves")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+
+---
+# Participation: Loans Paid Off
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: -$100m", "Deposits")
+dt[2,] <- c("Securities", "Borrowings: -$100m")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation")
+dt[2,] <- c("Loans to financial institutions: -$100m", "Reserves: -$100m")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+- banking system paying off the $100 million loan to the Fed causes reserves decreases by the equal amount, and monetary base decreases by the equal amount
+
+
+
+---
+# Shifts from Deposits into Currency
+
+- Now, the Fed does not conduct open market operations
+
+- Instead, suppose there is a shift from deposits to currency
+
+- during the Christmas season, the public wants to hold more currency to buy gifts and so withdraws $100 million in cash
+
+- T-account of the nonbank public: 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Checkable deposits: -$100m", NA)
+dt[2,] <- c("Currency: +$100m", NA)
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Nonbanking System" = 2), bold=TRUE, align = "c")
+```
+
+
+
+
+---
+# Shifts from Deposits into Currency
+
+- The banking system loses 100 million of deposits and hence 100 million of reserves
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: -$100m", "Deposits: -$100m")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Banking System" = 2), bold=TRUE, align = "c")
+```
+
+
+---
+# Shifts from Deposits into Currency
+
+- 100 million of additional currency is circulating in the hands of the public, while reserves in the banking system have fallen by 100 million
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 2))
+
+colnames(dt)<-c("Assets", "Liabilities")
+
+dt[1,] <- c("Securities", "Currency in circulation:+$100m")
+dt[2,] <- c("Loans to financial institutions", "Reserves: -$100m")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Federal Reserve System" = 2), bold=TRUE, align = "c")
+``` 
+
+- Net Result: reserves are affected, but monetary base is unaffected by the public’s increased desire for cash
+
+
+
+---
+# Summary: control of monetary base
+
+Two ways for the Fed to determine **monetary base**: open market operations and lending to financial institutions
+
+- amount of **open market purchases or sales** is completely controlled by the Fed
+  - The Fed places purchase or sale orders in U.S. Treasury bond markets
+  - U.S. Treasury bond are liquid and welcomed, so banks always take the orders 
+  
+- amount of **lending to financial institutions** cannot be unilaterally determined and perfectly predicted by the Fed
+  - The Fed sets the discount rate, then banks make decisions about whether to borrow
+  - the Fed cannot force banks to borrow 
+  
+  
+
+
+---
+Hence, split the monetary base MB into 2 components:  
+
+- **nonborrowed monetary base**, $MB_n$
+  - from open market operations
+  
+- borrowed reserves, $BR$
+  - from lending to financial institutions
+  
+- $BR+ {MB}_n=MB$
+
+- ${MB}_n=MB-BR$
+
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("May13_Ch14_lecture_slide.html", output = "May13_Ch14_lecture_slide.pdf")
+pagedown::chrome_print("May13_Ch14_lecture_slide.html", output = "May13_Ch14_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("May6_Ch9_lecture_slide.html"))
+webshot(file_name, "May6_Ch9_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```
+
+
+
+

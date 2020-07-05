@@ -1,0 +1,525 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 15: Tools of Monetary Policy - PART I"
+author: "Xiang LI"
+date: "May 20, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.remark-slide-content > h1 {
+  font-family: 'Fira Sans';
+  font-weight: normal;
+  font-size: 35px;
+  margin-top: -95px;
+  margin-left: -00px;
+  color: #FAFAFA;
+}
+
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+
+
+# Chapter 15: Tools of Monetary Policy
+- The Market for Reserves and the Federal Funds Rate
+  - Fed Funds Rate is determined by the Demand and Supply analysis in the Market for Reserves
+
+- How does the Fed use 4 tools to affect the Federal Funds Rate
+  - open market operations
+  - discount loan 
+  - reserve requirements
+  - interest paid on reserves
+  
+- Nonconventional Monetary Policy Tools
+
+  
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+
+# The Market for Reserves and the Federal Funds Rate
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Market for Reserves and Fed Funds Rate
+
+--
+
+- Reserves: banks's vault cash and deposits with the Fed
+
+--
+
+- Fed funds rate: interest rate on borrowing overnight loans of reserves from banks in the fed funds market
+
+--
+
+- The **target** for the federal funds rate is set at Fed Open Market Committee meetings
+
+--
+
+- Fed Funds Rate is determined by the demand for and supply of reserves
+  - derive **demand curve for reserves**
+  - derive **supply curve for reserves**
+  - the reserves market equilibrium determines the level of the **federal funds rate**
+
+
+
+
+---
+# Demand Curve
+
+- $RR$: required reserves, the required reserve ratio times **checkable deposits**
+  
+--
+
+- in addition to depositing a certain amount of reserves at their accounts at the Fed as required reserves RR, banks have two options if they have additional reserves
+  - to deposit at the Fed banks **choose** to hold as excess reserves, $ER$
+  - to lend to other banks, fed funds 
+
+--
+
+- 2 components of quantity of reserves demanded: $R^d = ER + RR$
+
+
+
+---
+# Demand Curve
+
+- Since the fall of 2008: the Fed has started paying **interest on reserves**, including required reserves and excess reserves
+
+--
+
+- **interest rate on reserves** is typically set at a fixed amount **below** the federal funds rate target (why?)
+
+--
+
+- $i_{ff}$: fed fund rate paid in the overnight market by lending banks 
+  
+- $i_{or}$: rate paid by the Fed on reserves if banks deposit reserves at the Fed
+  
+--
+
+- $i_{ff}-i_{or}$: opportunity cost of holding/depositing reserves at banks' accounts at the Fed
+  
+--
+  
+- Demand curve for reserves: how changes in **federal funds rate** affects **the quantity of reserves demanded by banks**
+
+
+---
+# $i_{ff} > i_{or}$
+
+- opportunity cost of holding reserves is positive: $i_{ff}-i_{or} > 0$
+- $i_{ff}$ $\downarrow$ $\Rightarrow$ opportunity cost of holding reserves $\downarrow$ $\Rightarrow$  $ER \uparrow$ $\Rightarrow$ $R^d \uparrow$
+- demand curve slopes downward when $i_{ff} > i_{or}$
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/demand_1.png")
+```
+
+
+
+
+---
+# $i_{ff} = i_{or}$
+
+- opportunity cost of holding reserves: $i_{ff}-i_{or} = 0$
+- no incentive to lend in the overnight market; banks can hold infinite excess reserves 
+- demand curve is flat exactly at $i_{or}$
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/demand_2.png")
+```
+
+
+
+
+---
+# Supply Curve 
+
+2 components of quantity of reserves supplied: $R^s = NBR+BR$
+- $NBR$: open market operations conducted by the Fed
+- $BR$: borrowing from the Fed, discount loan
+  - $i_d$ :discount rate, cost of $BR$
+      
+--
+
+- borrowing from other banks in the fed funds market is a substitute for borrowing from the Fed, $BR$
+
+--
+
+- Since 2003, the Fed has kept the discount rate at a fixed amount **above** the fed funds rate target (why?)
+
+--
+
+- Supply curve for reserves: how changes in **federal funds rate** affects **the quantity of reserves supplied by the Fed**
+
+
+
+
+---
+# $i_{ff} < i_d$
+
+- no banks will borrow from the Fed, and all banks will borrow in the overnight market
+- $i_{ff} < i_d: BR=0, R^s = BR+NBR=NBR$ 
+- supply curve will be vertical at $NBR$
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/supply_1.png")
+```
+
+
+
+
+
+---
+# $i_{ff} = i_d$
+
+- $i_{ff} = i_d$: banks have no incentive to borrow in the overnight market; banks can hold infinite excess reserves
+- supply curve is flat exactly at $i_d$
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/supply_2.png")
+```
+
+
+
+
+---
+# Reserves Market Equilibrium
+
+- Reserves market equilibrium: $R^s=R^d$
+- equilibrium federal funds rate: $i_{ff}^{\ast}$ , also called **fed fund rate target**
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/eq.png")
+```
+
+
+
+
+---
+# Reserves Market Equilibrium
+
+- excess supply: when $i_{ff} > i_{ff}^{\ast}$ (e.g. $i_{ff}^2$)
+- $i_{ff}$ will fall until it reaches $i_{ff}^{\ast}$
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/excess_supply.png")
+```
+
+
+
+
+
+---
+# Reserves Market Equilibrium
+
+- excess demand: when $i_{ff} < i_{ff}^{\ast}$ (e.g. $i_{ff}^1$)
+- $i_{ff}$ will rise until it reaches $i_{ff}^{\ast}$
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/excess_demand.png")
+```
+
+---
+class: inverse, center, middle
+name: Motivation
+
+
+# Tools of Monetary Policy
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Tools of Monetary Policy
+
+- tools of monetary policy used by the Fed to control the money supply
+
+  - open market operations
+  
+  - discount policy 
+  
+  - reserve requirements
+  
+  - interest paid on reserves
+
+- How Changes in the Tools Affect the Federal Funds Rate Target?
+
+
+
+---
+# I. Open Market Operations
+
+- the Fed purchases and sells U.S. Treasury securities, especially U.S. Treasury bills (the most liquid) 
+
+- the trading desk at the Federal Reserve Bank of New York conduct the actual execution by a computer system called TRAPS (Trading Room Automated Processing System)
+
+
+
+---
+# I. Open Market Operations
+##### (1) intersecting the downward-sloped section of the demand curve
+
+- open market purchase: $NBR \uparrow$ $\Rightarrow$ supply curve shifts to the right $\Rightarrow$ fed funds rate $\downarrow$, and equilibrium level of reserves increases from $NBR_1$ to $NBR_2$
+
+```{r echo=FALSE, out.width = '40%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/open_market1.png")
+```
+
+
+
+
+
+---
+# I. Open Market Operations
+##### (1) intersecting the downward-sloped section of the demand curve
+
+- open market sale: $NBR \downarrow$ $\Rightarrow$ supply curve shifts to the left $\Rightarrow$ fed funds rate target $\uparrow$, and equilibrium level of reserves decreases
+
+- **Participation #10** Exercise: graphically show the impact on fed funds rate of an open market sale, when vertical section of supply curve initial intersects demand curve at downward-sloped section
+
+
+
+
+---
+# I. Open Market Operations
+##### (2) intersecting the flat section of the demand curve 
+
+- open market purchase have no effect on the fed funds rate, which stays at $i_{or}$, but equilibrium level of reserves increases from $NBR1$ to $NBR2$
+
+- the interest rate paid on reserves, $i_{or}$, sets a floor for the fed funds rate
+
+```{r echo=FALSE, out.width = '40%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/open_market2.png")
+```
+
+
+
+
+---
+# I. Open Market Operations
+##### (2) intersecting the flat section of the demand curve 
+
+- open market sale have no effect on the fed funds rate, which stays at $i_{or}$, but equilibrium level of reserves decreases
+
+- **Participation #10** Exercise: graphically show the impact on fed funds rate of an open market sale, when the vertical section of supply curve initially intersects the demand curve at its flat section
+
+
+---
+# I. Open Market Operations - Summary
+
+- **supply** curve shifts to **left or right**
+
+--
+
+- if the vertical section of the supply curve initially intersects demand curve on the downward-sloped section
+  - open market **purchase** causes the fed funds rate to **fall**
+  - open market **sale** causes the fed funds rate to **rise**
+  
+--
+
+- if the vertical section of the supply curve initially intersects demand curve on the flat section of the demand curve
+  - open market purchase or sale has no effect on the fed funds rate
+  - interest rate paid on reserves sets a **floor** for the fed funds rate
+  
+ 
+ 
+---
+# II. Discount Lending
+
+- The discount rate differs from most interest rates because it is set by the Fed, whereas most interest rates are determined by demand and supply in financial markets
+
+--
+
+- discount rate is set **higher** than the federal funds rate target: 
+  - the discount rate is a penalty rate, as banks pay a penalty by borrowing from the Fed rather than from other banks
+  - banks borrowing from the Fed are usually desperate for funds or are in trouble 
+
+
+---
+# II. Discount Lending
+
+- Why does the Fed set discount rate higher than the federal funds rate target?
+  - the Fed prefers that banks borrow from each other so that banks continually monitor each other for credit risk
+
+--
+
+- before the financial crisis, lending by the Fed was just a few hundred million dollars 
+  - increases dramatically after the collapse of Lehman Brothers in 2008
+  - peaks at $993.5 billion in December 2008
+
+
+---
+# II. Discount Lending
+
+Categories of Discount Loans:
+
+- Primary credit consists of discount loans available to healthy banks experiencing temporary liquidity problems. Use of funds is not monitored
+
+- Secondary credit consists of discount loans to banks that are not eligible for primary credit. Use of funds is monitored
+
+- Seasonal credit consists of discount loans to smaller banks in areas where agriculture or tourism is important
+
+
+
+---
+# II. Discount Lending
+
+- the Fed: lender of last resort
+  - A lender that provides reserves to financial institutions when no one else is willing to do so; such lending is usually done to prevent a financial crisis
+  
+- discount loans is important in preventing and coping with financial panics
+  - The Black Monday crash
+  - the terrorist attacks of September 11, 2001
+  - and the global financial crisis
+
+- The Fed’s lender-of-last-resort role has thus created a moral hazard problem: too big to fail
+
+
+---
+# II. Discount Lending
+##### (1) intersecting the vertical section of supply curve 
+
+- initially: no discount lending, $BR=0$
+- Fed $\downarrow$ discount rate $\Rightarrow$ supply curve shiftd down $\Rightarrow$ fed funds rate unchanged 
+
+```{r echo=FALSE, out.width = '40%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/discount_lending1.png")
+```
+
+
+
+
+
+---
+# II. Discount Lending
+##### (1) intersecting the vertical section of supply curve 
+
+- initially: no discount lending, $BR=0$
+
+- Fed $\uparrow$ discount rate $\Rightarrow$ supply curve shiftd up $\Rightarrow$ fed funds rate unchanged 
+
+- **Participation #10** Exercise: graphically show the impact on fed funds rate of an increase in the discount rate, when the vertical section of the supply curve intersects the demand curve at the downward-sloped section
+
+
+
+
+---
+# II. Discount Lending
+##### (2) intersecting the flat section of supply curve 
+
+- initially: discount lending exists, $BR_1 > 0$, $i_{ff}^1 = {i_d}^1$ 
+- Fed $\downarrow$ discount rate $\Rightarrow$ supply curve shiftd down $\Rightarrow$ the fed funds rate falls from ${i_d}^1$ to ${i_d}^2$, and $BR$ increases from $BR_1$ to $BR_2$
+
+```{r echo=FALSE, out.width = '40%', fig.align = "center"}
+knitr::include_graphics("chpt15_Image/discount_lending2.png")
+```
+
+
+
+
+---
+# II. Discount Lending
+##### (2) intersecting the flat section of supply curve 
+
+- initially: discount lending exists, $BR_1 > 0$, $i_{ff}^1 = {i_d}^1$ 
+
+- Fed $\uparrow$ discount rate $\Rightarrow$ supply curve shiftd up $\Rightarrow$ the fed funds rate rises, and $BR$ falls
+
+- **Participation #10** Exercise: graphically show the impact on fed funds rate of an increase in the discount rate, when the flat section of the supply curve intersects the demand curve at the downward-sloped section
+
+
+
+
+
+ 
+---
+# II. Discount Lending - Summary
+
+- **supply** curves shifts **up or down**
+
+--
+
+- if the downward-sloped section of the demand curve initially intersects supply curve on the vertical section
+  - no discount lending
+  - changes in discount rate have no effect on the fed funds rate 
+  - the Fed typically keeps discount rate above the fed funds rate target
+    
+--
+
+- if the downward-sloped section of the demand curve initially intersects supply curve on the flat section 
+  - some discount lending
+  - lower discount rate causes the fed fund rate to fall
+  - higher discount rate causes the fed fund rate to rise
+
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("May20_Ch15_lecture_slide.html", output = "May20_Ch15_lecture_slide.pdf")
+pagedown::chrome_print("May20_Ch15_lecture_slide.html", output = "May20_Ch15_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("May20_Ch15_lecture_slide.html"))
+webshot(file_name, "May20_Ch15_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```
+

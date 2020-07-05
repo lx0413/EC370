@@ -1,0 +1,66 @@
+---
+output: pdf_document
+header-includes: 
+  - \usepackage[utf8]{inputenc}
+  - \usepackage{graphicx}
+  - \usepackage{caption}
+  - \usepackage[margin=1in]{geometry}
+  - \usepackage{amsmath,amssymb}
+  - \usepackage{multicol}
+  - \usepackage{array}
+  - \usepackage{tabulary}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+\newcommand{\class}{EC 370}
+\newcommand{\term}{Xiang LI (GE)}
+\newcommand{\examnum}{Participation 7 (Chapter 6)}
+
+\noindent
+\begin{tabular*}{\textwidth}{l @{\extracolsep{\fill}} r @{\extracolsep{6pt}} l}
+\textbf{\class} & \textbf{Name: } & \makebox[2in]{\hrulefill}\\
+\textbf{\term} &&\\
+\textbf{\examnum} & \textbf{UO ID: } & \makebox[2in]{\hrulefill}\\
+\end{tabular*}
+\rule[2ex]{\textwidth}{2pt}
+
+**INSTRUCTIONS**: Answer the following questions. Write legibly, take a high quality scan of your responses, compile all pages into one pdf, and upload only one pdf document to Canvas by **11:59pm (PDT), Sunday, June 7**. 
+
+\vspace{.3in}
+
+\textbf{QUESTION 1} 
+
+(1): the current interest rate on the one-year bond is 5%. If the 1-yr interest rates over the next four years are expected to be 6%, 7%, 8%, and 9%. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, and a 5-yr bond. Also draw the yield curve.
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.5\linewidth]{fig1}
+		\caption*{}
+	\end{figure}
+
+
+(2): if $i_t$ increases from 5% to 6%. Assume people expect interest rate on a 1-yr bond at time $t+1$ increases from 6% to 7%, and interest rate on a 1-yr bond at time $t+2$ increases from 7% to 8%, but do no adjust expectations further. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.5\linewidth]{fig1}
+		\caption*{}
+	\end{figure}
+	
+\newpage
+
+(3): Assume people expect interest rate on a 1-yr bond at time $t+1$ decreases from 6% to 4%, and interest rate on a 1-yr bond at time $t+2$ increases from 7% to 3%, and interest rate on a 1-yr bond at time $t+3$ and $t+4$ are back to 2%. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve. 
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.5\linewidth]{fig1}
+		\caption*{}
+	\end{figure}
+
+
+(4): the current 1-yr interest rate is 5%, and 1-yr interest rates over the next four years are expected to be 6%, 7%, 8%, and 9%. Assume liquidity premiums for 2- to 5-yr bonds are 0.25%, 0.5%, 0.75%, and 1.0%, respectively. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve
+	\begin{figure}[!htb]
+		\centering
+		\includegraphics[width=.5\linewidth]{fig1}
+		\caption*{}
+	\end{figure}

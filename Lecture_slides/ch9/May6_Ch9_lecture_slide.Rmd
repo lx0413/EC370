@@ -1,0 +1,781 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 9: Banking and the Management of Financial Institutions - PART I"
+author: "Xiang LI"
+date: "May 6, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+
+
+
+
+# Today's Contents
+## Chapter 9: Banking and the Management of Financial Institutions - PART I
+- [Bank Balance Sheet](#Bank Balance Sheet)
+- [Basic Banking and T-account](#Basic Banking and T-account) 
+
+
+  
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Bank Balance Sheet
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Bank Balance Sheet
+
+Recall Chapter 2: banks take deposits and make loans
+
+--
+
+- Sources of bank funds: **liabilities**
+  - deposits
+  - borrowings
+  - bank **capital**
+  
+--
+
+- Uses of bank funds: **assets**
+  - reserves
+  - securities 
+  - loans
+
+
+---
+# Liabilities
+## (1) Deposits 
+### Checkable Deposits
+- Checkable deposits are bank accounts that allow the owner of the account to write checks to third parties
+
+--
+
+- depositor can withdraw funds and the bank is obligated to pay
+  - checkable deposits are assets for the depositor
+  - checkable deposits are liabilities for the bank
+  
+
+---
+# Liabilities
+## (1) Deposits 
+### Checkable Deposits
+
+- ineterst rates on checkable deposits are low: https://www.usbank.com/bank-accounts/checking-accounts/platinum-interest-checking-account/interest-rates.html
+  - depositors are willing to forgo some interest in exchange for access to a liquid asset that they can use to make purchases immediately 
+
+
+---
+# Liabilities
+## (1) Deposits 
+### Nontransaction Deposits
+
+In addition to checking account, other types of bank accounts include savings accounts and Certificate of Deposits (time deposits, CDs): https://www.usbank.com/bank-accounts.html
+
+--
+
+- Savings accounts and Certificate of Deposits (time deposits, CDs) are also called nontransaction deposits
+
+--
+
+- Owners cannot write checks on nontransaction deposits
+
+--
+
+- Interest rates on nontransaction deposits are higher than those on checkable deposits
+
+
+
+---
+# Liabilities
+## (1) Deposits 
+### Nontransaction Deposits
+#### Savings accounts
+
+- funds can be added to or withdrawn at any time
+
+--
+
+- no penalty for early withdrawal 
+
+--
+
+- today's US Bank savings account rates: [savings rates]
+https://www.usbank.com/bank-accounts/savings-accounts/platinum-select-money-market-savings.html)
+
+
+---
+# Liabilities
+## (1) Deposits 
+### Nontransaction Deposits
+#### Certificate of Deposits (Time Deposits, CDs)
+
+- fixed maturity: there are penalties for early withdrawal 
+
+--
+
+- less liquid than savings accounts, therefore yield higher interest rates than those on savings accounts (https://www.usbank.com/bank-accounts/savings-accounts/certificate-of-deposit.html?productCode=CDA)
+
+--
+
+- large denomination CDs (> $100,000) can be resold in a secondary market before they mature, just like bonds
+  - bought mainly by corporations, banks, money market mutual funds
+  
+  
+---
+# Liabilities
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt) <- c("Checkable Deposits", "Non-transaction Deposits")
+rownames(dt) <- c("Writing Checks(payable at demand)", "Interest Rate", "Liquidity")
+
+dt[1,] <- c("YES", "NO")
+dt[2,] <- c("LOW", "HIGH")
+dt[3,] <- c("HIGH", "LOW")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16)
+```
+
+- Checkable deposits are payable at demand
+  - if a depositor shows up at the bank and requests payment by making a withdrawal, the bank must pay the depositor 
+  - if a person with a check written on an account from a bank presents that check at the bank, the bank must pay the funds out 
+    
+    
+---
+# Liabilities
+## (2) Borrowings
+Banks can borrow:
+
+--
+
+- from the Fed: called **discount loans**
+
+--
+
+- overnight from other banks to meet the daily deposits amount required by the Fed: called **federal funds**
+  - recall Chapter 2: **fed funds rate** are interest rates on the fed funds
+  - fed funds rate $\uparrow$ $\Rightarrow$ market interest rates $\uparrow$ $\Rightarrow$ economic growth $\downarrow$
+
+
+<!---
+(WSJ What's News Podcast On Wednesday, Oct 30) The Fed FOMC meetings on Oct 29-30, 2019: 
+
+- In light of the implications of global developments for the economic outlook as well as muted inflation pressures, the FOMC decided to cut its target range for Fed funds rate to 1.5% - 1.75%
+  
+- Due to sustained expansion of economic activity (1.9% GDP growth), strong labor market conditions (128,000 jobs added), and inflation near the 2 percent objective, it is not likely for the FOMC to cut its target range for Fed funds rate anymore in its last meeting this year on Dec 10-11 
+
+- FOMC Oct 29-30 Meeting Statement: https://www.federalreserve.gov/monetarypolicy/files/monetary20191030a1.pdf
+--->
+
+
+
+
+
+
+---
+# Bank Capital
+Bank capital (also called **net worth**): difference between assets and liabilities
+
+--
+
+- Bank capital serves as a cushion against drops in the value of bank assets, which could force the bank into insolvency
+  - **insolvency**: occurs when a bank has liabilities in excess of assets, meaning that the bank can be forced into liquidation
+
+--
+
+- 2 ways of raising bank capital:
+  - sell new equities (stocks): banks can issue stocks but not allowed to buy stocks (https://money.usnews.com/investing/stocks/major-banks)
+  - from retained earnings
+
+---
+# Assets
+## (1) Reserves
+**Reserves** consists of **vault cash** and **banks' deposits in their accounts at the Fed**
+
+```{r echo=FALSE, out.width = '35%'}
+knitr::include_graphics("Chpt9_Image/vault.png")
+knitr::include_graphics("Chpt9_Image/vault2.png")
+``` 
+
+- vault cash: currency physically stored in banks vaults
+
+---
+# Assets
+## (1) Reserves
+
+Banks' deposits in their accounts at the Fed consists of: 
+
+--
+
+- **required reserves**
+  - for every dollar of **checkable deposits** at a bank, a certain fraction (**required reserve ratio**) must be kept as reserves
+  - e.g. 10% required reserve ratio: every dollar of checkable deposits banks receive from depositors, 10 cents must be deposited in banks' accounts at the Fed
+  
+--
+
+- **excess reserves**
+  - additional reserves banks deposit in their accounts at the Fed
+  
+  
+  
+---
+# Assets
+## (2) Securities
+Securities are made up **entirely of debt** instruments 
+- recall Ch2: U.S. banks are not allowed to hold stock
+
+--
+
+Catogeries of bonds banks can hold:
+- U.S. government securities: T-bills/T-notes/T-bonds
+  - more liquid and no default risk 
+- state and local government securities: municipal bonds
+  - less liquid and more default risk
+
+
+
+
+---
+# Assets
+## (3) Loans 
+- loans are less liquid
+  - because loans cannot be turned into cash until maturity (think about simple loans in chapter 2) 
+
+--
+
+- loans have high default risk
+  - because high risk is compensated with high interest rates (think about subprime mortage that caused the 2007-2009 Great Recession)
+
+  
+  
+---
+# Assets
+- Categories of loans banks can hold:
+
+--
+
+  - **interbank loans**: overnight loans lent in the fed funds market (assest for banks that lend, but liabilities for banks that borrow)
+  - commercial and industrial/real estate/consumer loans
+  
+--
+
+- If we rank the liquidity of assets banks hold:
+
+--
+
+  - Reserves: the most liquid 
+  - U.S. government securities: the second liquid (U.S. government securities is also called **secondary reserves**)
+  - Loans: the least liquid 
+
+
+---
+# Assets
+
+Other assets banks hold include:
+  - Cash items in process of collection: a claim on another bank for funds that will be paid within a few days
+  - Deposits at other Banks: many small banks hold deposits in larger banks in exchange for a variety of services, including check collection, foreign exchange transactions, and help with securities purchases
+  - physical capital such as bank buildings, computers, and other equipment
+
+
+
+
+
+---
+# Bank Balance Sheet
+
+Ignoring cash items and physical assets: 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets (uses of funds)", "Liabilities + Capital (sources of funds)")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+  
+```
+
+**Balance sheet**: a list of the bank’s liabilities and assets
+- **assests = liabilities + capital**
+- interest on assets > interests on liabilities: bank profits
+
+
+
+---
+# Bank Balance Sheet
+
+Primary use of bank funds: loans
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(ggplot2)
+
+assets <- data.frame(
+  group = c("physical assets", "loan", "reserves and cash items", "securities"),
+  value = c(8, 57, 14, 21)
+  )
+
+bp_assets <- ggplot(assets, aes(x="", y=value, fill=group))+
+geom_bar(width = 1, stat = "identity")
+
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+
+bp_assets+
+  coord_polar("y", start=0)+
+  scale_fill_brewer("") +
+  blank_theme +
+  theme(axis.text.x=element_blank())
+```
+
+
+
+
+---
+# Bank Balance Sheet
+
+Primary source of bank funds: nontransaction deposits 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(ggplot2)
+library(dplyr)
+
+liabilities <- data.frame(
+  group = c("checkable deposits", "borrowings", "non-transaction deposits", "bank capital"),
+  value = c(11, 17, 61, 11)
+  )
+
+bp_liabilities <- ggplot(liabilities, aes(x="", y=value, fill=group))+geom_bar(width = 1, stat = "identity")
+
+blank_theme <- theme_minimal()+
+  theme(
+  axis.title.x = element_blank(),
+  axis.title.y = element_blank(),
+  panel.border = element_blank(),
+  panel.grid=element_blank(),
+  axis.ticks = element_blank(),
+  plot.title=element_text(size=14, face="bold")
+  )
+
+bp_liabilities+
+  coord_polar("y", start=0)+
+  scale_fill_brewer("") +
+  blank_theme +
+  theme(axis.text.x=element_blank())
+```
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Basic Banking and T-account 
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+---
+# Basic Banking and T-account
+
+- Liabilities and assests differ in characteristics: liquidity, risk, size, return
+  
+--
+
+- Banks sell liabilities with one set of characteristics and use the proceeds to buy assets with a different set of characteristics
+  - called **asset transformation** or **risk sharing**
+  - Example: borrow short and lends long
+  
+
+
+
+---
+# Basic Banking and T-account
+- **borrow short and lends long**
+  - banks require funds by issuing short-term deposits, and then use the funds to make long-term loans
+  - banks pay low interest on short-term deposits but receive high interests on long-term loans
+  - savings deposit is transformed into a mortgage loan 
+  
+--
+
+- Tool: T-account
+  - write only the **changes** that occur in items (use +/- signs to indicate an increase/decrease)
+
+
+
+---
+# Participation: T-account Example I
+
+* Q1: Jane opens a checking account with a $100 bill at the First National Bank, and the bank puts her $100 bill into vault. 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+
+_Instruction: To complete this balance sheets, show the **changes** of values for each item. For example, if you think the value of an item decreased by $10, write down -$10. If you think the value of an item increases by $10, write down +$10. If you think the value of an item isn't changed, leave it blank_
+
+
+---
+# Participation: T-account Example I
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$100", "Deposits: +$100")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+--
+
+- Net result: an increase in the bank’s reserves equals to the increase in checkable deposits
+
+
+
+
+---
+# Participation: T-account Example II
+
+- Q2: Jane opens a checking account at the First National Bank with a $100 check written on an account at the Second National Bank
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 4, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities", "Assets", "Liabilities")
+
+dt[1,] <- c("Reserves", "Deposits", "Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings", "Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital", "Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  column_spec(1:4, width = "12em", border_right = T, border_left = T) %>%
+  row_spec(0, bold=TRUE, align = "c") %>%
+  kable_styling(font_size = 9, position = "center") %>%
+  add_header_above(c("First National Bank" = 2, "Second National Bank" = 2), bold=TRUE, align = "c")
+```
+
+_Instruction: To complete this balance sheets, show the **changes** of values for each item. For example, if you think the value of an item decreased by $10, write down -$10. If you think the value of an item increases by $10, write down +$10. If you think the value of an item isn't changed, leave it blank_
+
+
+---
+# Participation: T-account Example II 
+
+- First National Bank deposits the check in its account at the Fed, and the Fed transfers $100 of reserves from the Second National Bank to the First National Bank
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 4, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities", "Assets", "Liabilities")
+
+dt[1,] <- c("Reserves: +$100", "Deposits: +$100", "Reserves: -$100", "Deposits: -$100")
+dt[2,] <- c("Securities", "Borrowings", "Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital", "Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  column_spec(1:4, width = "12em", border_right = T, border_left = T) %>%
+  row_spec(0, bold=TRUE, align = "c") %>%
+  kable_styling(font_size = 9, position = "center") %>%
+  add_header_above(c("First National Bank" = 2, "Second National Bank" = 2), bold=TRUE, align = "c")
+```
+
+- Net result: when a bank receives additional deposits, it gains an equal amount of reserves; when it loses deposits, it loses an equal amount of reserves
+
+
+---
+# Participation: T-account Example III 
+
+- Assume: 10% required reserve ratio
+
+- Q3: First National Bank receives a $100 of checkable deposits. Then this bank puts to productive use all excess reserves by making loans. Show the changes in the balance sheet.
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+_Instruction: To complete this balance sheets, show the **changes** of values for each item. For example, if you think the value of an item decreased by $10, write down -$10. If you think the value of an item increases by $10, write down +$10. If you think the value of an item isn't changed, leave it blank_
+
+---
+# Participation: T-account Example III 
+
+* Increase in reserves = $100 = increase in deposits
+
+* Increases in required reserves =  required reserve ratio $\times$ increase in deposits = 10% $\times$ 100 = $10
+
+* Increase in excess reserve = total increase in reserves - increase in required reserves = $100 - $10 = $90
+
+* Inrease in loans =  increase in excess reserve = $90
+
+---
+# Participation: T-account Example III 
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$10", "Deposits: +$100")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans: +$90", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+- Bank is making a profit by borrowing short and lending long
+  - holds low-cost short-term liabilities (checkable deposits), and uses the proceeds to fund longer-term assets (loans) with higher interest rates 
+
+
+
+---
+# Participation: Sufficient Excess Reserves 
+
+Q4: The bank is required to keep 10% of deposits as reserves. Initial balance sheet is as follows. (Unit: millions)
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $20 million", "Deposits: $100 million")
+dt[2,] <- c("Securities: $10 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $80 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+(1) How much excess reserves does this bank hold?
+
+--
+
+- Required reserve  = required reserve ration $\times$ deposits = 10% $\times$ 100 million = $10 million
+
+* Excess reserve = total reserves - required reserve = $20 million - $10 million = $10 million  
+
+
+---
+# Participation: Sufficient Excess Reserves 
+
+(2) Suppose a deposit outflow of $10 million occurs. Update the balance sheet.
+  
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+  
+_Instruction: To complete the following balance sheets, do **NOT** show **changes** of values for each item. Instead, you should write **levels** of updated values for each item. For example, an item starts with value $100. If you think its value decreases by $10, write down $90 **instead of** -$10; if you think its value increases by $10, write down $110, **instead of** +$10; if you think its value isn't changed, write down $100_
+
+
+
+---
+# Participation: Sufficient Excess Reserves 
+
+* loses $10 million of deposits and $10 million of reserves
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+library(kableExtra)
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: $10 million", "Deposits: $90 million")
+dt[2,] <- c("Securities: $10 million", "Borrowings: $0 million")
+dt[3,] <- c("Loans: $80 million", "Capital: $10 million")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em")
+```
+
+
+---
+# Participation: Sufficient Excess Reserves 
+
+(3) After deposit outflow occurs, does this bank meet the 10% required reserve requirement? If so, how much excess reserves does this bank hold?
+
+--
+
+- Required reserve  = required reserve ration $\times$ deposits = 10% $\times$ 90 million = $9 million
+
+* Excess reserve = total reserves - required reserve = $10 million - $9 million = $1 million  
+
+- Net result: if a bank has **ample excess reserves**, a deposit outflow does not necessitate changes in other parts of its balance sheet
+
+---
+- This is the end of materials covered in Midterm #2. We will continue with the rest of Chapter 9 **after** Midterm #2
+
+- Problem Set #4 is due **11:59pm (PDT), Sunday, May 10**. The first two questions ask about Chapter 6, and the third question asks about today's content
+
+- Practice problems and answer key have been posted to Canvas, which will help you work on Problem Set #4. 
+
+- Participation #5, #6, #7, and #8 are due 11:59 (PDT), Sunday June 7. However, an extra credit assignment has been created for early submissions. If you submit Participation #5, #6, #7, and #8 by **11:59 (PDT), Sunday, May 10**, you will get 1 extra credit. 
+
+- An announcement about Midterm #2 will be made soon
+
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("May6_Ch9_lecture_slide.html", output = "May6_Ch9_lecture_slide.pdf")
+pagedown::chrome_print("May4_Ch6_lecture_slide.html", output = "May4_Ch6_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("May6_Ch9_lecture_slide.html"))
+webshot(file_name, "May6_Ch9_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```
+
+
+

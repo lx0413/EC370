@@ -1,0 +1,480 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 5: The Behavior of Interest Rate (cont'd)"
+author: "Xiang LI"
+date: "April 27, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+# Today's Contents
+
+- [Demand and Supply in the Bond Market (cont'd)](#Demand and Supply in the Bond Market (cont'd))
+- [Supply and Demand in the Market for Money](#Supply and Demand in the Market for Money)
+
+
+
+---
+# Participation 5: Market for bonds 
+
+Q1: if there is an increase in **expected inflation**, how will interest rate change?
+
+--
+
+- Ask yourself: 
+  - Will demand/supply of bond change? 
+  - If so, to what direction will demand/supply curve of bond shift? 
+  - How will (equilibirum) bond price change?
+  - How will (equilibirum) interest rate change?
+      - keep in mind: **interest rate is negatively related to the bond price**
+
+
+
+
+---
+# Participation 5: Market for bonds 
+
+Step 1:  when **expected inflation** rises
+
+- real interest rate decreases $\Rightarrow$ expected return on bonds decreases $\Rightarrow$ **demand** for bonds decreases $\Rightarrow$ **demand** curve shifts to the left
+  
+--
+
+<img src="../ch5/chpt5_Image/bond_exercise1-1.png" width=400>
+  
+  
+  
+---
+# Participation 5: Market for bonds 
+
+step 2: when **expected inflation** rises
+
+- real interest rate decreases $\Rightarrow$ real cost of borrowing decreases $\Rightarrow$ issuing more bonds $\Rightarrow$ **supply** of bonds increases $\Rightarrow$ **supply** curve shifts to the right
+
+--
+
+<img src="../ch5/chpt5_Image/bond_exercise1-2.png" width=400>
+
+
+---
+# Participation 5: Market for bonds 
+
+Net result: when **expected inflation rises**, bond price falls, **interest rates rises**; but quantity of bonds can either rise or fall
+
+--
+
+.pull-left[<img src="../ch5/chpt5_Image/bond_exercise1-3.png" width=400, height=300>]
+
+.pull-right[<img src="../ch5/chpt5_Image/bond_exercise1-4.png" width=400, height=300>]
+
+
+
+---
+# Participation 5: Market for bonds 
+
+- When expected inflation rises, interest rates rise: **Fisher effect**
+
+<img src="../ch5/chpt5_Image/fisher.png" width=600>
+
+
+- Interest rate on three-month Treasury bills has usually moved along with the expected inflation rate
+
+
+
+---
+# Participation 5: Market for bonds 
+
+Q2: if the economy is in a **business cycle expansion**, how will interest rate change?
+
+--
+
+- Again, ask yoursef: 
+  - Will demand/supply of bond change? 
+  - If so, to what direction will demand/supply curve of bond shift? 
+  - How will (equilibirum) bond price change?
+  - How will (equilibirum) interest rate change?
+      - keep in mind: **interest rate is negatively related to the bond price**
+
+
+
+---
+# Participation 5: Market for bonds 
+
+- supply and demand curves both shift to the right
+
+--
+
+.pull-left[<img src="../ch5/chpt5_Image/bond_exercise2-1.png" width=400, height=300>]
+
+.pull-right[<img src="../ch5/chpt5_Image/bond_exercise2-3.png" width=400, height=300>]
+
+
+- depending on if supply curve shifts more than the demand curve, the new interest rate can either rise or fall: interest rates in a business cycle expansion is **ambiguous**
+
+
+
+
+
+
+
+---
+# Participation 5: Market for bonds 
+
+- However, empirically, the outcome we actually see in the U.S. data suggests that, **interest rate tends to rise during business cycle expansions and fall during recessions** (procyclical)
+
+--
+
+<img src="../ch5/chpt5_Image/business_cycle.png" width=500>
+
+
+
+---
+# Participation 5: Market for bonds  
+
+Q3: In the aftermath of the global financial crisis, in Europe and the United States, as well as in Japan, inflation has fallen to very low levels, sometimes even going negative, same as the expected inflation; at the same time, all of these countries have been experiencing a lack of profitable investment opportunities. Explain graphically why interest rates are low. 
+
+
+
+---
+# Participation 5: Market for bonds 
+
+- expected inflation decreases $\Rightarrow$ rightward shift of the demand curve and leftward shift of the supply curve 
+  
+- profitable investment opportunities decreases $\Rightarrow$ supply curve shifts to the left again 
+
+--
+
+<img src="../ch5/chpt5_Image/bond_exercise3.png" width=400>
+
+
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Supply and Demand in the Market for Money
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+- The previous lecture: demand and supply in the bond market determines the (nominal) interest rate
+
+--
+
+- An alternative model for determining the equilibrium interest rate, developed by John Maynard Keynes, is known as the **liquidity preference framework**
+
+--
+
+- This framework determines the equilibrium interest rate in terms of the **supply of and demand for money** rather than the supply of and demand for bonds
+  
+  
+  
+
+---
+# Liquidity Preference Framework
+
+- Key Assumption: people use only two categories of assets to store their wealth: **money** and **bonds**
+  - holding money earns no interest
+  - holding bond earns interest at rate i
+  
+--
+
+- total wealth in the economy must equal the total quantity of bonds supplied plus money supplied $B^s+M^s$, and must also equal the total quantity of bonds demanded plus money demanded $B^d+M^d$
+
+--
+
+- $B^s+M^s = B^d+M^d$
+
+ 
+
+---
+# Liquidity Preference Framework
+
+- $B^s+M^s = B^d+M^d$
+
+--
+
+- if $M^d=M^s$, then $B^s=B^d$
+
+--
+
+- if market for money is in equilibrium, bond market is also in equilibrium
+
+--
+
+- equating the supply and demand for bonds $\iff$ equating the supply and demand for money
+
+--
+
+- bond market framwork $\iff$ liquidity preference framework
+
+
+
+---
+# Demand curve for money
+
+- interest rate: cost of borrowing, i.e. **price of money**  
+
+--
+
+- interest rate rises $\rightarrow$  the amount of interest holding bonds rises $\rightarrow$ **opportunity cost** of holding money rises $\rightarrow$ bonds are more desirable, and money is less desirable $\rightarrow$ quantity of money demanded falls
+
+
+
+---
+# Demand curve for money
+
+- **quantity of money demanded** and the **interest rate** is **negatively** related
+
+--
+
+<img src="../ch5/chpt5_Image/money_demand.png" width=400>
+
+ 
+  
+
+  
+---
+# Supply curve for money
+
+- Assume: central bank controls the amount of money supplied at a fixed quantity M, irrespective of the level of interest rate
+
+--
+
+- Money supply is a **vertical** curve at $\bar{M}$
+
+--
+
+<img src="../ch5/chpt5_Image/money_supply.png" width=400>
+  
+
+  
+  
+
+---
+# Equilibrium
+
+- x-axis: quantity of money demanded/supplied 
+- y-axis: **interest rate**
+- $M^d=M^s$: **market equilibrium for money**
+- equilibrium interest rate: 15%
+- equilibrium quantity of money: $300 billions
+
+<img src="../ch5/chpt5_Image/eq_money.png" width=400>
+
+
+
+
+---
+# Equilibrium
+
+- $M^d > M^s$: **excess demand of money**
+  - i rises until reaching 15%
+  - move along demand curve from E to C
+
+<img src="../ch5/chpt5_Image/excess_demand_money.png" width=400>
+
+
+  
+
+---
+# Equilibrium
+
+- $M^s > M^d$: **excess supply of money**
+  - i falls until reaching 15%
+  - move along demand curve from A to C
+
+<img src="../ch5/chpt5_Image/excess_supply_money.png" width=400>
+  
+  
+  
+
+---
+# Equilibrium
+
+- The relationship between quantity demanded and quantity supplied of money determines interest rate 
+- **move along** the demand/supply curve until reaching the equilibirum interest rate
+
+<img src="../ch5/chpt5_Image/moving_money.png" width=400>
+ 
+
+
+
+---
+# Changes in Equilibrium Interest Rates 
+
+- Now, we will look at **shift** of supply/demand curves, and how **shift** of supply/demand curves determines the change in equilibirum interest rate
+
+--
+
+## Demand Curve Shifts
+- In Keynes’s liquidity preference framework, 2 factors cause the demand curve for money to shift:
+  - income 
+  - price level
+  
+  
+---
+# Demand Curve Shifts
+## Income
+
+- income rises $\rightarrow$ people want to hold more money as a store of value
+- income rises $\rightarrow$ people want to hold more money as a medium of exchange to carry out more transactions
+
+
+
+
+---
+# Demand Curve Shifts
+## Income
+
+-  income increases $\rightarrow$ demand for money at each interest rate increases $\rightarrow$ demand curve shifts to right $\rightarrow$ interest rate increases
+
+--
+
+- **Income effect: when income increases, interest rate increases**
+
+<img src="../ch5/chpt5_Image/money_demand_right.png" width=350>
+
+
+
+
+---
+# Demand Curve Shifts
+## Price-Level
+
+- price level rises $\rightarrow$ money loses value in terms of its purchasing power $\rightarrow$ to maintain money's purchasing power in real terms, people will want to hold more nominal quantity of money
+
+
+
+---
+# Demand Curve Shifts
+## Price-Level
+
+- when price level increases $\rightarrow$ demand for money at each interest rate to increase $\rightarrow$ demand curve shifts to right $\rightarrow$ interest rate increases
+
+--
+
+- **Price-Level Effect: when price level increases, interest rate increases**
+
+<img src="../ch5/chpt5_Image/money_demand_right.png" width=350>
+
+
+
+
+---
+# Supply Curve Shifts 
+
+- We have assumed that the supply of money is completely controlled by the central bank
+
+--
+
+- an important way in which the Fed increases the money supply is by buying bonds from the public
+  - expansionary monetary policy: will learn in chapter 15
+
+
+
+---
+# Supply Curve Shifts 
+
+- an increase in the money supply engineered by the Federal Reserve will shift the supply curve for money to the right
+
+<img src="../ch5/chpt5_Image/money_supply_right.png" width=400>
+
+
+
+
+---
+# Participation 5: Market for money 
+
+Q4: In a business cycle expansion, when income is rising, how will interest rate change? 
+
+--
+
+- when income is rising during a business cycle expansion, interest rates will rise
+
+<img src="../ch5/chpt5_Image/money_exercise1.png" width=400>
+
+
+
+
+---
+# Participation 5: Market for money  
+
+Q5: In a business cycle expansion, when the price level rises, how will interest rate change?
+
+--
+
+- when the price level increases during a business cycle expansion, interest rates will rise
+
+<img src="../ch5/chpt5_Image/money_exercise1.png" width=400>
+
+
+
+---
+# Participation 5: Market for money 
+
+Q6: If there is an increase in the money supply due to expansionary monetary policy by the Fed, how will interest rate change?
+
+--
+
+- When the money supply increases, interest rates decline
+
+<img src="../ch5/chpt5_Image/money_exercise2.png" width=400>
+
+---
+- This is the end of Chapter 5
+
+- Practice problems and answer key for this chapter have been posted on Canvas
+
+- On Wedensday we will start chapter 6. Problem set #3 will cover the material discussed on Wednesday. 
+
+- Problem set #4 was scheduled on week 8, but it is moved to week 6 to help ypu prepare for the second midterm. Problem set #4 will cover part of chapter 6 and chapter 9.
+
+- Midterm #2 will cover only chpater 5, 6 and 9. 
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Apr27_Ch5_lecture_slide.html"))
+webshot(file_name, "Apr27_Ch5_lecture_slide.pdf")
+--->
+
+
+
+
+

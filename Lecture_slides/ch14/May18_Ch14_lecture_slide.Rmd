@@ -1,0 +1,703 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 14: The Money Supply Process - PART II"
+author: "Xiang LI"
+date: "May 18, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+
+red_pink <- "#e64173"
+turquoise <- "#20B2AA"
+orange <- "#FFA500"
+red <- "#fb6107"
+blue <- "#3b3b9a"
+green <- "#8bb174"
+grey_light <- "grey70"
+grey_mid <- "grey50"
+grey_dark <- "grey20"
+purple <- "#6A5ACD"
+slate <- "#314f4f"
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+
+
+
+
+- In previous part: the Fed can supply the banking system with **reserves** via open market operation and discount loan
+
+--
+
+- when the Fed supplies the banking system with $1 of additional **reserves**, **deposits** will increase by **a multiple** of one dollar
+  - this is called **multiple deposit creation**
+  
+--
+
+- 2 models can explain multiple deposit creation:
+  - a simple model
+  - a general model 
+  
+  
+---
+class: inverse, center, middle
+name: Motivation
+
+
+# Part II: Control of Monetary Supply
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+  
+  
+---
+# Simple Model 
+- Step 1: the Fed bought the $100 million in bonds **with reserves** from the FN Bank 
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$100m", "Deposits")
+dt[2,] <- c("Securities: -$100m", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("First National Bank" = 2))
+``` 
+
+- no increase in **checkable deposits**: no **additional required reserves** needed
+
+--
+
+- additional $100 million of reserves become **excess reserves**
+
+
+---
+# Simple Model 
+
+- **Assumption 1: bank does not want to hold excess reserves because it earns little interest on them**
+
+--
+
+- Step 2: under Assumption I, bank put $100m of **excess reserves** into a **loan**, which can earn high interest for the bank
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves", "Deposits")
+dt[2,] <- c("Securities: -$100m", "Borrowings")
+dt[3,] <- c("Loans: +$100m", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("First National Bank" = 2))
+``` 
+
+
+
+---
+# Simple Model 
+
+- **Assumption 2: public does not want to hold any additional currency**
+
+--
+
+- Step 3: under Assumption 2, borrowers of First National Bank will deposit all 100m payment at other banks (say, Bank A)
+
+--
+
+- 100m of **checkable deposits** and **reserves** increases at Bank A
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$100m", "Deposits: +$100m")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Bank A" = 2))
+``` 
+
+
+---
+# Simple Model 
+- 10% of the **additional checkable deposits** is **required** to be deposited in Bank A's vault or Bank A's account at the Fed
+
+--
+
+- $10m increase in **required reserves**, leaving Bank A 90m of **excess reserves**
+  
+--
+
+- Step 4: under Assumption 1, Bank A turn 90m of **excess reserves** into a 90m of **loan**
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$10m", "Deposits: +$100m")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans: +$90m", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Bank A" = 2))
+``` 
+
+
+
+---
+# Simple Model 
+- Step 5: under Assumption II, borrowers of Bank A will deposit all 90m payment at other banks (say Bank B)
+
+--
+
+- 90m of **checkable deposits** and **reserves** increases at Bank B
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$90m", "Deposits: +$90m")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Bank B" = 2))
+``` 
+
+
+
+---
+# Simple Model 
+- 10% of the **additional checkable deposits** is **required** to be deposited in Bank B's vault or account at the Fed 
+
+--
+
+- 9m increase in **required reserves**, leaving Bank B $81m of **excess reserves**
+
+--
+
+- Step 6: under Assumption I, Bank B turn $81m of **excess reserves** to **loans** 
+
+--
+
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+options(knitr.kable.NA = '')
+
+dt <- data.frame(matrix(ncol = 2, nrow = 3))
+colnames(dt)<-c("Assets", "Liabilities+Capital")
+
+dt[1,] <- c("Reserves: +$9m", "Deposits: +$90m")
+dt[2,] <- c("Securities", "Borrowings")
+dt[3,] <- c("Loans: +$81m", "Capital")
+
+dt %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "condensed"), full_width = F, font_size = 16) %>%
+  column_spec(1:2, width = "10em") %>%
+  add_header_above(c("Bank B" = 2))
+``` 
+
+
+
+
+---
+# Simple Model 
+- Following the same reasoning, if all banks make loans for the full amount of their **excess reserves**, further increments in **checkable deposits** will continue (at Banks C, D, E, and so on) 
+
+```{r, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 4, nrow = 12))
+
+colnames(dt)<-c("Bank","Increase in Deposits($)", "Increase in Loans($)","Increase in Reserves($)")
+
+dt[,1] <- c("First National", "A", "B", "C", "D", "E", "F", ".", ".", ".", ".", "Total for all banks")
+dt[,2]<-c("0.00", "100.00m", "90.00m", "81.00m", "72.90m", "65.61m", "59.05m", ".", ".", ".", ".", "1000.00m")
+dt[,3]<-c("100.00m", "90.00m", "81.00m", "72.90m", "65.61m", "59.05m", "53.14m", ".", ".", ".", ".", "1000.00m")
+dt[,4]<-c("0.00", "10.00m", "9.00m", "8.10m", "7.29m", "6.56m", "5.91m", ".", ".", ".", ".", "100.00m")
+
+dt %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F, font_size = 14) 
+```
+
+---
+# Simple Model 
+- the total increase in <span style="color: #20B2AA;">**deposits**</span> from the initial <span style="color: #e64173;">**100m**</span> increase in <span style="color: #e64173;">**reserves**</span> is <span style="color: #20B2AA;">**1000m**</span>, assuming <span style="color: #FFA500;">**10% reserve requirement**</span>
+
+```{r, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 4, nrow = 12))
+
+colnames(dt)<-c("Bank","Increase in Deposits($)", "Increase in Loans($)","Increase in Reserves($)")
+
+dt[,1] <- c("First National", "A", "B", "C", "D", "E", "F", ".", ".", ".", ".", "Total for all banks")
+dt[,2]<-c("0.00", "100.00m", "90.00m", "81.00m", "72.90m", "65.61m", "59.05m", ".", ".", ".", ".", "1000.00m")
+dt[,3]<-c("100.00m", "90.00m", "81.00m", "72.90m", "65.61m", "59.05m", "53.14m", ".", ".", ".", ".", "1000.00m")
+dt[,4]<-c("0.00", "10.00m", "9.00m", "8.10m", "7.29m", "6.56m", "5.91m", ".", ".", ".", ".", "100.00m")
+dt[12,4] <- cell_spec("100.00m", color = "#e64173", bold = T)
+dt[12,2] <- cell_spec("1000.00m", color = "#20B2AA", bold = T)
+dt[12,3] <- cell_spec("1000.00m", color = "#20B2AA", bold = T)
+
+dt %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F, font_size = 14) 
+```
+
+
+
+---
+# Simple Model 
+
+- the increase is tenfold: the **reciprocal** of the <span style="color: #FFA500;">**10% reserve requirement**</span>
+
+```{r, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 4, nrow = 12))
+
+colnames(dt)<-c("Bank","Increase in Deposits($)", "Increase in Loans($)","Increase in Reserves($)")
+
+dt[,1] <- c("First National", "A", "B", "C", "D", "E", "F", ".", ".", ".", ".", "Total for all banks")
+dt[,2]<-c("0.00", "100.00m", "90.00m", "81.00m", "72.90m", "65.61m", "59.05m", ".", ".", ".", ".", "1000.00m")
+dt[,3]<-c("100.00m", "90.00m", "81.00m", "72.90m", "65.61m", "59.05m", "53.14m", ".", ".", ".", ".", "1000.00m")
+dt[,4]<-c("0.00", "10.00m", "9.00m", "8.10m", "7.29m", "6.56m", "5.91m", ".", ".", ".", ".", "100.00m")
+dt[12,4] <- cell_spec("100.00m", color = "#e64173", bold = T)
+dt[12,2] <- cell_spec("1000.00m", color = "#20B2AA", bold = T)
+dt[12,3] <- cell_spec("1000.00m", color = "#20B2AA", bold = T)
+
+dt %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F, font_size = 14) 
+```
+
+
+<!---
+# Simple Model 
+- Note: Whether a bank chooses to use its **excess reserves** to make **loans** or to purchase **securities**, the effect on deposit expansion is the same
+
+- Bank A buys 90m of securities $\Rightarrow$ sellers of the securities deposit 90m at Bank B $\Rightarrow$ Bank B’s **checkable deposits** increase by $90m
+--->
+
+
+
+---
+# Simple Model Formula 
+
+- **Assumption 1: banks hold NO excess reserves**
+- **Assumption 2: Depositors hold NO currency** 
+
+--
+
+Denote: 
+- $RR$:required reserves 
+- $R$: reserves 
+- $D$: checkable deposits 
+- $rr$: required reserve ratio (10% in this example)
+
+  
+  
+---
+# Simple Model Formula
+- by Assumption 1: $ER=0, R=ER+RR=RR$ 
+
+--
+
+- definition of RR: $RR=rr \times D$ 
+
+--
+
+- substitute for RR: $R=RR=rr \times D$ 
+
+--
+
+- rearrange: $D=\frac{1}{rr} \times R$
+
+--
+
+- taking changes at both sides simultaneously: $\Delta D = \frac{1}{rr} \times \Delta R$ 
+  - $\Delta D$: change in D
+  - $\Delta R$: change in R
+
+
+
+---
+# Simple Model Formula
+$$\Delta D = \frac{1}{rr} \times \Delta R$$
+
+- impact of change in R on change in D is: $\frac{1}{rr}$
+
+--
+
+- $\frac{1}{rr}$ is called **simple deposit multiplier** 
+  - Since rr is normally less than 1, the simple deposit multiplier is greater than 1
+  - if rr<1: $1 increase in reserves lead more than $1 increase in total deposit
+
+
+
+---
+TWO Critques about simple deposit multiplier: 
+  
+--
+
+- if banks choose to keep all or some of their **excess reserves**: assumption 1 violated
+
+--
+
+- if some of the loans are not deposited in banks but instead are withdrawn as **currency**: assumption 2 violated
+
+--
+
+- if either assumption 1 or assumption 2 is violated, the **full expansion** of deposits predicted by the simple model of multiple deposit creation does not occur
+
+
+
+
+---
+# Factors that Determine Money Supply
+## (1) nonborrowed monetary base
+- The money supply is positively related to the nonborrowed monetary base, $MB_n$, holding all other factors constant 
+  
+  
+- open market purchase, $MB_n$ $\uparrow$ $\Rightarrow$ R in the banking system $\uparrow$ $\Rightarrow$ multiple deposit creation occurs  $\Rightarrow$ D $\uparrow$ $\Rightarrow$ money supply=M1=C+D $\uparrow$
+
+
+---
+# Factors that Determine Money Supply
+## (2) borrowed reserves 
+- The money supply is positively related to the level of borrowed reserves, BR, holding all other factors constant 
+
+
+- lending to banks, BR $\uparrow$ $\Rightarrow$ R in the banking system $\uparrow$ $\Rightarrow$ multiple deposit creation occurs $\Rightarrow$ D $\uparrow$ $\Rightarrow$ money supply=M1=C+D $\uparrow$
+
+---
+# Factors that Determine Money Supply
+## (3) required reserve ratio
+- The money supply is negatively related to the required reserve ratio rr, holding all other factors constant 
+
+
+- rr on checkable deposits $\uparrow$ $\Rightarrow$  less excess reserves can be used to make loans $\Rightarrow$ multiple deposit expansion is reduced $\Rightarrow$ D $\downarrow$  $\Rightarrow$ money supply=M1=C+D $\downarrow$
+
+---
+# Factors that Determine Money Supply
+## (4) excess reserves
+- The money supply is negatively related to the amount of excess reserves, holding all other factors constant 
+
+
+- banks's holdings of excess reserves $\uparrow$ $\Rightarrow$ less loans can be made from excess reserves $\Rightarrow$ multiple deposit expansion is reduced $\Rightarrow$ D $\downarrow$  $\Rightarrow$ money supply=M1=C+D $\downarrow$
+
+
+---
+# Factors that Determine Money Supply
+## (5) currency holdings
+- Holding excess reserves constant, the money supply is negatively related to currency holdings
+
+
+- currency holding $\uparrow$ $\Rightarrow$ less checkable deposits can be made  $\Rightarrow$ multiple deposit expansion is reduced $\Rightarrow$ D $\downarrow$  $\Rightarrow$ money supply=M1=C+D $\downarrow$
+
+
+---
+# Factors that Determine Money Supply
+- in the general model: all three players - the Fed, depositors, and banks - directly influence **money supply**
+
+```{r, echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+dt <- data.frame(matrix(ncol = 4, nrow = 5))
+
+colnames(dt)<-c("Variable", "Change in Variable","Money Supply Responses", "Reason")
+
+dt[,1] <- c("Nonborrowed monetary base, $MB_n$", "Required Reserve ratio, $rr$", "Borrowed reserves, $BR$", "Excess reserves, $ER$", "Currency holdings, $C$")
+dt[,4]<-c("More MB for deposit creastion", "Less multiple deposit expansion", "More MB for deposit creation", "less loans and deposit creation", "Less multiple deposit expansions")
+
+dt[,2] <- c("&#8593;")
+dt[1,3] <- c("&#8593;")
+dt[3,3] <- c("&#8593;")
+dt[2,3] <- c("&#8595;")
+dt[4,3] <- c("&#8595;")
+dt[5,3] <- c("&#8595;")
+
+dt %>%
+  kable(escape = F, align = "c") %>%
+  kable_styling(c("striped", "condensed"), full_width = F, font_size = 16) %>%
+  pack_rows("Federal Reserve System", 1, 2) %>%
+  pack_rows("Banks", 3, 4) %>%
+  pack_rows("Depositors", 5,5)
+```
+
+
+---
+# General Model Formula
+- **simple deposit multiplier $\frac{1}{rr}$**: impact of $\Delta R$ on $\Delta D$
+
+--
+
+- **money multiplier $m$**: impact of $\Delta MB$ on $\Delta M$
+
+--
+
+- To derive money multiplier $m$ from $M = m \times MB$, let's denote: 
+  - m: money multiplier 
+  - M: money supply 
+  - MB: monetary base
+  - $c=\frac{C}{D}$: currency-to-deposit ratio
+  - $er=\frac{ER}{D}$: excess reserves-to-deposit ratio
+  - $rr=\frac{RR}{D}$: required reserves ratio 
+
+  
+  
+  
+---
+# General Model Formula
+- $MB=R+C=RR+ER+C=rr*D+er*D+c*D$.
+
+--
+
+- $MB=D*(rr+er+c)$
+
+--
+
+- use M1 as money supply M: $M=M1=C+D=c*D+D=D*(1+c)$ 
+
+--
+
+- plug M and MB into $M=m*MB$: $D*(1+c)=m*D*(c+er+rr)$
+
+--
+
+- money multiplier: $m=\frac{1+c}{c+er+rr}$
+
+--
+
+- Hence, $M=\frac{1+c}{c+er+rr}*MB$, and $\Delta M= m * \Delta MB = \frac{1+c}{c+er+rr}* \Delta MB$
+
+
+
+
+<!---
+# General Model Formula
+- Suppose: rr=0.10, C=1200 billion, D=1600 billion, ER=2500 billion
+
+- solve for m: 
+  - c=1200/1600=0.75
+  - er=2500/1600=1.56
+  - m=(1+0.75)/(0.1+1.56+0.75)=0.73
+ 
+- Given that the required reserve ratio is 10% on checkable deposits, and the behavior of depositors (represented by c = 0.75), and the behavior of banks (represented by er = 1.56):
+
+- $1 increase in the monetary base leads to a 0.73 dollars increase in the money supply
+--->
+
+
+
+---
+# General Model Formula
+$$m=\frac{1+c}{c+er+rr}$$
+
+--
+
+- holding other variables constant, $rr \uparrow$ $\Rightarrow$ $m \downarrow$
+
+--
+
+- holding other variables constant, $er \uparrow$ $\Rightarrow$ $m \downarrow$
+
+--
+
+- when $er+rr<1$: $c \uparrow$ $\Rightarrow$ $m \downarrow$
+  - in normal times: $er \approx 0$ 
+
+--
+
+- when $er+rr>1$: $c \uparrow$ $\Rightarrow$ $m \uparrow$ 
+  - during financial crisis: $er$ is large 
+
+
+---
+# General Model Formula
+$$m=\frac{1+c}{c+er+rr}$$
+
+- Simple deposit multiplier is a special case of money multiplier
+
+--
+
+- when er=0 and c=0: $m=\frac{1}{rr}$ 
+
+--
+
+- er=0 is Assumption 1 in the simple model 
+
+--
+
+- c=0 is Assumption 2 in the simple model 
+  
+  
+  
+---
+# Application: the Great Recession
+
+- There were 14 trillion dollars of residential mortgages and commercial mortgages. If default rate is 5%, then 700 billion dollars of banks' **assets** will become toxicate
+
+--
+
+- In Oct 2008, to unlock frozen credit markets, a bailout bill was passed so that the Treasury Department can inject $700 billion of **capital** in many banks (partial ownership)
+
+--
+
+- https://www.youtube.com/watch?v=xK8G5x8pxIQ
+
+--
+
+- Such a move would quickly strengthen banks’ **balance sheets** and hopefully persuade them to **resume lending**. In a coordinated action, the Fed reduced their benchmark interest rates by one-half percentage point
+
+--
+
+- Did banks actually resume lending? 
+
+
+---
+# Application: the Great Recession
+- during 07-09 financial crisis: the Fed initiated lending programs and large-scale asset-purchase programs (**quantitative easing**) in an attempt to bolster the economy
+
+--
+
+- these purchases of securities had led to a fivefold increase of the Fed’s balance sheet and an over 350% increase in the **monetary base**
+
+--
+
+- Such a massive expansion of the monetary base could potentially lead to a large expansion of the **money supply**
+
+--
+
+- $M=m*MB$: **if m is constant**, then $\Delta M = m * \Delta MB$
+
+
+---
+# Application: the Great Recession
+- However, when the **monetary base** increased by more than 350%, the **M1 money supply** only rose by only 150%: $\Delta M \neq m * \Delta MB$
+
+--
+
+```{r echo=FALSE, out.width = '70%', fig.align = "center"}
+knitr::include_graphics("chpt14_Image/quant_ease1.png")
+```
+
+--
+
+- This is because the **money multiplier** fell by around 50%: m is not constant
+
+
+---
+# Application: the Great Recession
+- during crisis, instead of turning excess reserves to loans and lend out, banks are willing to hold huge excess reserves
+
+--
+
+- er $\uparrow$ so that er+rr>1
+
+--
+
+- plus, currency ratio had a slight downward trend
+
+--
+
+- when e+rr>1: c $\downarrow$ $\Rightarrow$ m $\downarrow$ $\Rightarrow$ increase in M < increase in MB
+
+--
+
+```{r echo=FALSE, out.width = '50%', fig.align = "center"}
+knitr::include_graphics("chpt14_Image/quant_ease2.png")
+```
+
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("May18_Ch14_lecture_slide.html", output = "May18_Ch14_lecture_slide.pdf")
+pagedown::chrome_print("May18_Ch14_lecture_slide.html", output = "May18_Ch14_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("May18_Ch14_lecture_slide.html"))
+webshot(file_name, "May18_Ch14_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```

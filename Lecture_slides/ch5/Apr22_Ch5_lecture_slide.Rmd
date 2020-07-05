@@ -1,0 +1,483 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 5: The Behavior of Interest Rate"
+author: "Xiang LI"
+date: "April 22, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+</style>
+
+
+
+
+
+# Today's Contents
+
+- [Demand and Supply in the Bond Market](#Demand and Supply in the Bond Market)
+- [Changes in Equilibrium Interest Rates](#Changes in Equilibrium Interest Rates)
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Demand and Supply in the Bond Market
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Demand Curve for Bond
+
+- demand curve: relationship between quantity demanded and price
+- x-axis: quantity demanded of bond
+- y-axis: price of bond (**P**), also interest rate of bond (**i**)
+
+--
+
+Let’s consider purchasing a discount bonds
+- no coupon payments
+- face value (F): $1,000
+- years to maturity: 1 year 
+- holding period: 1 year
+
+
+---
+# Demand Curve for Bond
+
+- What is interest rate (yield to maturity), if bond price is $950?
+
+--
+  - $P=\frac{F}{1+i}$
+  - $i=\frac{F-P}{P}=\frac{1000-950}{950}=5.3\%$
+
+--
+
+- What is interest rate, if bond price is $850?
+
+--
+  - $i=\frac{F-P}{P}=\frac{1000-850}{850}=17.6\%$
+  
+--
+
+- What is interest rate, if bond price is $750?
+
+--
+  - $i=\frac{F-P}{P}=\frac{1000-750}{750}=33.0\%$
+
+
+
+
+---
+# Demand Curve for Bond
+
+- **negatively** related: if P $\uparrow$, then $B^d$ $\downarrow$
+  
+<img src="../ch5/chpt5_Image/demand_bond.png" width=400>
+
+
+
+
+---
+# Supply Curve for Bond
+
+- At lower P (higher i), quantity supplied of bonds is lower
+
+<img src="../ch5/chpt5_Image/supply_bond.png" width=400>
+
+
+
+
+
+---
+# Equilibrium 
+
+- $B^d=B^s$: **bond market equilibirum**
+
+--
+  - equilibrium quantity: $300 billion
+  - equilibrium price (P*): $850
+  - equilibrium interest rate (i*): 17.6%
+  
+<img src="../ch5/chpt5_Image/eq_bond.png" width=400>
+  
+
+
+---
+# Equilibrium 
+
+- $B^d>B^s$: **excess demand**
+
+--
+  - P will rise until reaching P\*, i will fall until reaching i\*
+  - move along supply curve from F to C, move along demand curve from E to C 
+  
+<img src="../ch5/chpt5_Image/excess_demand_bond.png" width=400>
+
+
+
+---
+# Equilibrium 
+
+- $B^d<B^s$: **excess supply**
+
+--
+  - P will fall until reaching P\*, i will rise until reaching i\*
+  - move along supply curve from I to C; move along demand curve from A to C 
+  
+<img src="../ch5/chpt5_Image/excess_supply_bond.png" width=400>
+
+
+
+---
+# Equilibrium 
+
+- The relationship between quantity demanded and quantity supplied of bonds determines interest rate 
+
+--
+- **move along** the demand/supply curve until reaching the **equilibirum interest rate**
+
+<img src="../ch5/chpt5_Image/moving_bond.png" width=400>
+ 
+
+
+
+<!---
+* Recall Ec202: 
+- **Ceteris paribus**: the assumption that all **other** economic variables are held **constant**
+* So far, when we study how quantity demanded/supplied of bonds determines the change of interest rate
+  + we have assumed all **other** economic variables that can affect interest rate are held **constant**
+  + then, we **move along** demand/supply curve so that interest rate can change to its equilibrium level
+- **Other** economic variables that can affect interest rate:
+  + bond buyer's wealth
+  
+  
+  + expected profitability of the corporate that issues the bond......
+* What if these economic variables are **NOT constant**? 
+* If one of those other economic variables that affect interest rate are **NOT** held constant, how will equilibrium interest rate change?
+--->
+
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Changes in Equilibrium Interest Rates
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+
+---
+# Changes in Equilibrium Interest Rates
+
+- Now, we will look at **shift** of supply/demand curves
+
+--
+
+- And how **shift** of supply/demand curves determines equilibrium bonds' prices and **equilibirum interest rate**
+
+
+
+---
+# Demand Curve Shift
+
+Changes in factors that affect how many bonds people will want to hold will make **demand curve for bonds shift**
+ 
+ 
+- Wealth
+- Expected returns on bonds relative to alternative assets
+  - Expected interest rate
+  - Expected return on alternative assets
+  - Expected inflation
+- Risk of bonds relative to alternative assets
+- Liquidity of bonds relative to alternative assets
+
+
+
+---
+# Demand Curve Shift
+## (1) Wealth
+
+- if wealth increases, demand for bonds at each bond price (or at each interest rate) rises
+  - business cycle expansion
+  - increased propensity to save
+
+
+
+---
+# Demand Curve Shift
+## (1) Wealth
+
+- **business cycle expansion (or: propensity to save increases)** $\Rightarrow$ wealth increases $\Rightarrow$ demand for bonds increases $\Rightarrow$ demand curve shifts to the right
+
+--
+
+<img src="../ch5/chpt5_Image/demand_right.png" width=300>
+
+
+---
+# Demand Curve Shift
+## (1) Wealth
+
+- if wealth decreases, demand for bonds at each bond price (or at each interest rate) decreases
+  - business cycle recession
+  - decreased propensity to save
+  
+
+
+---
+# Demand Curve Shift
+## (1) Wealth
+
+- **business cycle recession (or: propensity to save decreases)** $\Rightarrow$ wealth decreases $\Rightarrow$ demand for bonds decreases $\Rightarrow$ demand curve shifts to the left
+
+--
+
+<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+
+
+
+
+---
+# Demand Curve Shift
+## (2) Expected returns 
+
+- Recall Chapter 4: if interest rate when you sell the bond is higher than the interest rate when you buy the bond $\Rightarrow$ the price at which you sell the bond is lower than the price at which you buy the bond 
+
+--
+
+- interest-rate risk: interest rate rises $\Rightarrow$ bond price falls $\Rightarrow$ capital loss $\Rightarrow$ rate of return falls
+
+
+--
+
+- if you expect that interest rate will rise in the future, then you also expect that return on bonds will fall; hence, you demand less bonds today 
+
+
+
+---
+# Demand Curve Shift
+## (2) Expected returns 
+
+- **expected future interest rates** increases $\Rightarrow$ expected return on bonds decreases $\Rightarrow$ demand for bonds decreases $\Rightarrow$ demand curve shifts to the left
+
+--
+
+<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+
+- **expected future interest rates** decreases $\Rightarrow$ demand curve shifts to the right
+
+
+---
+# Demand Curve Shift
+## (2) Expected returns 
+
+- **expected return on alternative assets** increases $\Rightarrow$ expected returns on bonds relative to alternative assets decreases $\Rightarrow$ demand for bonds decreases $\Rightarrow$ demand curve shifts to the left
+
+--
+
+<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+
+- **expected return on alternative assets** decreases $\Rightarrow$ demand curve shifts to the right
+
+
+---
+# Demand Curve Shift
+## (2) Expected returns 
+
+- Recall Chapter 4: $r=i-\pi^e$
+
+--
+
+- **expected inflation** increases $\Rightarrow$ real interest rate decreases $\Rightarrow$ expected return on bonds decreases $\Rightarrow$ demand for bonds decreases $\Rightarrow$ demand curve shifts to the left
+
+
+
+---
+# Demand Curve Shift
+## (2) Expected returns 
+
+<img src="../ch5/chpt5_Image/demand_left.png" width=250>
+
+- **expected inflation** decreases $\Rightarrow$ demand curve shifts to right
+
+---
+# Demand Curve Shift
+## (3) Risk 
+
+- prices in the bond market become more volatile $\Rightarrow$ **riskiness of bonds** increases $\Rightarrow$ demand for bonds decreases $\Rightarrow$ demand curve shifts to the left
+
+--
+
+<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+
+
+
+---
+# Demand Curve Shift
+## (3) Risk 
+
+- an increase in the volatility of prices in another asset market (e.g. stock market)  $\Rightarrow$ **riskiness of alternative assets** increases $\Rightarrow$ demand for bonds increases $\Rightarrow$ demand curve shifts to the right
+
+--
+
+<img src="../ch5/chpt5_Image/demand_right.png" width=300>
+
+
+---
+# Demand Curve Shift
+## (4) Liquidity
+
+- more people started trading in the bond market $\Rightarrow$ easier to sell bonds quickly $\Rightarrow$ **liquidity of bonds** increases $\Rightarrow$ demand for bonds increases $\Rightarrow$ demand curve shifts to the right
+
+--
+
+<img src="../ch5/chpt5_Image/demand_right.png" width=300>
+
+
+
+---
+# Demand Curve Shift
+## (4) Liquidity
+
+- **liquidity of alternative assets** increases $\Rightarrow$ demand for bonds decreased $\Rightarrow$ demand curve shifts to the left
+  - the reduction of brokerage commissions for trading common stocks in 1975
+
+--
+
+<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+
+
+
+
+---
+# Supply Curve Shifts
+
+Changes in factors that affect how many bonds corporates or government will want to issue will make **supply curve shift**
+ 
+--
+ 
+- Expected profitability of investment opportunities
+- Expected inflation
+- Government budget deficits
+
+
+
+
+---
+# Supply Curve Shifts
+## (1) Expected Profitability of Investment Opportunities
+
+- business cycle expansion $\Rightarrow$ **expected profitability of investment opportunities** increases $\Rightarrow$ supply of bonds increases $\Rightarrow$ supply curve shifts to the right
+
+--
+
+<img src="../ch5/chpt5_Image/supply_right.png" width=300>
+
+
+---
+# Supply Curve Shifts
+## (1) Expected Profitability of Investment Opportunities
+
+- business cycle recession $\Rightarrow$ **expected profitable investment opportunities** decreases $\Rightarrow$ supply of bonds decreases $\Rightarrow$ supply curve shifts to the left
+
+--
+
+<img src="../ch5/chpt5_Image/supply_left.png" width=300>
+
+
+
+---
+# Supply Curve Shifts
+## (2) Expected Inflation
+
+- **expected inflation** increases $\Rightarrow$ real interest rate decreases $\Rightarrow$ real cost of borrowing decreases $\Rightarrow$ issuing more bonds $\Rightarrow$ supply of bonds increases $\Rightarrow$ supply curve shifts to the right
+
+--
+
+<img src="../ch5/chpt5_Image/supply_right.png" width=300>
+
+
+
+---
+# Supply Curve Shifts
+## (2) Expected Inflation
+
+- **expected inflation** decreases $\Rightarrow$ supply of bonds decreases $\Rightarrow$ supply curve shifts to the left
+
+--
+
+<img src="../ch5/chpt5_Image/supply_left.png" width=300>
+
+
+
+
+---
+# Supply Curve Shifts
+## (3) Government Budget Deficits
+
+- government’s expenditures is higher than its revenues $\Rightarrow$ **government deficits** $\Rightarrow$ U.S. Treasury issues bonds to finance government deficits $\Rightarrow$ supply of bonds increases $\Rightarrow$ supply curve shifts to the right
+
+--
+
+<img src="../ch5/chpt5_Image/supply_right.png" width=300>
+
+
+---
+# Supply Curve Shifts
+## (3) Government Budget Deficits
+
+- government’s expenditures is less than its revenues $\Rightarrow$ **government surpluses** $\Rightarrow$ supply of bonds decreases $\Rightarrow$ supply curve shifts to the left
+
+--
+
+<img src="../ch5/chpt5_Image/supply_left.png" width=300>
+
+
+
+
+
+
+
+<!---
+library(webshot)
+file_name <- paste0("file://", normalizePath("Apr22_Ch5_lecture_slide.html"))
+webshot(file_name, "Apr22_Ch5_lecture_slide.pdf")
+--->
+

@@ -1,0 +1,674 @@
+---
+title: "Ec 370 <br> Money and Banking"
+subtitle: "Chapter 6: The Risk and Term Structure of Interest Rates - PART II"
+author: "Xiang LI"
+date: "May 4, 2020"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      # countdown: 120000
+    css: [default, metropolis, metropolis-fonts]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+# library(gdtools)
+# library(hrbrthemes)
+library(plotly)
+library(lubridate)
+library(kableExtra)
+library(htmlTable)
+```
+
+
+<style>
+  .large { font-size: 200% } 
+  .small { font-size: 70% }
+</style>
+
+<style type="text/css">
+.remark-slide-content {
+    font-size: 25px;
+    padding: 1em 1em 1em 1em;
+}
+
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-right{
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+</style>
+
+
+
+
+
+- **Previous lecture**: default risk, liquidity, income tax consideration explain why bonds with the **same maturity** have different interest rates
+  - Risk structure of interest rates
+  
+--
+
+- **Today's lecture**: three theories explaining why bonds with _identical_ default risk, liquidity, tax consideration have _different_ interest rates because their terms to **maturity are different**
+  - Term structure of interest rates
+
+
+---
+class: inverse, center, middle
+name: Motivation
+
+# Term structure of interest rates
+
+
+<html><div style='float:left'></div><hr color='#EB811B' size=1px width=796px></html>
+
+
+
+---
+# Yield Curve
+
+- **Yield curve**: a plot of the yields on bonds with **differing** terms to maturity but the **same** risk, liquidity, and tax considerations
+
+--
+
+- Yield curves have three basic shapes
+  - **upward-sloping** (most common): long-term interest rates > short-term interest rates
+  - **flat**: short- and long-term interest rates are the same
+  - **downward-sloping or inverted**: long-term interest rates < short-term interest rates
+
+
+---
+# Yield Curve
+
+Upward-sloping yield curve: 
+
+- **long-term interest rates is larger than short-term interest rates**
+
+<img src="chpt6_Image/yield-curve.png" width=600>
+
+https://www.treasury.gov/resource-center/data-chart-center/interest-rates/pages/TextView.aspx?data=yieldYear&year=2020
+
+
+
+
+---
+# Yield Curve
+
+A good theory of the yield curve must explain these following **three important empirical facts**:
+
+- **Fact #1**: interest rates on bonds of different maturities move together over time
+
+- **Fact #2**: When short-term interest rates are low, yield curves are more likely to have an upward slope; when short-term interest rates are high, yield curves are more likely to slope downward
+
+- **Fact #3**: Yield curves almost always slope upward
+
+
+  
+
+
+
+---
+# Yield Curve
+
+Three theories of the yield curve: 
+
+- Expectations theory: can only explain Fact #1 & #2
+
+- Segmented markets theory: can only explain Fact #3
+
+- Liquidity premium theory: 
+  - combination of expectations theory and segmented markets theory
+  - can explain Fact #1 & #2 & #3
+  
+  
+---
+# (1) Expectations Theory
+
+For an investment of $1, there are two investment strategies for the choice of holding for 2 periods:
+
+--
+
+**Option 1**: purchase a 1-yr bond, and when it matures in 1 year, purchase another 1-yr bond
+
+--
+
+**Option 2**: purchase a 2-yr bond and hold it until maturity
+
+--
+
+- interest rate on a 1-yr bond at time t: $i_t$
+- interest rate on a 1-yr bond _expected_ for time t + 1: $i^e_{t+1}$
+- interest rate on the 2-yr bond at time t: $i_{2t}$
+
+
+<!---
+draw a time line: from t to t+1, i_t; from t+1 to t+2: i^e_{t+1};
+draw another time line: from t to t+2: i_{2t}
+--->
+
+
+
+
+---
+# (1) Expectations Theory
+
+- expected return for Strategy 1:
+$$(1+i_{t})(1+i^e_{t+1})-1=i_{t}+i^e_{t+1}+i_t(i^e_{t+1})\approx i_{t}+i^e_{t+1}$$
+
+--
+
+- expected return for Strategy 2:
+$$(1+i_{2t})(1+i_{2t})-1=2i_{2t}+(i_{2t})^2 \approx 2i_{2t}$$
+
+--
+
+- **Key assumption of Expectations Theory**: bonds with different maturities are perfect substitutes
+  - the expected returns on bonds with different maturities are equal
+
+
+
+---
+# (1) Expectations Theory
+
+- equalize: $$2i_{2t}=i_{t}+i^e_{t+1}$$
+
+--
+
+- rewrite: $$i_{2t}=\frac{i_t+i^e_{t+1}}{2}$$
+
+--
+
+- generalize: interest rate on an n-yr bond is
+
+  - $$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}$$
+
+<!---the n-yr interest rate equals the average of the one-yr interest rates expected to occur over the n-yr life of the bond--->
+
+---
+# Participation 7
+
+- Q1 (1): the current interest rate on the one-year bond is 5%. If the 1-yr interest rates over the next four years are **expected** to be 6%, 7%, 8%, and 9%. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, and a 5-yr bond. Also draw the yield curve. 
+
+--
+
+$$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}$$
+
+
+
+
+
+---
+# Participation 7
+
+(1) Given $i_t=5\%$, $i_{t+1}^e=6\%$, $i_{t+2}^e=7\%$, $i_{t+3}^e=8\%$, $i_{t+4}^e=9\%$: 
+- $i_{2t}=\frac{5\%+6\%}{2}=5.5\%$
+- $i_{3t}=\frac{5\%+6\%+7\%}{3}=6\%$
+- $i_{4t}=\frac{5\%+6\%+7\%+8\%}{4}=6.5\%$
+- $i_{5t}=\frac{5\%+6\%+7\%+8\%+9\%}{5}=7\%$
+
+--
+
+<img src="chpt6_Image/yield1.png" width=450>
+
+
+
+<!---
+# (1) Expectations Theory
+$$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}$$
+
+- upward-sloping yield curve: the long-term rate is currently higher than the short-term rate
+
+- this can occur only if short-term interest rates are **expected** to rise, on average, in the future
+  
+
+
+- downward-sloping yield curve: 
+  - the long-term rate is currently lower than the short-term rate
+  - implying that short-term interest rates are **expected** to fall, on average, in the future 
+
+
+- flat yield curve: 
+  - the long-term rate is currently same as the short-term rate
+  - short-term interest rates are not **expected** to change, on average, in the future
+--->
+
+
+
+---
+# Participation 7
+
+- Q1 (2): if $i_t$ increases from 5% to 6%. Assume people expect interest rate on a 1-yr bond at time $t+1$ increases from 6% to 7%, and interest rate on a 1-yr bond at time $t+2$ increases from 7% to 8%, but do no adjust expectations further.
+
+--
+
+- Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve 
+
+
+
+
+---
+# Participation 7
+
+(2) Given $i_t=6\%$, $i_{t+1}^e=7\%$, $i_{t+2}^e=8\%$, $i_{t+3}^e=8\%$, $i_{t+4}^e=9\%$:
+
+- $i_{2t}=\frac{6\%+7\%}{2}=6.5\%$
+- $i_{3t}=\frac{6\%+7\%+8\%}{3}=7\%$
+- $i_{4t}=\frac{6\%+7\%+8\%+8\%}{4}=7.25\%$
+- $i_{5t}=\frac{6\%+7\%+8\%+8\%+9\%}{5}=7.6\%$
+
+--
+
+<img src="chpt6_Image/yield2.png" width=400>
+
+
+
+
+---
+# (1) Expectations Theory
+
+- In summary, **A rise in actual short-term rates raises people’s expectation on future short-term rates**. Therefore, increasing actual and expected short-term rates jointly drives up longer-term rates
+
+--
+
+- This is exactly why we observe **Fact #1** : interest rates on bonds of different maturities move together over time
+  - $i_t \uparrow \Rightarrow i_{2t} \uparrow,...,i_{nt} \uparrow$
+  - $i_t \downarrow \Rightarrow i_{2t} \downarrow,...,i_{nt} \downarrow$
+
+--
+
+- How does Expectations Theory explains **Fact #2**?
+
+
+---
+# Participation 7
+
+Post the 2007-2009 Great Recession, interest rate on 1-yr T-bills is usually less than 2%. So the current 5% 1-yr interest rate is way too high. Therefore, people expect the rates to decline in the future. 
+
+--
+
+- Q1 (3): Assume people expect interest rate on a 1-yr bond at time $t+1$ decreases from 6% to 4%, and interest rate on a 1-yr bond at time $t+2$ increases from 7% to 3%, and interest rate on a 1-yr bond at time $t+3$ and $t+4$ are back to 2%. 
+
+--
+
+- Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve 
+
+
+---
+# Participation 7
+
+(3) Given $i_t=5\%$, $i_{t+1}^e=4\%$, $i_{t+2}^e=3\%$, $i_{t+3}^e=2\%$, $i_{t+4}^e=2\%$: 
+- $i_{2t}=\frac{5\%+4\%}{2}=4.5\%$
+- $i_{3t}=\frac{5\%+4\%+3\%}{3}=4\%$
+- $i_{4t}=\frac{5\%+4\%+3\%+2\%}{4}=3.5\%$
+- $i_{5t}=\frac{5\%+4\%+3\%+2\%+2\%}{5}=3.2\%$
+
+--
+
+<img src="chpt6_Image/yield3.png" width=400>
+
+- This exactly why we observe **Fact #2**: yield curves tend to be inverted when short-term rates are high (vice versa)
+
+
+
+
+
+  
+---
+# (2) Segmented Markets Theory
+
+- Expectations Theory assumes that investors do not prefer bonds of one maturity over another 
+
+<!---bonds with different maturities are perfect subsititutes--->
+
+--
+
+- However, people may prefer short-term bonds to long-term bonds
+  - people who are limited by a short holding period will prefer to hold short-term bonds
+
+<!---
+- risk-averse investors generally prefer bonds with shorter maturities that have less interest-rate risk
+--->
+  
+--
+
+- And people may prefer long-term bonds to short-term bonds
+  - someone who was putting funds away for their young child to go to college would want to hold longer-term bonds
+
+--
+
+- So when expectations theory does not hold and fails to explain Fact #3, we need another theory
+
+<!---
+Expectations Theory fails to explain why short-term interest rates are **usually** expected to rise (**Fact#3**) because its assumption might not hold. 
+--->
+
+
+
+
+---
+# (2) Segmented Markets Theory
+
+- **Key assumption of segmented markets theory**: bonds of different maturities are NOT substitutes
+
+<!---just like fruits and cars are not subsitutes--->
+
+--
+
+- demand/supply for different maturity bonds are independent and completely separated 
+
+<!---demand/supply of fruits is segmented from demand/supply of cars--->
+
+--
+
+- interest rates of bonds of different maturity are determined by the demand and supply of that bond only are independent 
+
+--
+
+- Recall Chapter 4: shorter-term bonds have less interest rate risk, and shorter-term bonds are typically more liquid
+
+--
+
+- Therefore, investors typically prefer shorter-term bonds
+  
+
+---
+# (2) Segmented Markets Theory
+
+Hence, **demand** for long-term bonds is **typically** lower than that for short-term bonds
+
+<img src="chpt6_Image/segment.png" width=600>
+
+--
+
+- In summary: under segemented markets theory, **long-term bonds typically have higher interest rates** (this is exactly Fact #3)
+
+
+
+
+---
+# (3) Liquidity Premium Theory
+
+- Let's call the additional interest that investors require as compensation for buying longer-term bonds: **liquidity premium**
+
+--
+
+- $l_{nt}$: liquidity premium for the $n$-year bond at time t
+  - $l_{nt}>0$, for all $n$ 
+  - $l_{nt}$ grows with the term to maturity $n$ (longer-term bonds have greater liquidity premium)
+
+--
+
+$$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}+l_{nt}$$
+
+<!---
+The interest rate on a long-term bond will equal an average of short-term interest rates expected to occur over the life of the long-term bond plus a liquidity premium that responds to supply and demand conditions for that bond 
+--->
+
+
+---
+# (3) Liquidity Premium Theory
+
+$$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}+l_{nt}$$
+
+- As a combination of expectation theory and segmented markets theory, liquidity premium theory assumes bonds of different maturity are partial (not perfect) substitutes
+
+--
+
+- Fact #1 and #2 are explained by the first term in the equation 
+
+--
+
+- Fact #3 is explained by the second term in the equation - the liquidity premium term
+
+
+
+---
+# Participation 7
+
+- Let's return to the exercise
+
+- Q1 (4): the current 1-yr interest rate is 5%, and 1-yr interest rates over the next four years are expected to be 6%, 7%, 8%, and 9%. Assume liquidity premiums for 2- to 5-yr bonds are 0.25%, 0.5%, 0.75%, and 1.0%, respectively.
+
+- Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve 
+
+$$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}+l_{nt}$$
+
+
+---
+# Participation 7
+
+(4) In part (1), we have solved the first term for each bond to be: $5\%, 5.5\%, 6\%, 6.5\%, 7\%$. Given $l_{t}=0\%$, $l_{2t}=0.25\%$, $l_{3t}=0.5\%$, $l_{4t}=0.75\%$, $l_{5t}=1\%$: 
+- $i_{t}=5\%+0\%=5\%$
+- $i_{2t}=5.5\%+0.25\%=5.75\%$
+- $i_{3t}=6\%+0.5\%=6.5\%$
+- $i_{4t}=6.5\%+0.75\%=7.25\%$
+- $i_{5t}=7\%+1\%=8\%$
+
+<img src="chpt6_Image/yield4.png" width=400>
+
+
+
+---
+# Interpreting Yield Curve
+
+- Recall Chapter 5: falling interest rates are associated with recessions (procyclical)
+
+--
+
+- when inverted yield curve is observed, short-term interest rates are expected to fall sharply in the future, and the economy is expected to be more likely to enter a recession
+
+--
+
+- Yield curve is a powerful predictor of an economic downturn 
+
+
+---
+# Interpreting Yield Curve
+
+<img src="chpt6_Image/evidence.png" width=350>
+
+The steep inverted yield curve occurred on January 15, 1981 
+- This indicated that short-term interest rates were expected to decline sharply in the future
+- Indeed, by March 1981, 3-month Treasury bill rates had declined from the 16% to 13%
+- Soon afterwards, a recession started in July 1981 
+
+
+
+---
+# Interpreting Yield Curve
+
+**Who discovered the predictive power of the yield curve?**
+
+- The relationship between inverted yield curve and recessions was
+discovered by Professor Campbell Harvey in his dissertation in 1986. He got his Ph.D. from University of Chicago
+
+--
+
+**What measure to choose?**
+
+- Common measures are 2-year/10-year spread and 3-month/10-year spread
+  - available from 1976-: https://fred.stlouisfed.org/series/T10Y2Y
+  - available from 1982-: https://fred.stlouisfed.org/series/T10Y3M
+
+
+<!---
+# Interpreting Yield Curve
+
+**Why does this indicator work?**
+
+- when the Fed cut federal funds rates in their July 30-31 meeting, the short-term bond rates came down immediately
+
+- However, with concerns over a global slowdown and uncertainties from the U.S.-China trade war, people shift assets into the U.S. long-term Treasury bond, the safest asset in the world 
+
+- Buying pressure on the long-term bonds drives prices up, thereby lowering long-term yields
+
+- leading to an inverted yield curve on Aug 14, plummeting the stock market for its worst day of 2019 
+--->
+
+
+---
+# Interpreting Yield Curve
+
+**If the yield curve flattens, when will it invert? If the yield curve inverts, when will the recession happen?**
+
+- Indeterminate ... The lags can be 12 months, 18 or 20 months. But the recession will not happen right away.
+
+--
+
+- Professor Harvey said the curve needs to stay inverted for three months to be reliable
+
+--
+
+- Although the yield curve has a strong track record, it is not a cause of a financial crisis, nor does it share any insight onto the timing and magnitude of a recession (there can be false positives)
+
+
+
+
+
+
+<!---
+The 2-year/10-year preceded five recessions, and the 3-month/10-year preceded all seven of the past recessions with two false positives (an inversion in late 1966 and a very flat curve in late 1998
+--->
+
+
+
+
+<!---
+# Interpreting Yield Curve
+
+**Are there other indicators that we should watch to help us forecast a recession?**
+
+- the Duke-CFO survey, which has been going on for 25 years, has an excellent track record. CFOs know the capital spending and employment plans before the plans are executed. Two-thirds of the U.S. CFOs believe a recession will begin in 2020. 
+
+- Jeremy Piger at UO: a dynamic-factor Markov-switching (DFMS) model that calculate monthly recession probabilities (https://pages.uoregon.edu/jpiger/us_recession_probs.htm/)
+--->
+
+
+
+---
+# Interpreting Yield Curve
+
+<img src="chpt6_Image/up.png" width=600>
+
+**Steeply rising yield curve**: short-term interest rates are expected to rise in the future
+
+**Moderately steep yield curve**: short-term interest rates are not expected to rise or fall much in the future
+
+<!---
+- when short-term interest rates are expected to rise in the future $\Rightarrow$
+- their average plus the liquidity premium will be higher than the current short-term rate $\Rightarrow$
+- long-term interest rates are higher than short-term interest rates $\Rightarrow$
+--->
+
+<!---
+- when short-term interest rates are not expected to rise or fall much in the future $\Rightarrow$
+- average remains the same as the current short-term rate, and the positive liquidity premium for longer-term bonds explains the moderate upward slope of the yield curve  $\Rightarrow$
+--->
+
+---
+# Interpreting Yield Curve
+
+<img src="chpt6_Image/down.png" width=600>
+
+**Flat yield curve**: short-term interest rates are expected fall moderately in the future
+
+**Inverted yield curve**: short-term interest rates are expected to fall sharply in the future
+
+
+<!---
+- when short-term rates are expected to fall moderately in the future $\Rightarrow$
+- it offsets the positive value of liquidity premium  $\Rightarrow$
+--->
+
+
+---
+# Interpreting Yield Curve
+
+**What does yield curve say about inflation?**
+
+- Recall Chapter 4 Fisher Equation: $i=r+\pi^e$
+  - when observing flat or inverted yield curve: short-term $i$ are expected to fall 
+  - hence inflation is expected to decline in the near future
+  
+--
+
+A 3-D View of a Chart That Predicts The Economic Future: https://www.nytimes.com/interactive/2015/03/19/upshot/3d-yield-curve-economic-growth.html?fbclid=IwAR1y8BI1JOx3DMrZlOmStEeeeYOpnU_GJY_MO69Lap0HY8GR5jz0qvh1FZs
+
+
+<!---
+The yield curve of 1m T-bill shows how much it costs the federal government to borrow money; reveal the relationship between long- and short-term interest rate
+
+short-term rate nearly zero: the Fed
+
+long-term rate low: strong foreign demand 
+
+Yields in Germany are negative: Investors who buy a German 7-year bond now, and hold onto it until 2022, are essentially agreeing to lose money. They will be paid back less money than they lent the government.
+Yields in Japan have been low for decades, as the country struggled with deflation
+
+With rates so low in Europe and Japan, the rates in the United States are actually among the highest in the highly industrialized world.
+The bond market expects slow growth and very low inflation for years to come.
+--->
+
+
+
+
+
+
+<!---
+2019 FOMC Meeting:
+- January 29-30: No fed funds rates cut
+  - The Fed was satisfied with current rates of economic growth, inflation, and unemployment
+- March 19-20: No rates cut
+  - The Fed didn't think growth and inflation were strong enough to warrant another increase
+- April 30 - May 1: No rates cut
+  - The Fed said employment and economic growth was strong, although inflation was a little below its 2% target.
+- June 18-19: No rates cut
+  - The Fed said it may cut the rate in July if global growth slows and inflation remains below the Fed's target. 
+  
+- July 30-31: because business spending is soft, and inflation is slightly below the 2% target, the FOMC lowered the short-term federal funds rate for the first time in the year 
+
+- Aug 1: the 2-year bond rates came down and widened slightly against the 10-year bond rates, extending the spread 
+
+- Concerns over a global slowdown, and uncertainties from the U.S.-China trade war, have weighed heavily on longer-term U.S. Treasury yields
+  
+- Aug 14, 2019: yield curve inverted, plummeting the stock market for its worst day of 2019 
+
+- Spet 17-18: The FOMC lowered the rate to by 0.25%.
+
+- October 29-30 meeting: ? 
+
+- stocks fell since analysts predicted three more cuts in 2019
+--->
+
+
+---
+exclude: true
+
+```{r, generate pdfs, include = F, eval = F}
+# method 1:
+pagedown::chrome_print("May4_Ch6_lecture_slide.html", output = "May4_Ch6_lecture_slide.pdf")
+pagedown::chrome_print("May4_Ch6_lecture_slide.html", output = "May4_Ch6_lecture_slide_nopause.pdf")
+# can set longer time to allow for the longer conversion of the pdf document: say, 60 sec rather than 30 sec  
+# need to set the working directory to be the folder that contains .html 
+
+# method 2:
+library(webshot)
+file_name <- paste0("file://", normalizePath("Apr29_Ch6_lecture_slide.html"))
+webshot(file_name, "Apr29_Ch6_lecture_slide.pdf")
+
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+```
+
+
+
+
