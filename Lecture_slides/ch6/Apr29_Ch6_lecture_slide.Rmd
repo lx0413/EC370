@@ -14,6 +14,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width=5, fig.height=4) 
 library(knitr)
 library(tidyverse)
 # library(gdtools)
@@ -156,7 +157,39 @@ name: Motivation
 
 --
 
-![risk-0](chpt6_Image/risk-0.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Corporate Bonds ($ billions)")+
+  ylab("Price of Corporate Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^C",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^C",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^C, P[1]^C)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)
+```
 
 
 
@@ -169,7 +202,45 @@ name: Motivation
   
 --
 
-![risk-1](chpt6_Image/risk-1.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(0,3),y=c(3,0))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Corporate Bonds ($ billions)")+
+  ylab("Price of Corporate Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^C",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^C",parse = TRUE,size=5)+
+   annotate('text', x = 0, y = 3, label = "D[2]^C",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^C, P[1]^C)",parse = TRUE,size=5)+
+  geom_point(aes(1.5, 1.5), size=3)+
+  geom_segment(aes(x=0, xend=1.5, y=1.5, yend=1.5), linetype="dashed")+
+  annotate('text', x = 2, y = 1.5, label = "E[2](Q[2]^C, P[2]^C)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)
+```
 
 
 
@@ -184,7 +255,51 @@ name: Motivation
   
 --
   
-![risk-2](chpt6_Image/risk-2.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(0,3),y=c(3,0))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Corporate Bonds ($ billions)")+
+  ylab("Price of Corporate Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^C",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^C",parse = TRUE,size=5)+
+   annotate('text', x = 0, y = 3, label = "D[2]^C",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^C, P[1]^C)",parse = TRUE,size=5)+
+  geom_point(aes(1.5, 1.5), size=3)+
+  geom_segment(aes(x=0, xend=1.5, y=1.5, yend=1.5), linetype="dashed")+
+  annotate('text', x = 2, y = 1.5, label = "E[2](Q[2]^C, P[2]^C)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(1,4),y=c(4,1))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+   annotate('text', x = 1, y = 4, label = "D[2]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)+
+  geom_point(aes(2.5, 2.5), size=3)+
+  geom_segment(aes(x=0, xend=2.5, y=2.5, yend=2.5), linetype="dashed")+
+  annotate('text', x = 3, y = 2.5, label = "E[2](Q[2]^T, P[2]^T)",parse = TRUE,size=5)
+```
 
 
 
@@ -197,7 +312,51 @@ name: Motivation
 
 --
 
-![risk-3](chpt6_Image/risk-3.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(0,3),y=c(3,0))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Corporate Bonds ($ billions)")+
+  ylab("Price of Corporate Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^C",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^C",parse = TRUE,size=5)+
+   annotate('text', x = 0, y = 3, label = "D[2]^C",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^C, P[1]^C)",parse = TRUE,size=5)+
+  geom_point(aes(1.5, 1.5), size=3)+
+  geom_segment(aes(x=0, xend=4, y=1.5, yend=1.5), linetype="dashed")+
+  annotate('text', x = 2, y = 1.5, label = "E[2](Q[2]^C, P[2]^C)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(1,4),y=c(4,1))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+   annotate('text', x = 1, y = 4, label = "D[2]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)+
+  geom_point(aes(2.5, 2.5), size=3)+
+  geom_segment(aes(x=-4, xend=2.5, y=2.5, yend=2.5), linetype="dashed")+
+  annotate('text', x = 3, y = 2.5, label = "E[2](Q[2]^T, P[2]^T)",parse = TRUE,size=5)
+```
 
 
 
@@ -316,7 +475,51 @@ https://www.youtube.com/watch?v=uM19CBGhhas
 
 --
 
-![risk-2](chpt6_Image/risk-2.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(0,3),y=c(3,0))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Corporate Bonds ($ billions)")+
+  ylab("Price of Corporate Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^C",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^C",parse = TRUE,size=5)+
+   annotate('text', x = 0, y = 3, label = "D[2]^C",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^C, P[1]^C)",parse = TRUE,size=5)+
+  geom_point(aes(1.5, 1.5), size=3)+
+  geom_segment(aes(x=0, xend=1.5, y=1.5, yend=1.5), linetype="dashed")+
+  annotate('text', x = 2, y = 1.5, label = "E[2](Q[2]^C, P[2]^C)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(1,4),y=c(4,1))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+   annotate('text', x = 1, y = 4, label = "D[2]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)+
+  geom_point(aes(2.5, 2.5), size=3)+
+  geom_segment(aes(x=0, xend=2.5, y=2.5, yend=2.5), linetype="dashed")+
+  annotate('text', x = 3, y = 2.5, label = "E[2](Q[2]^T, P[2]^T)",parse = TRUE,size=5)
+```
 
 
 
@@ -406,7 +609,39 @@ https://www.youtube.com/watch?v=uM19CBGhhas
 
 --
 
-![risk-0-m](chpt6_Image/risk-0-m.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Municipal Bonds ($ billions)")+
+  ylab("Price of Municipal Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^M",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^M",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^M, P[1]^M)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)
+```
 
 
 
@@ -422,7 +657,45 @@ https://www.youtube.com/watch?v=uM19CBGhhas
 
 --
 
-![risk-1-m](chpt6_Image/risk-1-m.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(1,4),y=c(4,1))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Municipal Bonds ($ billions)")+
+  ylab("Price of Municipal Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^M",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^M",parse = TRUE,size=5)+
+   annotate('text', x = 1, y = 4, label = "D[2]^M",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^M, P[1]^M)",parse = TRUE,size=5)+
+  geom_point(aes(2.5, 2.5), size=3)+
+  geom_segment(aes(x=0, xend=2.5, y=2.5, yend=2.5), linetype="dashed")+
+  annotate('text', x = 3, y = 2.5, label = "E[2](Q[2]^M, P[2]^M)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)
+```
 
 
 
@@ -437,7 +710,51 @@ https://www.youtube.com/watch?v=uM19CBGhhas
   
 --
 
-![risk-2-m](chpt6_Image/risk-2-m.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(1,4),y=c(4,1))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Municipal Bonds ($ billions)")+
+  ylab("Price of Municipal Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^M",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^M",parse = TRUE,size=5)+
+   annotate('text', x = 1, y = 4, label = "D[2]^M",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^M, P[1]^M)",parse = TRUE,size=5)+
+  geom_point(aes(2.5, 2.5), size=3)+
+  geom_segment(aes(x=0, xend=2.5, y=2.5, yend=2.5), linetype="dashed")+
+  annotate('text', x = 3, y = 2.5, label = "E[2](Q[2]^M, P[2]^M)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(0,3),y=c(3,0))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 0, y = 3, label = "D[2]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)+
+  geom_point(aes(1.5, 1.5), size=3)+
+  geom_segment(aes(x=0, xend=1.5, y=1.5, yend=1.5), linetype="dashed")+
+  annotate('text', x = 2, y = 1.5, label = "E[2](Q[2]^T, P[2]^T)",parse = TRUE,size=5)
+```
   
   
   
@@ -450,7 +767,51 @@ https://www.youtube.com/watch?v=uM19CBGhhas
 
 --
 
-![risk-2-m](chpt6_Image/risk-2-m.png)
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(1,4),y=c(4,1))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Municipal Bonds ($ billions)")+
+  ylab("Price of Municipal Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^M",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^M",parse = TRUE,size=5)+
+   annotate('text', x = 1, y = 4, label = "D[2]^M",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^M, P[1]^M)",parse = TRUE,size=5)+
+  geom_point(aes(2.5, 2.5), size=3)+
+  geom_segment(aes(x=0, xend=2.5, y=2.5, yend=2.5), linetype="dashed")+
+  annotate('text', x = 3, y = 2.5, label = "E[2](Q[2]^M, P[2]^M)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(0,3),y=c(3,0))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Treasury Bonds ($ billions)")+
+  ylab("Price of Treasury Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^T",parse = TRUE,size=5)+
+  annotate('text', x = 0, y = 3, label = "D[2]^T",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^T, P[1]^T)",parse = TRUE,size=5)+
+  geom_point(aes(1.5, 1.5), size=3)+
+  geom_segment(aes(x=0, xend=1.5, y=1.5, yend=1.5), linetype="dashed")+
+  annotate('text', x = 2, y = 1.5, label = "E[2](Q[2]^T, P[2]^T)",parse = TRUE,size=5)
+```
 
 
 

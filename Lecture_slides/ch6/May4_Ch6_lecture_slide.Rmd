@@ -16,6 +16,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(fig.width=5, fig.height=4) 
 library(knitr)
 library(tidyverse)
 # library(gdtools)
@@ -218,7 +219,16 @@ $$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}$$
 
 --
 
-<img src="chpt6_Image/yield1.png" width=450>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df <- data.frame(x=c(1,2, 3, 4, 5),y=c(5, 5.5, 6, 6.5, 7))
+
+ggplot(data=df, aes(x=x, y=y, group=1)) +
+  geom_line()+
+  geom_point()+
+  xlab("Years to Maturity")+
+  ylab("Interest Rate")+
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))
+```
 
 
 
@@ -268,7 +278,17 @@ $$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}$$
 
 --
 
-<img src="chpt6_Image/yield2.png" width=400>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df <- data.frame(x=c(1,2, 3, 4, 5, 1,2, 3, 4, 5),y=c(5, 5.5, 6, 6.5, 7, 6, 6.5, 7, 7.5, 8), rates=rep(c("pre", "post"), each=5))
+
+ggplot(data=df, aes(x=x, y=y, group=rates)) +
+  geom_line(aes(color=rates))+
+  geom_point(aes(color=rates))+
+  xlab("Years to Maturity")+
+  ylab("Interest Rate (%)")+
+  theme_minimal()+
+  scale_color_manual(labels = c("after adjusting expectations", "before adjusting expectations"), values = c("blue", "black"))
+```
 
 
 
@@ -307,14 +327,20 @@ Post the 2007-2009 Great Recession, interest rate on 1-yr T-bills is usually les
 # Participation 7
 
 (3) Given $i_t=5\%$, $i_{t+1}^e=4\%$, $i_{t+2}^e=3\%$, $i_{t+3}^e=2\%$, $i_{t+4}^e=2\%$: 
-- $i_{2t}=\frac{5\%+4\%}{2}=4.5\%$
-- $i_{3t}=\frac{5\%+4\%+3\%}{3}=4\%$
-- $i_{4t}=\frac{5\%+4\%+3\%+2\%}{4}=3.5\%$
-- $i_{5t}=\frac{5\%+4\%+3\%+2\%+2\%}{5}=3.2\%$
+- $i_{2t}=\frac{5\%+4\%}{2}=4.5\%$, $i_{3t}=\frac{5\%+4\%+3\%}{3}=4\%$
+- $i_{4t}=\frac{5\%+4\%+3\%+2\%}{4}=3.5\%$, $i_{5t}=\frac{5\%+4\%+3\%+2\%+2\%}{5}=3.2\%$
 
---
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df <- data.frame(x=c(1,2, 3, 4, 5, 1,2, 3, 4, 5),y=c(5, 5.5, 6, 6.5, 7, 5, 4.5, 4, 3.5, 3.2), rates=rep(c("pre", "post"), each=5))
 
-<img src="chpt6_Image/yield3.png" width=400>
+ggplot(data=df, aes(x=x, y=y, group=rates)) +
+  geom_line(aes(color=rates))+
+  geom_point(aes(color=rates))+
+  xlab("Years to Maturity")+
+  ylab("Interest Rate (%)")+
+  theme_minimal()+
+  scale_color_manual(labels = c("after adjusting expectations", "before adjusting expectations"), values = c("blue", "black"))
+```
 
 - This exactly why we observe **Fact #2**: yield curves tend to be inverted when short-term rates are high (vice versa)
 
@@ -386,7 +412,51 @@ Expectations Theory fails to explain why short-term interest rates are **usually
 
 Hence, **demand** for long-term bonds is **typically** lower than that for short-term bonds
 
-<img src="chpt6_Image/segment.png" width=600>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.show="hold", out.width="50%"}
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(1,4),y=c(4,1))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Short-term Bonds ($ billions)")+
+  ylab("Price of Short-term Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^S",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^S",parse = TRUE,size=5)+
+   annotate('text', x = 1, y = 4, label = "D[2]^S",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^S, P[1]^S)",parse = TRUE,size=5)+
+  geom_point(aes(2.5, 2.5), size=3)+
+  geom_segment(aes(x=0, xend=2.5, y=2.5, yend=2.5), linetype="dashed")+
+  annotate('text', x = 3, y = 2.5, label = "E[2](Q[2]^S, P[2]^S)",parse = TRUE,size=5)
+
+df1 <- data.frame(x=c(0,4),y=c(4,0))
+df2 <- data.frame(x=c(0,4),y=c(0,4))
+df3 <- data.frame(x=c(0,3),y=c(3,0))
+
+ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  coord_cartesian(xlim = c(0, 4), clip = 'off') +
+  xlab("Quantity of Long-term Bonds ($ billions)")+
+  ylab("Price of Long-term Bonds, P ($)")+
+  annotate('text', x = 0, y = 4, label = "D[1]^L",parse = TRUE,size=5)+
+  annotate('text', x = 4, y = 4, label = "S[1]^L",parse = TRUE,size=5)+
+  annotate('text', x = 0, y = 3, label = "D[2]^L",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(2, 2), size=3)+
+  geom_segment(aes(x=0, xend=2, y=2, yend=2), linetype="dashed")+
+  annotate('text', x = 2.5, y = 2, label = "E[1](Q[1]^L, P[1]^L)",parse = TRUE,size=5)+
+  geom_point(aes(1.5, 1.5), size=3)+
+  geom_segment(aes(x=0, xend=1.5, y=1.5, yend=1.5), linetype="dashed")+
+  annotate('text', x = 2, y = 1.5, label = "E[2](Q[2]^L, P[2]^L)",parse = TRUE,size=5)
+```
 
 --
 
@@ -448,15 +518,20 @@ $$i_{nt} = \frac{i_t+i^e_{t+1}+i^e_{t+2}+\dots+i^e_{t+(n-1)}}{n}+l_{nt}$$
 # Participation 7
 
 (4) In part (1), we have solved the first term for each bond to be: $5\%, 5.5\%, 6\%, 6.5\%, 7\%$. Given $l_{t}=0\%$, $l_{2t}=0.25\%$, $l_{3t}=0.5\%$, $l_{4t}=0.75\%$, $l_{5t}=1\%$: 
-- $i_{t}=5\%+0\%=5\%$
-- $i_{2t}=5.5\%+0.25\%=5.75\%$
-- $i_{3t}=6\%+0.5\%=6.5\%$
-- $i_{4t}=6.5\%+0.75\%=7.25\%$
-- $i_{5t}=7\%+1\%=8\%$
+- $i_{t}=5\%+0\%=5\%$, $i_{2t}=5.5\%+0.25\%=5.75\%$
+- $i_{3t}=6\%+0.5\%=6.5\%$, $i_{4t}=6.5\%+0.75\%=7.25\%$, $i_{5t}=7\%+1\%=8\%$
 
-<img src="chpt6_Image/yield4.png" width=400>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df <- data.frame(x=c(1,2, 3, 4, 5, 1,2, 3, 4, 5),y=c(5, 5.5, 6, 6.5, 7, 5, 5.75, 6.5, 7.25, 8), rates=rep(c("Expectation Theory", "Liquidity Premium Theory"), each=5))
 
-
+ggplot(data=df, aes(x=x, y=y, group=rates)) +
+  geom_line(aes(color=rates))+
+  geom_point(aes(color=rates))+
+  xlab("Years to Maturity")+
+  ylab("Interest Rate (%)")+
+  theme_minimal()+
+  scale_color_manual(labels = c("Expectation Theory", "Liquidity Premium Theory"), values = c("black","blue"))
+```
 
 ---
 # Interpreting Yield Curve
@@ -663,8 +738,8 @@ pagedown::chrome_print("May4_Ch6_lecture_slide.html", output = "May4_Ch6_lecture
 
 # method 2:
 library(webshot)
-file_name <- paste0("file://", normalizePath("Apr29_Ch6_lecture_slide.html"))
-webshot(file_name, "Apr29_Ch6_lecture_slide.pdf")
+file_name <- paste0("file://", normalizePath("May4_Ch6_lecture_slide.html"))
+webshot(file_name, "May4_Ch6_lecture_slide.pdf")
 
 # to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
 ```
