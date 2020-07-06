@@ -504,7 +504,23 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_right.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(x=c(1,5),y=c(5,1))
+df2 <- data.frame(x=c(1,3),y=c(3,1))
+  
+demand_left <- ggplot() +
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  geom_line(aes(x=df2$x,y=df2$y), color="red")+
+  coord_cartesian(xlim = c(1, 5), clip = 'off') +
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  #theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  annotate('text', x = 5, y = 1, label = "B[1]^d",parse = TRUE,size=5) +
+  annotate('text', x = 3, y = 1, label = "B[2]^d",parse = TRUE,size=5)
+
+demand_left
+```
 
 
 ---
@@ -525,7 +541,9 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+demand_left
+```
 
 
 
@@ -555,7 +573,9 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+demand_left
+```
 
 - **expected future interest rates** decreases $\Rightarrow$ demand curve shifts to the right
 
@@ -568,7 +588,9 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis', fig.width=5, fig.height=4}
+demand_left
+```
 
 - **expected return on alternative assets** decreases $\Rightarrow$ demand curve shifts to the right
 
@@ -589,7 +611,9 @@ Changes in factors that affect how many bonds people will want to hold will make
 # Demand Curve Shift
 ## (2) Expected returns 
 
-<img src="../ch5/chpt5_Image/demand_left.png" width=250>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+demand_left
+```
 
 - **expected inflation** decreases $\Rightarrow$ demand curve shifts to right
 
@@ -601,7 +625,9 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+demand_left
+```
 
 
 
@@ -613,8 +639,23 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_right.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(x=c(1,5),y=c(5,1))
+df2 <- data.frame(x=c(1,3),y=c(3,1))
+  
+demand_right <- ggplot() +
+  geom_line(aes(x=df1$x,y=df1$y), color="red")+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  coord_cartesian(xlim = c(1, 5), clip = 'off') +
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  #theme_classic()+
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  annotate('text', x = 5, y = 1, label = "B[2]^d",parse = TRUE,size=5) +
+  annotate('text', x = 3, y = 1, label = "B[1]^d",parse = TRUE,size=5)
 
+demand_right
+```
 
 ---
 # Demand Curve Shift
@@ -624,7 +665,9 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_right.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+demand_right
+```
 
 
 
@@ -637,7 +680,9 @@ Changes in factors that affect how many bonds people will want to hold will make
 
 --
 
-<img src="../ch5/chpt5_Image/demand_left.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+demand_left
+```
 
 
 
@@ -664,7 +709,25 @@ Changes in factors that affect how many bonds corporates or government will want
 
 --
 
-<img src="../ch5/chpt5_Image/supply_right.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(x=c(1,5),y=c(5,1))
+df2 <- data.frame(x=c(1,5),y=c(1,5))
+df3 <- data.frame(x=c(2,5),y=c(1,4))
+
+supply_right <- ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  coord_cartesian(xlim = c(1, 5), clip = 'off') +
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  annotate('text', x = 5, y = 1, label = "B[1]^d",parse = TRUE,size=5)+
+  geom_line(aes(x=df2$x,y=df2$y), color="blue")+
+  annotate('text', x = 5, y = 5, label = "B[1]^s",parse = TRUE,size=5)+
+  geom_line(aes(x=df3$x,y=df3$y), color="red")+
+  annotate('text', x = 5, y = 4, label = "B[2]^d",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))
+
+supply_right
+```
 
 
 ---
@@ -675,7 +738,25 @@ Changes in factors that affect how many bonds corporates or government will want
 
 --
 
-<img src="../ch5/chpt5_Image/supply_left.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+df1 <- data.frame(x=c(1,5),y=c(5,1))
+df2 <- data.frame(x=c(1,5),y=c(1,5))
+df3 <- data.frame(x=c(2,5),y=c(1,4))
+
+supply_left <- ggplot()+
+  geom_line(aes(x=df1$x,y=df1$y), color="blue")+
+  coord_cartesian(xlim = c(1, 5), clip = 'off') +
+  xlab("Quantity of Bonds, B ($ billions)")+
+  ylab("Price of Bonds, P ($)")+
+  annotate('text', x = 5, y = 1, label = "B[1]^d",parse = TRUE,size=5)+
+  geom_line(aes(x=df2$x,y=df2$y), color="red")+
+  annotate('text', x = 5, y = 5, label = "B[2]^s",parse = TRUE,size=5)+
+  geom_line(aes(x=df3$x,y=df3$y), color="blue")+
+  annotate('text', x = 5, y = 4, label = "B[1]^d",parse = TRUE,size=5)+
+  theme(axis.text.x=element_blank(), axis.text.y=element_blank(),axis.ticks.x=element_blank(),axis.ticks.y=element_blank(), panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line = element_line(colour = "black"))
+
+supply_left
+```
 
 
 
@@ -687,7 +768,9 @@ Changes in factors that affect how many bonds corporates or government will want
 
 --
 
-<img src="../ch5/chpt5_Image/supply_right.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+supply_right
+```
 
 
 
@@ -699,7 +782,10 @@ Changes in factors that affect how many bonds corporates or government will want
 
 --
 
-<img src="../ch5/chpt5_Image/supply_left.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+supply_left
+```
+
 
 
 
@@ -712,7 +798,10 @@ Changes in factors that affect how many bonds corporates or government will want
 
 --
 
-<img src="../ch5/chpt5_Image/supply_right.png" width=300>
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+supply_right
+```
+
 
 
 ---
@@ -723,11 +812,9 @@ Changes in factors that affect how many bonds corporates or government will want
 
 --
 
-<img src="../ch5/chpt5_Image/supply_left.png" width=300>
-
-
-
-
+```{r , echo=FALSE, message=FALSE, warnings=FALSE, results='asis'}
+supply_right
+```
 
 
 
