@@ -23,6 +23,7 @@ library(plotly)
 library(lubridate)
 library(kableExtra)
 library(htmlTable)
+library(ggplot2)
 ```
 
 
