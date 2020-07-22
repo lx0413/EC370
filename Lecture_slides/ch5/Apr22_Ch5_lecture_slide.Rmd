@@ -14,7 +14,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(fig.width=6, fig.height=5) 
+knitr::opts_chunk$set(fig.width=6, fig.height=5, dpi=300,out.width="50%") 
 library(knitr)
 library(tidyverse)
 # library(gdtools)
@@ -676,7 +676,7 @@ demand_right
 ## (4) Liquidity
 
 - **liquidity of alternative assets** increases $\Rightarrow$ demand for bonds decreased $\Rightarrow$ demand curve shifts to the left
-  - the reduction of brokerage commissions for trading common stocks in 1975
+  - 1975: reducing brokerage commissions for trading common stocks
 
 --
 

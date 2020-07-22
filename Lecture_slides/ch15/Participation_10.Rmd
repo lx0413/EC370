@@ -36,18 +36,20 @@ knitr::opts_chunk$set(echo = TRUE)
 (1) Left-hand-plot: vertical section of supply curve initially intersects demand curve at downward-sloped section
 
 (2) Right-hand-plot: vertical section of supply curve initially intersects demand curve at flat section
-	\begin{figure}[!htb]
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{}
-	\end{minipage}\hfill
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{}
-	\end{minipage}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", fig.width=7, fig.height=2.5, fig.align='center'}
+library(ggplot2)
+library(gridExtra)
+library(grid)
+
+blank <- ggplot()+
+  coord_cartesian(xlim = c(0, 4), ylim = c(0, 4), clip = 'off') +
+  theme_void()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)
+
+grid.arrange(blank, nullGrob(), blank, widths=c(4,1,4))
+```
 
 
 \textbf{Graph 2: the impact on fed funds rate of an increase in the discount rate}
@@ -55,18 +57,11 @@ knitr::opts_chunk$set(echo = TRUE)
 (1) Left-hand-plot: the vertical section of the supply curve intersects the demand curve at the downward-sloped section
 
 (2) Right-hand-plot: the flat section of the supply curve intersects the demand curve at the downward-sloped section
-	\begin{figure}[!htb]
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{}
-	\end{minipage}\hfill
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{}
-	\end{minipage}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", fig.width=7, fig.height=2.5, fig.align='center'}
+grid.arrange(blank, nullGrob(), blank, widths=c(4,1,4))
+```
+
 	
 	
 \newpage
@@ -74,30 +69,21 @@ knitr::opts_chunk$set(echo = TRUE)
 \textbf{Graph 3: the impact on fed funds rate of a decrease in the required reserve ratio}
 
 The vertical section of the supply curve intersects the demand curve at the downward-sloped section
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=0.5\linewidth]{fig1}
-		\caption*{}
-	\end{figure}
-	
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
+
 
 \textbf{Graph 4: the impact on fed funds rate of a decrease in the interest rate on reserves}
 
 (1) Left-hand-plot: the vertical section of the supply curve intersects the demand curve at the downward-sloped section
 
 (2) Right-hand-plot: the vertical section of the supply curve intersects the demand curve at the flat section
-	\begin{figure}[!htb]
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{}
-	\end{minipage}\hfill
-	\begin{minipage}{0.5\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{}
-	\end{minipage}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", fig.width=7, fig.height=2.5, fig.align='center'}
+grid.arrange(blank, nullGrob(), blank, widths=c(4,1,4))
+```
 	
 
 	

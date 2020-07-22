@@ -35,21 +35,23 @@ knitr::opts_chunk$set(echo = TRUE)
 
 If there is an increase in expected inflation, how will interest rate change?
 
-\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.6\linewidth]{fig1}
-		\caption*{}
-\end{figure}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+library(ggplot2)
+blank <- ggplot()+
+  coord_cartesian(xlim = c(0, 4), ylim = c(0, 4), clip = 'off') +
+  theme_void()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)
+blank
+```
 
 \textbf{QUESTION 2} 
 
 If the economy is in a business cycle expansion, how will interest rate change?
 	
-\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.6\linewidth]{fig1}
-		\caption*{}
-\end{figure}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
 
 \newpage
 
@@ -57,11 +59,9 @@ If the economy is in a business cycle expansion, how will interest rate change?
 
 In the aftermath of the global financial crisis, in Europe and the United States, as well as in Japan, inflation has fallen to very low levels, sometimes even going negative, same as the expected inflation; at the same time, all of these countries have been experiencing a lack of profitable investment opportunities. Use supply and demand analysis for bond market, and explain graphically why interest rates in these countries are at such low levels.
 
-\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.6\linewidth]{fig1}
-		\caption*{}
-\end{figure}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
 
 
 
@@ -69,11 +69,9 @@ In the aftermath of the global financial crisis, in Europe and the United States
 
 In a business cycle expansion, when income is rising, how will interest rate change?
 
-\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.6\linewidth]{fig1}
-		\caption*{}
-\end{figure}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
 
 \newpage
 
@@ -81,19 +79,15 @@ In a business cycle expansion, when income is rising, how will interest rate cha
 
 In a business cycle expansion, when the price level rises, how will interest rate change?
 
-\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.6\linewidth]{fig1}
-		\caption*{}
-\end{figure}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
 
 \textbf{QUESTION 6}
 
 If there is an increase in the money supply due to expansionary monetary policy by the Fed, how will interest rate change?
 
-\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.6\linewidth]{fig1}
-		\caption*{}
-\end{figure}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
 

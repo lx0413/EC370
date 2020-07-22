@@ -34,33 +34,35 @@ knitr::opts_chunk$set(echo = TRUE)
 \textbf{QUESTION 1} 
 
 (1): the current interest rate on the one-year bond is 5%. If the 1-yr interest rates over the next four years are expected to be 6%, 7%, 8%, and 9%. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, and a 5-yr bond. Also draw the yield curve.
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.5\linewidth]{fig1}
-		\caption*{}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+library(ggplot2)
+blank <- ggplot()+
+  coord_cartesian(xlim = c(0, 4), ylim = c(0, 4), clip = 'off') +
+  theme_void()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)
+blank
+```
 
 
 (2): if $i_t$ increases from 5% to 6%. Assume people expect interest rate on a 1-yr bond at time $t+1$ increases from 6% to 7%, and interest rate on a 1-yr bond at time $t+2$ increases from 7% to 8%, but do no adjust expectations further. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.5\linewidth]{fig1}
-		\caption*{}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
 	
 \newpage
 
 (3): Assume people expect interest rate on a 1-yr bond at time $t+1$ decreases from 6% to 4%, and interest rate on a 1-yr bond at time $t+2$ increases from 7% to 3%, and interest rate on a 1-yr bond at time $t+3$ and $t+4$ are back to 2%. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve. 
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.5\linewidth]{fig1}
-		\caption*{}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```
 
 
 (4): the current 1-yr interest rate is 5%, and 1-yr interest rates over the next four years are expected to be 6%, 7%, 8%, and 9%. Assume liquidity premiums for 2- to 5-yr bonds are 0.25%, 0.5%, 0.75%, and 1.0%, respectively. Find out the interest rate on a 2-yr bond, a 3-yr bond, a 4-yr bond, a 5-yr bond, and draw the yield curve
-	\begin{figure}[!htb]
-		\centering
-		\includegraphics[width=.5\linewidth]{fig1}
-		\caption*{}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", out.width="50%", fig.width=5, fig.height=4}
+blank
+```

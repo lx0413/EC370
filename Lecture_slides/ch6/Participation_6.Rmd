@@ -34,35 +34,42 @@ knitr::opts_chunk$set(echo = TRUE)
 \textbf{QUESTION 1} 
 
 Higher default risk of corporate bonds relative to U.S. Treasury bonds increases the spread between the interest rates on these two bonds
-	\begin{figure}[!htb]
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{corporate bonds}
-	\end{minipage}\hfill
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{Treasury bonds}
-	\end{minipage}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", fig.width=7, fig.height=2.5, fig.align='center'}
+library(ggplot2)
+library(gridExtra)
+library(grid)
+
+blank1 <- ggplot()+
+  coord_cartesian(xlim = c(0, 4), ylim = c(0, 4), clip = 'off') +
+  theme_void()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  labs(caption="Corporate bonds") + 
+  theme(plot.caption = element_text(hjust=0.5, size=rel(1.2)))
+
+blank2 <- ggplot()+
+  coord_cartesian(xlim = c(0, 4), ylim = c(0, 4), clip = 'off') +
+  theme_void()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  labs(caption="Treasury bonds") + 
+  theme(plot.caption = element_text(hjust=0.5, size=rel(1.2)))
+
+grid.arrange(blank1, nullGrob(), blank2, widths=c(4,1,4))
+```
 	
 
+\vspace{.5in}
+	
 \textbf{QUESTION 2} 
 
 Lower liquidity of corporate bonds relative to Treasury bonds increases the spread between the interest rates on these two bonds 
-	\begin{figure}[!htb]
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{corporate bonds}
-	\end{minipage}\hfill
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{Treasury bonds}
-	\end{minipage}
-	\end{figure}
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", fig.width=7, fig.height=2.5, fig.align='center'}
+grid.arrange(blank1, nullGrob(), blank2, widths=c(4,1,4))
+```
+
 	
 	
 \newpage
@@ -70,20 +77,31 @@ Lower liquidity of corporate bonds relative to Treasury bonds increases the spre
 \textbf{QUESTION 3} 
 
 Favorable tax treatment of municipal bonds relative to Treasury bonds increases the spread between the interest rates on these two bonds 
-	\begin{figure}[!htb]
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{Municipal bonds}
-	\end{minipage}\hfill
-	\begin{minipage}{0.55\textwidth}
-		\centering
-		\includegraphics[width=1\linewidth]{fig1}
-		\caption*{Treasury bonds}
-	\end{minipage}
-	\end{figure}
-	
 
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='asis', fig.show="hold", fig.width=7, fig.height=2.5, fig.align='center'}
+library(ggplot2)
+library(gridExtra)
+library(grid)
+
+blank1 <- ggplot()+
+  coord_cartesian(xlim = c(0, 4), ylim = c(0, 4), clip = 'off') +
+  theme_void()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  labs(caption="Municipal bonds") + 
+  theme(plot.caption = element_text(hjust=0.5, size=rel(1.2)))
+
+blank2 <- ggplot()+
+  coord_cartesian(xlim = c(0, 4), ylim = c(0, 4), clip = 'off') +
+  theme_void()+
+  geom_hline(yintercept=0)+
+  geom_vline(xintercept = 0)+
+  labs(caption="Treasury bonds") + 
+  theme(plot.caption = element_text(hjust=0.5, size=rel(1.2)))
+
+grid.arrange(blank1, nullGrob(), blank2, widths=c(4,1,4))
+```
 
 
 

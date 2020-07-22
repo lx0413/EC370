@@ -14,7 +14,7 @@ output:
 
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
-knitr::opts_chunk$set(fig.width=5, fig.height=4) 
+knitr::opts_chunk$set(fig.width=5, fig.height=4, dpi=300) 
 library(knitr)
 library(tidyverse)
 # library(gdtools)
@@ -23,11 +23,10 @@ library(plotly)
 library(lubridate)
 library(kableExtra)
 library(htmlTable)
-library(ggplot2)
 ```
 
 <!---
-# to allow for incremental bulltes in the pdf: uncomment out this css
+# to allow for incremental bullets in the pdf: uncomment out this css
 ```{css, echo = F, eval = T}
 @media print {
   .has-continuation {
@@ -928,7 +927,7 @@ library(webshot)
 file_name <- paste0("file://", normalizePath("Apr29_Ch6_lecture_slide.html"))
 webshot(file_name, "Apr29_Ch6_lecture_slide.pdf")
 
-# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top
+# to maintain the incremental bullets in the pdf: use either method 1 or method 2, but need to comment out the css block on the top of this file
 ```
   
 
